@@ -1,0 +1,8 @@
+record_id,message_text,primary_intent,secondary_intent,sentiment,urgency,pii_types,pii_span_to_redact,clarification_flag,annotation_rationale
+V001,"My new card has not arrived.",card_delivery,,negative,standard,none,,no,"Directly asks about missing card delivery."
+V002,"Please call me at [PHONE] about my transfer.",transfer_status,,neutral,standard,phone,[PHONE],no,"Phone token is present and should be protected."
+V003,"I need help with my card.",intent_unclear,,neutral,routine,none,,yes,"Insufficient detail to select a narrow card intent."
+V004,"The payment is missing.",made_up_label,,negative,urgent,none,,no,"Deliberately invalid intent label for validator demonstration."
+V005,"My account is locked.",account_access,,negative,standard,none,,no,"Deliberately repeated ID to test duplicate detection."
+V005,"My account is locked again.",account_access,,negative,standard,none,,no,"Duplicate record ID."
+V006,"Contact me at [EMAIL].",profile_update,,neutral,routine,email,[PHONE],no,"Deliberately mismatched PII token."
