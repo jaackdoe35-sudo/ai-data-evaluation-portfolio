@@ -29,5 +29,29 @@ class ScoreCalculatorTests(unittest.TestCase):
         result = analyze_rows(HEADERS, [record()])
         self.assertIn("Mean score by dimension", render_report(result))
 
+    def test_empty_dataset_is_rejected(self):
+        with self.assertRaisesRegex(ValueError, "No valid evaluation records"):
+            analyze_rows(HEADERS, [])
+
+    def test_all_na_dimensions_are_rejected(self):
+        with self.assertRaisesRegex(ValueError, "at least one dimension"):
+            analyze_rows(HEADERS, [record(**{d: "N/A" for d in DIMENSIONS})])
+
+    def test_fractional_score_is_rejected(self):
+        with self.assertRaisesRegex(ValueError, "integer from 1 to 5"):
+            analyze_rows(HEADERS, [record(factuality="4.5")])
+
+    def test_non_finite_score_is_rejected(self):
+        with self.assertRaises(ValueError):
+            analyze_rows(HEADERS, [record(factuality="NaN")])
+
+    def test_invalid_severity_is_rejected(self):
+        with self.assertRaisesRegex(ValueError, "invalid issue_severity"):
+            analyze_rows(HEADERS, [record(issue_severity="Unknown")])
+
+    def test_missing_header_is_rejected(self):
+        with self.assertRaisesRegex(ValueError, "no header row"):
+            analyze_rows(None, [])
+
 if __name__ == "__main__":
     unittest.main()
