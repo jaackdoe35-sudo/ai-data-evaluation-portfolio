@@ -1,0 +1,36 @@
+name: Annotation QA stress test
+
+on:
+  push:
+    branches: [main, annotation-qa-stress-test]
+    paths:
+      - "10-annotation-csv-validator/**"
+      - "11-annotation-consistency-checker/**"
+      - "12-ai-response-score-calculator/**"
+      - "13-annotation-qa-dashboard/**"
+      - "16-annotation-qa-stress-test/**"
+      - ".github/workflows/annotation-qa-stress-test.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stress-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Run 10,000-row stress test
+        run: python 16-annotation-qa-stress-test/stress_test.py
+      - name: Upload measured results
+        uses: actions/upload-artifact@v4
+        with:
+          name: annotation-qa-stress-test-results
+          path: 16-annotation-qa-stress-test/stress-test-results.json
+          if-no-files-found: error
