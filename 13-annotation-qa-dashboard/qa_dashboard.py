@@ -8,6 +8,17 @@ from pathlib import Path
 
 REQUIRED = ("record_id", "message_text", "primary_intent", "sentiment", "urgency",
             "pii_types", "pii_span_to_redact", "clarification_flag", "annotation_rationale")
+PRIMARY_INTENTS = {
+    "account_access", "account_closure", "profile_update", "card_activation",
+    "card_delivery", "card_replacement_address", "card_not_working",
+    "card_payment_declined", "contactless_payment_issue", "card_payment_dispute",
+    "card_bill_payment_status", "card_retained_by_atm", "lost_card",
+    "suspected_fraud", "cash_withdrawal_dispute", "withdrawal_limit",
+    "withdrawal_limit_change", "transfer_status", "transfer_information",
+    "transfer_cancellation", "transfer_reversal_request", "transfer_reference_issue",
+    "duplicate_transaction", "duplicate_charge", "fee_information", "refund_status",
+    "pin_help", "intent_unclear",
+}
 SENTIMENTS = {"positive", "neutral", "negative"}
 URGENCIES = {"routine", "standard", "elevated", "urgent"}
 PII = {"none": "", "phone": "[PHONE]", "email": "[EMAIL]", "card_last4": "[LAST4]"}
@@ -16,11 +27,15 @@ PII = {"none": "", "phone": "[PHONE]", "email": "[EMAIL]", "card_last4": "[LAST4
 def inspect(fieldnames, rows):
     if fieldnames is None:
         raise ValueError("CSV has no header row.")
+    if len(fieldnames) != len(set(fieldnames)):
+        raise ValueError("CSV contains duplicate column names.")
     missing_columns = sorted(set(REQUIRED) - set(fieldnames))
     if missing_columns:
         raise ValueError("Missing required columns: " + ", ".join(missing_columns))
     rows = list(rows)
     issues, ids = [], Counter()
+    if not rows:
+        issues.append(("—", "Empty dataset", "CSV contains a header but no data rows."))
     for line, row in enumerate(rows, start=2):
         rid = (row.get("record_id") or "").strip()
         if rid:
@@ -31,6 +46,8 @@ def inspect(fieldnames, rows):
                       "pii_types", "clarification_flag", "annotation_rationale"):
             if not (row.get(field) or "").strip():
                 issues.append((line, "Missing required value", field))
+        if row.get("primary_intent") not in PRIMARY_INTENTS:
+            issues.append((line, "Invalid primary intent", row.get("primary_intent", "")))
         if row.get("sentiment") not in SENTIMENTS:
             issues.append((line, "Invalid sentiment", row.get("sentiment", "")))
         if row.get("urgency") not in URGENCIES:
