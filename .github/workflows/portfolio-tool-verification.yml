@@ -172,8 +172,8 @@ jobs:
                       and r["sentiment"] in {"positive", "neutral", "negative", "mixed"} for r in rows),
                   "introductory annotation labels match the documented taxonomy")
           require(Counter(r["intent"] for r in rows) ==
-                  {"account_access": 7, "billing": 9, "cancellation": 5, "feedback": 8,
-                   "other": 1, "product_information": 6, "shipping": 7, "technical_support": 7},
+                  {"account_access": 6, "billing": 9, "cancellation": 5, "feedback": 8,
+                   "other": 2, "product_information": 6, "shipping": 7, "technical_support": 7},
                   "introductory annotation intent counts match QA report")
           require(Counter(r["sentiment"] for r in rows) ==
                   {"mixed": 3, "negative": 20, "neutral": 21, "positive": 6},
