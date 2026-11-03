@@ -1,16 +1,15 @@
-# Software Development, AI Evaluation & Data Quality Portfolio
+# AI Data Annotation & Evaluation Portfolio
 
-**Software development · AI response evaluation · Data annotation · Quality assurance**
+**AI data annotation · AI response evaluation · Data quality assurance**
 
-This portfolio brings together software engineering work and structured AI/data evaluation practice. It is intended for technical and AI operations opportunities where the ability to build, inspect, validate, and improve systems and datasets is valuable.
+This portfolio contains practical, self-directed work samples relevant to AI data annotation, LLM response evaluation, annotation quality review, and data quality roles.
 
 **[Recruiter overview](RECRUITER-OVERVIEW.md)**
 
-## Core capability areas
+## Core work samples
 
 | Area | Evidence | Demonstrated focus |
 |---|---|---|
-| Android software development | [MemoryImprovement project](https://github.com/jaackdoe35-sudo/MemoryImprovement) | Kotlin, Jetpack Compose, Room persistence, offline-first architecture, recall workflows, Gradle and GitHub Actions CI |
 | AI response evaluation | [Rubric](01-ai-response-evaluation/evaluation-rubric.md) · [30-example dataset](01-ai-response-evaluation/evaluated-responses.csv) · [Findings](01-ai-response-evaluation/findings-report.md) | Factuality, instruction-following, completeness, clarity, safety and judgment |
 | Data annotation | [Guidelines](02-data-annotation/annotation-guidelines.md) · [50-row dataset](02-data-annotation/annotated-dataset.csv) | Intent and sentiment labeling |
 | Quality assurance | [QA report](03-quality-assurance/quality-assurance-report.md) | Structural completeness, unique IDs, label distributions and limitations |
@@ -20,11 +19,16 @@ This portfolio brings together software engineering work and structured AI/data 
 | Contextual response review | [Six-case assessment](08-realistic-response-review/README.md) · [Results](08-realistic-response-review/evaluation-results.csv) | Contextual evaluation, five-dimensional scoring and evidence-based reflection |
 | End-to-end annotation case study | [Case study](09-end-to-end-annotation-case-study/README.md) · [Dataset](09-end-to-end-annotation-case-study/annotated_dataset.csv) · [QA report](09-end-to-end-annotation-case-study/qa-report.md) | Task design, taxonomy, 40-row annotation, ambiguity handling, PII tagging and schema QA |
 
-## Software engineering work
+## Practical supporting tools
 
-The linked Android project, **MemoryImprovement**, is an independently developed offline-first application. Its documented implementation includes Kotlin, Jetpack Compose, Room, Gradle, and GitHub Actions. The application covers local data management, memory-palace organization, multiple recall modes, review scheduling, progress tracking, and delayed-retention checkpoints.
+Small, task-focused coding or spreadsheet projects may be added where they directly support annotation and evaluation work. Examples include:
 
-The project README documents current scope and outstanding validation. It explicitly distinguishes successful compilation from feature completeness and does not claim that the app's learning methods are scientifically validated.
+- **Annotation CSV validator:** checks required columns, missing values, duplicate IDs, invalid labels and malformed records.
+- **Annotation consistency checker:** flags inconsistent use of labels and possible boundary-rule conflicts for human review.
+- **AI evaluation score calculator:** applies a documented rubric to structured ratings and produces transparent summary statistics.
+- **QA sampling worksheet:** selects records for review and tracks error categories, corrections and reviewer notes.
+
+These are supporting workflow tools, not separate software-development services. Any tool added here will include its scope, test cases, limitations and a sample output.
 
 ## Evaluation workflow
 
@@ -42,18 +46,16 @@ The AI evaluation and annotation datasets in this repository are synthetic, self
 
 Scores and preference results are illustrative judgments against author-created reference material. They are not independently adjudicated benchmark results. The end-to-end annotation case study was completed in a single pass and self-audited; it does not establish independent annotator agreement, production throughput, or professional client experience.
 
-The linked MemoryImprovement repository is a separate software project. Its README describes the implementation and remaining validation; it should be assessed on its own source, commit history, and CI evidence.
-
 ## Roles this portfolio is designed to support
 
-- Software developer / Android developer
-- Junior application developer
-- AI response evaluator / model evaluator
-- AI data annotator / annotation specialist
-- Dataset quality assurance / data quality analyst
-- AI evaluation operations and tooling support
+- AI Data Annotator / Annotation Specialist
+- AI Response Evaluator / LLM Evaluator
+- AI Trainer / AI Data Reviewer
+- Annotation Quality Reviewer
+- Data Quality Assurance Analyst
+- Search and Content Relevance Evaluator
 
-Actual role fit and eligibility depend on each employer's technical requirements, location restrictions, assessment, schedule, and payment arrangements.
+Actual role fit and eligibility depend on each employer's requirements, location restrictions, assessment, schedule, device requirements, and payment arrangements.
 
 ## Contact
 
