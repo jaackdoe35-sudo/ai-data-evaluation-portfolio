@@ -1,0 +1,8 @@
+record_id,message_text,primary_intent,sentiment,urgency,pii_types,pii_span_to_redact,clarification_flag,annotation_rationale
+Q001,"Where is my transfer?",transfer_status,neutral,standard,none,,no,"Asks about transfer status."
+Q002,"Please call me at [PHONE].",profile_update,neutral,routine,phone,[PHONE],no,"Synthetic phone token is identified."
+Q003,"I need help with my card.",intent_unclear,neutral,routine,none,,yes,"Insufficient detail for a narrow label."
+Q004,"My card was charged twice.",duplicate_charge,negative,immediate,none,,no,"Deliberately invalid urgency value."
+Q005,"Contact me at [EMAIL].",profile_update,neutral,routine,email,[PHONE],no,"Deliberately mismatched PII token."
+Q006,"Refund not received.",refund_status,negative,elevated,none,,no,"Direct refund status complaint."
+Q006,"Refund not received again.",refund_status,negative,elevated,none,,no,"Deliberate duplicate record ID."
