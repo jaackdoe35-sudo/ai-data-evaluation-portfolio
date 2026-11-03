@@ -1,55 +1,80 @@
-# Recruiter Overview — AI Data Evaluation & Annotation
+# Recruiter Overview — Software Development, AI Evaluation & Data Quality
 
 ## Candidate positioning
 
-**Entry-level AI data annotation and response evaluation candidate**
+**Software developer with demonstrated work in Android application development and structured AI/data evaluation practice.**
 
-This portfolio presents self-directed practice in evaluating AI-generated responses, applying text labels, writing annotation guidance, checking dataset structure, and documenting quality decisions. The work demonstrates foundational skills relevant to entry-level AI data operations and evaluation tasks.
+This portfolio combines an independently developed Android application with practical work samples in AI response evaluation, text annotation, evaluation methodology, and dataset quality assurance. It is relevant to software development roles as well as technical AI operations and evaluation roles.
 
-## Relevant work samples
+## Software engineering evidence
+
+### [MemoryImprovement — Android application](https://github.com/jaackdoe35-sudo/MemoryImprovement)
+
+An offline-first Android application for organizing information, practising active recall, and tracking memory performance over time.
+
+The repository documents:
+- Kotlin and Jetpack Compose application development.
+- Room persistence and local preferences.
+- Offline-first workflows and local data management.
+- Memory-palace structures with nested locations.
+- Multiple recall and review modes.
+- Progress tracking and delayed-retention checkpoints.
+- Gradle build workflows and GitHub Actions CI.
+- Unit tests, debug APK assembly, and separate instrumentation-test workflow.
+
+**Validation boundary:** The project is under development. Its README distinguishes compilation and APK assembly from feature completeness and emulator integration-test validation. A physical-device acceptance test remains outstanding. The portfolio does not claim that every feature is complete or that the app's memory techniques are clinically or scientifically validated.
+
+## AI evaluation and data quality evidence
 
 | Work sample | Evidence available | What it demonstrates |
 |---|---|---|
-| [AI response evaluation rubric](01-ai-response-evaluation/evaluation-rubric.md) | Five scoring dimensions, rating anchors, severity tags, evidence-note rules | Structured evaluation criteria |
-| [30-example evaluation dataset](01-ai-response-evaluation/evaluated-responses.csv) | Synthetic prompt/response examples with scores and rationales | Applying a rubric across examples |
-| [Evaluation findings report](01-ai-response-evaluation/findings-report.md) | Descriptive score summary, observed patterns, limitations | Summarizing findings without presenting practice data as a benchmark |
+| [AI response evaluation rubric](01-ai-response-evaluation/evaluation-rubric.md) | Five scoring dimensions, rating anchors, severity tags and evidence-note rules | Structured evaluation criteria |
+| [30-example evaluation dataset](01-ai-response-evaluation/evaluated-responses.csv) | Synthetic prompt/response examples with scores and rationales | Consistent rubric application |
+| [Evaluation findings report](01-ai-response-evaluation/findings-report.md) | Descriptive score summary, observed patterns and limitations | Evidence-based reporting |
 | [Annotation guidelines](02-data-annotation/annotation-guidelines.md) | Label definitions and boundary rules | Taxonomy-based annotation |
 | [50-row annotated dataset](02-data-annotation/annotated-dataset.csv) | Synthetic messages with intent and sentiment labels | Structured text labeling |
-| [Quality assurance report](03-quality-assurance/quality-assurance-report.md) | Row counts, unique IDs, populated fields, label distribution | Basic structural QA and disclosure of limits |
+| [Quality assurance report](03-quality-assurance/quality-assurance-report.md) | Row counts, unique IDs, populated fields and label distribution | Dataset checks and transparent QA reporting |
 | [Advanced blind evaluation](07-advanced-blind-evaluation/challenge.md) | Five paired-response cases | Comparative judgment and error analysis |
 | [Evaluator reflection](07-advanced-blind-evaluation/reflection.md) | 5/5 preference agreement with an author-created key, plus qualitative rationale review | Reflective practice and transparent reporting |
-| [Realistic response review](08-realistic-response-review/README.md) | Six completed cases, scoring results, reflection | Contextual evaluation, pairwise judgment, five-dimensional scoring and evidence-based reflection |
-| [End-to-end annotation case study](09-end-to-end-annotation-case-study/README.md) | 40-row annotated dataset, task methodology, taxonomy, ambiguity log, QA report and findings | End-to-end text annotation workflow and quality documentation |
+| [Realistic response review](08-realistic-response-review/README.md) | Six completed cases, scoring results and reflection | Contextual evaluation, pairwise judgment and five-dimensional scoring |
+| [End-to-end annotation case study](09-end-to-end-annotation-case-study/README.md) | 40-row dataset, methodology, taxonomy, ambiguity log, QA report and findings | End-to-end annotation workflow and quality documentation |
 
 ## Working approach
 
-- Follow task instructions and schemas closely.
+- Translate task instructions into explicit criteria and schemas.
 - Separate source-supported facts from unsupported claims.
-- Record evidence for evaluation decisions.
+- Record evidence for evaluation and annotation decisions.
 - Treat missing information as unknown rather than filling gaps.
-- Check structured data for completeness and consistency.
-- Disclose uncertainty, limitations, and synthetic practice data.
+- Validate structured data for completeness, consistency and allowed values.
+- Document ambiguity, limitations and corrective actions.
+- Use software engineering practices where they improve repeatability and reliability.
 
-## Tools and materials represented
+## Tools and technologies evidenced in the repositories
 
-The repository uses Markdown documentation, CSV datasets, and GitHub version control. It does not claim experience with proprietary annotation platforms, client systems, or production datasets.
+**Software project:** Kotlin, Jetpack Compose, Room, Gradle, GitHub Actions.
+
+**Portfolio artifacts:** Markdown, CSV, GitHub version control, annotation schemas, evaluation rubrics and QA reports.
+
+This section lists technologies documented in the linked project; it does not imply experience with every commercial annotation platform, cloud environment, or production ML stack.
 
 ## Experience and evidence boundary
 
-All examples in this repository are synthetic and self-directed. They are not paid work, employment, client engagements, or independent benchmark results. Preference scores are agreement with author-created reference keys, not externally validated proficiency scores.
+The AI evaluation and annotation examples are synthetic and self-directed. They are not paid work, employment, client engagements, or independent benchmark results. Preference scores are agreement with author-created reference keys, not externally validated proficiency scores.
 
-The end-to-end case study's annotations were produced in a single pass and self-audited. It does not establish independent annotator agreement, production QA, throughput, or professional client experience.
+The end-to-end annotation case study was produced in a single pass and self-audited. It does not establish independent annotator agreement, production QA, throughput, or professional client experience.
 
-## Suitable entry-level work to consider
+The Android application is a separate independently developed project. Its implementation, commit history, and CI evidence should be reviewed directly. It remains under development, with physical-device acceptance testing and other validation still required.
 
-- Text classification and intent labeling
-- Sentiment annotation
-- AI response rating and comparison
-- Instruction-following and factuality review
-- Search or content relevance evaluation
-- Basic annotation quality checks
+## Suitable role families
 
-Actual eligibility depends on each employer's location restrictions, language requirements, assessment, schedule, and payment arrangements.
+- Android developer / junior software developer
+- Application developer
+- AI response evaluator / model evaluator
+- AI data annotator / annotation specialist
+- Dataset QA / data quality analyst
+- AI evaluation operations and tooling support
+
+Actual eligibility depends on each employer's location restrictions, language requirements, technical assessment, device requirements, schedule, and payment arrangements.
 
 ## Contact
 
