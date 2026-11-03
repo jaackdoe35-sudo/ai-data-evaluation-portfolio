@@ -31,10 +31,15 @@ def validate_rows(fieldnames, rows):
     errors = []
     if fieldnames is None:
         return ["CSV has no header row."]
+    if len(fieldnames) != len(set(fieldnames)):
+        return ["CSV contains duplicate column names."]
     missing = [name for name in REQUIRED_COLUMNS if name not in fieldnames]
     if missing:
         return [f"Missing required column: {name}" for name in missing]
 
+    rows = list(rows)
+    if not rows:
+        return ["CSV contains a header but no data rows."]
     seen_ids = set()
     for line_number, row in enumerate(rows, start=2):
         record_id = (row.get("record_id") or "").strip()
@@ -66,11 +71,18 @@ def validate_rows(fieldnames, rows):
         redaction = (row.get("pii_span_to_redact") or "").strip()
         if pii_type == "none" and redaction:
             errors.append(f"Row {line_number}: PII span supplied while pii_types is 'none'.")
-        elif pii_type in PII_TOKENS and redaction != PII_TOKENS[pii_type]:
-            errors.append(
-                f"Row {line_number}: {pii_type} requires redaction token "
-                f"{PII_TOKENS[pii_type]}."
-            )
+        elif pii_type in PII_TOKENS:
+            expected_token = PII_TOKENS[pii_type]
+            if redaction != expected_token:
+                errors.append(
+                    f"Row {line_number}: {pii_type} requires redaction token "
+                    f"{expected_token}."
+                )
+            if expected_token not in (row.get("message_text") or ""):
+                errors.append(
+                    f"Row {line_number}: expected PII token {expected_token} "
+                    "does not appear in message_text."
+                )
     return errors
 
 
