@@ -21,14 +21,12 @@ This portfolio contains practical, self-directed work samples relevant to AI dat
 
 ## Practical supporting tools
 
-Small, task-focused coding or spreadsheet projects may be added where they directly support annotation and evaluation work. Examples include:
+These small, self-directed tools support annotation and quality workflows:
 
-- **Annotation CSV validator:** checks required columns, missing values, duplicate IDs, invalid labels and malformed records.
-- **Annotation consistency checker:** flags inconsistent use of labels and possible boundary-rule conflicts for human review.
-- **AI evaluation score calculator:** applies a documented rubric to structured ratings and produces transparent summary statistics.
-- **QA sampling worksheet:** selects records for review and tracks error categories, corrections and reviewer notes.
+- [Project 10 — Annotation CSV Validator](10-annotation-csv-validator/README.md): checks required columns, missing values, duplicate IDs, allowed labels and PII-token consistency.
+- [Project 11 — Annotation Consistency Checker](11-annotation-consistency-checker/README.md): flags selected cross-record and cross-field patterns for human review.
 
-These are supporting workflow tools, not separate software-development services. Any tool added here will include its scope, test cases, limitations and a sample output.
+They are supporting workflow tools, not separate software-development services. Each includes source code, sample data, tests and stated limitations.
 
 ## Evaluation workflow
 
@@ -45,6 +43,8 @@ These are supporting workflow tools, not separate software-development services.
 The AI evaluation and annotation datasets in this repository are synthetic, self-directed practice materials. They are not paid work, employment, client engagements, or proprietary production data.
 
 Scores and preference results are illustrative judgments against author-created reference material. They are not independently adjudicated benchmark results. The end-to-end annotation case study was completed in a single pass and self-audited; it does not establish independent annotator agreement, production throughput, or professional client experience.
+
+The supporting tools are small rule-based demonstrations. Their passing tests establish only the behavior covered by those tests, not production readiness or semantic annotation accuracy.
 
 ## Roles this portfolio is designed to support
 
