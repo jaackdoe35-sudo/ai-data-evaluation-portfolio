@@ -4,7 +4,7 @@
 
 This repository contains self-directed, synthetic work samples demonstrating structured annotation, response evaluation, search relevance judgment, quality checks, and small supporting data-validation tools.
 
-**[Recruiter overview](RECRUITER-OVERVIEW.md)** · **[Documentation, semantic and reference audit](15-semantic-and-reference-audit/README.md)**
+**[Recruiter overview](RECRUITER-OVERVIEW.md)** · **[Documentation, semantic and reference audit](15-semantic-and-reference-audit/README.md)** · **[QA scale-test report](16-annotation-qa-stress-test/scale-test-report.md)**
 
 ## Start here — strongest work samples
 
