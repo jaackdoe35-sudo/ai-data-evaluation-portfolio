@@ -20,6 +20,8 @@ This portfolio presents practical, self-directed work samples in AI response eva
 | [Evaluator reflection](07-advanced-blind-evaluation/reflection.md) | 5/5 preference agreement with an author-created key, plus qualitative rationale review | Reflective practice and transparent reporting |
 | [Realistic response review](08-realistic-response-review/README.md) | Six completed cases, scoring results and reflection | Contextual evaluation and five-dimensional scoring |
 | [End-to-end annotation case study](09-end-to-end-annotation-case-study/README.md) | 40-row dataset, methodology, taxonomy, ambiguity log, QA report and findings | End-to-end annotation workflow and quality documentation |
+| [Annotation CSV Validator](10-annotation-csv-validator/README.md) | Python utility, sample CSV and unit tests | Structural and categorical validation |
+| [Annotation Consistency Checker](11-annotation-consistency-checker/README.md) | Python utility, sample CSV and unit tests | Rule-based flags for human review |
 
 ## Working approach
 
@@ -33,15 +35,15 @@ This portfolio presents practical, self-directed work samples in AI response eva
 
 ## Supporting technical skills
 
-Basic scripting and spreadsheet skills can support data cleaning, CSV validation, duplicate detection, label checks, and evaluation summaries. These are supporting methods for annotation and quality work—not a separate software-development role or a claim of expertise in complex engineering.
-
-Planned small demonstrations may include an annotation CSV validator, a label-consistency checker, a rubric score calculator, and a QA sampling worksheet. They will be described as practice tools and will not be presented as production systems.
+Basic scripting and spreadsheet skills can support data cleaning, CSV validation, duplicate detection, label checks, and evaluation summaries. The two small Python demonstrations in this portfolio show how simple rule-based checks can support annotation QA. They are supporting methods for annotation and quality work—not a separate software-development role or a claim of expertise in complex engineering.
 
 ## Experience and evidence boundary
 
 The AI evaluation and annotation examples are synthetic and self-directed. They are not paid work, employment, client engagements, or independent benchmark results. Preference scores are agreement with author-created reference keys, not externally validated proficiency scores.
 
 The end-to-end annotation case study was produced in a single pass and self-audited. It does not establish independent annotator agreement, production QA, throughput, or professional client experience.
+
+The supporting tools are small demonstrations against a documented synthetic schema. Their tests cover selected rule behavior; they do not prove semantic annotation accuracy or production readiness.
 
 ## Suitable role families
 
