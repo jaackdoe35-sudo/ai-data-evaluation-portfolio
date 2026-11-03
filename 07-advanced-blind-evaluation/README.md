@@ -1,4 +1,4 @@
-# Project 04 — Advanced Blind Evaluation
+# Advanced Blind Evaluation
 
 A five-case paired-response assessment designed to test judgment beyond obvious correctness checks.
 
