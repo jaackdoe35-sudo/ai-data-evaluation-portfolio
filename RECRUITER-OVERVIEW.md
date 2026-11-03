@@ -22,6 +22,8 @@ This portfolio presents practical, self-directed work samples in AI response eva
 | [End-to-end annotation case study](09-end-to-end-annotation-case-study/README.md) | 40-row dataset, methodology, taxonomy, ambiguity log, QA report and findings | End-to-end annotation workflow and quality documentation |
 | [Annotation CSV Validator](10-annotation-csv-validator/README.md) | Python utility, sample CSV and unit tests | Structural and categorical validation |
 | [Annotation Consistency Checker](11-annotation-consistency-checker/README.md) | Python utility, sample CSV and unit tests | Rule-based flags for human review |
+| [AI Response Evaluation Score Calculator](12-ai-response-score-calculator/README.md) | Python utility, sample evaluations, generated report and unit tests | Rubric arithmetic, score summaries and severity counts |
+| [Annotation Data Quality Review Dashboard](13-annotation-qa-dashboard/README.md) | Python utility, sample annotations, HTML dashboard and unit tests | Label distributions and structural QA reporting |
 
 ## Working approach
 
