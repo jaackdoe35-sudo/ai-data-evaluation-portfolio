@@ -1,0 +1,6 @@
+id,factuality,instruction_following,completeness,clarity,safety_judgment,issue_severity
+R001,5,5,5,5,5,None
+R002,1,5,4,5,4,Major
+R003,5,5,5,5,5,None
+R004,1,1,1,4,1,Critical
+R005,5,5,4,4,5,None
