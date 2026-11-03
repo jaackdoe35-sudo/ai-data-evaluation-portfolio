@@ -25,6 +25,8 @@ These small, self-directed tools support annotation and quality workflows:
 
 - [Project 10 — Annotation CSV Validator](10-annotation-csv-validator/README.md): checks required columns, missing values, duplicate IDs, allowed labels and PII-token consistency.
 - [Project 11 — Annotation Consistency Checker](11-annotation-consistency-checker/README.md): flags selected cross-record and cross-field patterns for human review.
+- [Project 12 — AI Response Evaluation Score Calculator](12-ai-response-score-calculator/README.md): recalculates rubric scores and generates a summary report.
+- [Project 13 — Annotation Data Quality Review Dashboard](13-annotation-qa-dashboard/README.md): summarizes annotation distributions and displays configured QA flags.
 
 They are supporting workflow tools, not separate software-development services. Each includes source code, sample data, tests and stated limitations.
 
