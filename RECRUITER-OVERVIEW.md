@@ -4,7 +4,7 @@
 
 **AI Data Annotation & Evaluation Specialist**
 
-This portfolio presents practical, self-directed work samples in AI response evaluation, text annotation, annotation guidelines, quality assurance, ambiguity handling, and structured reporting. It is intended for annotation, AI evaluation, and data quality roles.
+This portfolio presents practical, self-directed work samples in AI response evaluation, text annotation, annotation guidelines, quality assurance, ambiguity handling, search relevance evaluation, and structured reporting. It is intended for annotation, AI evaluation, and data quality roles.
 
 ## Relevant work samples
 
@@ -24,6 +24,7 @@ This portfolio presents practical, self-directed work samples in AI response eva
 | [Annotation Consistency Checker](11-annotation-consistency-checker/README.md) | Python utility, sample CSV and unit tests | Rule-based flags for human review |
 | [AI Response Evaluation Score Calculator](12-ai-response-score-calculator/README.md) | Python utility, sample evaluations, generated report and unit tests | Rubric arithmetic, score summaries and severity counts |
 | [Annotation Data Quality Review Dashboard](13-annotation-qa-dashboard/README.md) | Python utility, sample annotations, HTML dashboard and unit tests | Label distributions and structural QA reporting |
+| [Search and Content Relevance Evaluation](14-search-relevance-evaluation/README.md) | 20 synthetic query-result cases, relevance grades, rationales and QA summary | Search intent identification, constraint matching and relevance judgment |
 
 ## Working approach
 
@@ -37,15 +38,15 @@ This portfolio presents practical, self-directed work samples in AI response eva
 
 ## Supporting technical skills
 
-Basic scripting and spreadsheet skills can support data cleaning, CSV validation, duplicate detection, label checks, and evaluation summaries. The two small Python demonstrations in this portfolio show how simple rule-based checks can support annotation QA. They are supporting methods for annotation and quality work—not a separate software-development role or a claim of expertise in complex engineering.
+Basic scripting and spreadsheet skills can support data cleaning, CSV validation, duplicate detection, label checks, and evaluation summaries. The small Python demonstrations in this portfolio show how simple rule-based checks can support annotation QA. They are supporting methods for annotation and quality work—not a separate software-development role or a claim of expertise in complex engineering.
 
 ## Experience and evidence boundary
 
-The AI evaluation and annotation examples are synthetic and self-directed. They are not paid work, employment, client engagements, or independent benchmark results. Preference scores are agreement with author-created reference keys, not externally validated proficiency scores.
+The AI evaluation, annotation and search-relevance examples are synthetic and self-directed. They are not paid work, employment, client engagements, or independent benchmark results. Preference scores are agreement with author-created reference keys, not externally validated proficiency scores.
 
 The end-to-end annotation case study was produced in a single pass and self-audited. It does not establish independent annotator agreement, production QA, throughput, or professional client experience.
 
-The supporting tools are small demonstrations against a documented synthetic schema. Their tests cover selected rule behavior; they do not prove semantic annotation accuracy or production readiness.
+The supporting tools are small demonstrations against documented synthetic schemas. Their tests cover selected rule behavior; they do not prove semantic annotation accuracy or production readiness.
 
 ## Suitable role families
 
