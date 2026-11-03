@@ -6,9 +6,9 @@ Completed the five-case Advanced Blind Evaluation in `07-advanced-blind-evaluati
 
 ## Recorded result
 
-- **Pairwise preference agreement:** 5/5 (100%) against the exercise's author-created reference answer key.
+- **Pairwise preference agreement:** 4/5 (80%) against the corrected exercise reference key. The earlier 5/5 figure used the original C01 Tie key; after semantic review corrected C01 to A, the recorded Tie preference no longer agrees.
 - **C02–C04 rationales:** Correctly identified the decisive instruction, unsupported policy detail, and unjustified uncertainty.
-- **C01 rationale:** The selected Tie matched the reference, but the initial explanation did not identify the distinct arithmetic errors in the two responses. This remains an area to strengthen.
+- **C01 rationale:** The recorded Tie preference does not match the corrected reference preference A. A's subtotals are both correct, while B also has an incorrect pen subtotal. The earlier Tie key was wrong; the preference-agreement figure has therefore been recalculated.
 - **C05 rationale:** The initial explanation identified a contradiction but did not state the denominator error. In a follow-up, the evaluator correctly explained that dividing the 20-case decrease by the new value (80) gives 25%, whereas percentage decrease uses the original value (100), giving 20%. The evaluator also correctly stated that a correct final answer does not validate incorrect intermediate reasoning.
 
 ## Strengths demonstrated
@@ -26,9 +26,9 @@ Completed the five-case Advanced Blind Evaluation in `07-advanced-blind-evaluati
 
 ## Scope and limitations
 
-This was a self-directed practice exercise using synthetic cases and an answer key written by the portfolio author. The 5/5 figure measures preference agreement with that reference key only. It is not an independently adjudicated benchmark, a statistically reliable proficiency measure, proof of professional qualification, or evidence of paid work.
+This was a self-directed practice exercise using synthetic cases and an answer key written by the portfolio author. The 4/5 figure measures preference agreement with the corrected author-created reference key only. It is not an independently adjudicated benchmark, a statistically reliable proficiency measure, proof of professional qualification, or evidence of paid work.
 
-The written-rationale review was qualitative. C01's explanation remained incomplete, and C05 required a follow-up before the mathematical issue was fully articulated. No independent reviewer validated the judgments.
+The written-rationale review was qualitative. C01's recorded preference and explanation did not identify A as materially better; C05 required a follow-up before the mathematical issue was fully articulated. No independent reviewer validated the judgments.
 
 ## Reflection
 
