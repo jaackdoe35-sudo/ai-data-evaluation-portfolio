@@ -7,7 +7,7 @@ A small offline tool that reviews an annotation CSV against selected structural 
 - Number of input records and unique non-empty record IDs.
 - Counts by primary intent, sentiment, urgency, PII type and clarification flag.
 - Missing required values and duplicate record IDs.
-- Invalid sentiment, urgency and clarification labels.
+- Invalid primary-intent, sentiment, urgency and clarification labels.
 - Mismatches between PII types and their expected synthetic redaction tokens.
 
 ## Run
