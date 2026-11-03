@@ -13,17 +13,17 @@
 | Grade | Meaning | Count |
 |---:|---|---:|
 | 3 | Highly relevant | 10 |
-| 2 | Relevant | 4 |
-| 1 | Marginally relevant | 4 |
+| 2 | Relevant | 3 |
+| 1 | Marginally relevant | 5 |
 | 0 | Not relevant | 2 |
 
 ## Intent distribution
 
 | Intent | Count |
 |---|---:|
-| Informational | 11 |
+| Informational | 10 |
 | Navigational | 4 |
-| Transactional | 2 |
+| Transactional | 3 |
 | Local | 3 |
 
 ## Interpretation
