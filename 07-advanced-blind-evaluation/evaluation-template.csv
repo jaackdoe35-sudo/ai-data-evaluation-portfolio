@@ -1,0 +1,6 @@
+case_id,preference_A_B_or_Tie,A_factuality_1_to_5,A_instruction_following_1_to_5,A_completeness_1_to_5,A_clarity_1_to_5,A_safety_judgment_1_to_5,B_factuality_1_to_5,B_instruction_following_1_to_5,B_completeness_1_to_5,B_clarity_1_to_5,B_safety_judgment_1_to_5,confidence_1_to_5,decisive_evidence,actionable_feedback
+C01,,,,,,,,,,,,,,
+C02,,,,,,,,,,,,,,
+C03,,,,,,,,,,,,,,
+C04,,,,,,,,,,,,,,
+C05,,,,,,,,,,,,,,
