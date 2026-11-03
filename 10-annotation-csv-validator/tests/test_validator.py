@@ -33,8 +33,29 @@ class ValidatorTests(unittest.TestCase):
         self.assertTrue(any("requires redaction token [EMAIL]" in e for e in errors))
 
     def test_missing_column_is_reported(self):
-        errors = validate_rows(REQUIRED_COLUMNS[:-1], [])
+        errors = validate_rows(REQUIRED_COLUMNS[:-1], [row()])
         self.assertTrue(any("Missing required column" in e for e in errors))
+
+    def test_empty_dataset_is_rejected(self):
+        errors = validate_rows(REQUIRED_COLUMNS, [])
+        self.assertTrue(any("no data rows" in e for e in errors))
+
+    def test_duplicate_headers_are_rejected(self):
+        errors = validate_rows(REQUIRED_COLUMNS + ["record_id"], [row()])
+        self.assertTrue(any("duplicate column names" in e for e in errors))
+
+    def test_pii_token_must_appear_in_source_message(self):
+        errors = validate_rows(REQUIRED_COLUMNS, [
+            row(pii_types="email", pii_span_to_redact="[EMAIL]")
+        ])
+        self.assertTrue(any("does not appear in message_text" in e for e in errors))
+
+    def test_valid_pii_token_in_source_message_passes(self):
+        errors = validate_rows(REQUIRED_COLUMNS, [
+            row(message_text="Contact me at [EMAIL].", pii_types="email",
+                pii_span_to_redact="[EMAIL]")
+        ])
+        self.assertEqual(errors, [])
 
 
 if __name__ == "__main__":
