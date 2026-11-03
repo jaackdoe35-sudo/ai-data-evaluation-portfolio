@@ -18,6 +18,7 @@ on:
       - "12-ai-response-score-calculator/**"
       - "13-annotation-qa-dashboard/**"
       - "14-search-relevance-evaluation/**"
+      - "15-semantic-and-reference-audit/**"
       - ".github/workflows/portfolio-tool-verification.yml"
   workflow_dispatch:
 
