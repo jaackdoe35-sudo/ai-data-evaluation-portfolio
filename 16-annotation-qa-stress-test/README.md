@@ -43,7 +43,7 @@ The script uses only the Python standard library and writes `scale-test-results.
 
 ## Results
 
-The workflow generates `stress-test-results.json` during execution and uploads it as the `annotation-qa-stress-test-results` artifact. The measurements are run-specific; do not copy their numbers to other environments without preserving the runner context.
+The script writes `scale-test-results.json` during execution. GitHub Actions uploads it as the `annotation-qa-scale-test-results` artifact. The recorded measurements and interpretation are documented in [the scale-test report](scale-test-report.md). The measurements are run-specific; do not copy their numbers to other environments without preserving the runner context.
 
 ## Evidence boundary
 
