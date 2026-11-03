@@ -43,7 +43,7 @@ class DashboardTests(unittest.TestCase):
             inspect(list(REQUIRED) + ["record_id"], [row()])
 
     def test_html_content_is_escaped(self):
-        malicious = row(message_text="<script>alert(1)</script>")
+        malicious = row(primary_intent="<script>alert(1)</script>")
         page = render_dashboard(inspect(REQUIRED, [malicious]), "sample.csv")
         self.assertNotIn("<script>alert(1)</script>", page)
         self.assertIn("&lt;script&gt;alert(1)&lt;/script&gt;", page)
