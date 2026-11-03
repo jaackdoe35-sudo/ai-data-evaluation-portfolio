@@ -1,44 +1,38 @@
 # AI Data Evaluation & Annotation Portfolio
 
-**Practice portfolio | Synthetic examples | Independent learning project**
+**Entry-level practice portfolio | Synthetic examples | Self-directed learning**
 
-This repository demonstrates practical skills in AI response evaluation, text annotation, rubric design, quality assurance, and transcription review. All names, messages, prompts, responses, and datasets in this repository are synthetic and were created for demonstration. No real customer data or confidential material is included.
+This repository contains practical exercises in AI response evaluation, text annotation, rubric design, quality assurance, and transcription review. It is designed to let a reviewer inspect the work, methods, evidence, and limitations directly.
 
-## Portfolio contents
+**[Recruiter overview](RECRUITER-OVERVIEW.md)** · **[Evaluation rubric](01-ai-response-evaluation/evaluation-rubric.md)** · **[Evaluation dataset](01-ai-response-evaluation/evaluated-responses.csv)** · **[Annotation guidelines](02-data-annotation/annotation-guidelines.md)** · **[Annotated dataset](02-data-annotation/annotated-dataset.csv)**
 
-| Project | What it demonstrates |
-|---|---|
-| [AI response evaluation](01-ai-response-evaluation/evaluation-rubric.md) | Consistent scoring of model outputs for factuality, instruction-following, completeness, clarity, and safety |
-| [Evaluation dataset](01-ai-response-evaluation/evaluated-responses.csv) | 30 scored practice examples with concise evidence-based rationales |
-| [Evaluation findings](01-ai-response-evaluation/findings-report.md) | Summary of observed strengths, failure patterns, and limitations |
-| [Annotation guidelines](02-data-annotation/annotation-guidelines.md) | Operational definitions, label boundaries, and ambiguity handling |
-| [Annotated dataset](02-data-annotation/annotated-dataset.csv) | 50 synthetic messages labeled for intent and sentiment |
-| [Quality assurance](03-quality-assurance/quality-assurance-report.md) | Completeness, consistency, ambiguity, and correction checks |
-| [Transcription sample](04-transcription/transcription-sample.md) | Short illustrative transcript with uncertainty conventions |
-| [Skills and methodology](05-skills/skills-and-methodology.md) | Workflow, tools, and working principles |
+## Portfolio projects
 
-| Paired-response challenge | [Challenge worksheet](06-paired-response-challenge/challenge.md), [evaluation template](06-paired-response-challenge/evaluation-template.csv), [methodology](06-paired-response-challenge/methodology.md), and [reference answer key](06-paired-response-challenge/answer-key.md) |
+| Project | Work sample | Focus |
+|---|---|---|
+| AI response evaluation | [Rubric](01-ai-response-evaluation/evaluation-rubric.md) · [30-example dataset](01-ai-response-evaluation/evaluated-responses.csv) · [Findings](01-ai-response-evaluation/findings-report.md) | Factuality, instruction-following, completeness, clarity, safety and judgment |
+| Data annotation | [Guidelines](02-data-annotation/annotation-guidelines.md) · [50-row dataset](02-data-annotation/annotated-dataset.csv) | Intent and sentiment labeling |
+| Quality assurance | [QA report](03-quality-assurance/quality-assurance-report.md) | Structural completeness, unique IDs, label distributions and limitations |
+| Transcription | [Transcription sample](04-transcription/transcription-sample.md) | Illustrative transcript and uncertainty conventions |
+| Skills and methodology | [Workflow and methods](05-skills/skills-and-methodology.md) | Evaluation and annotation process |
+| Paired-response challenge | [Challenge](06-paired-response-challenge/challenge.md) · [Methodology](06-paired-response-challenge/methodology.md) | Comparative response judgment |
+| Advanced blind evaluation | [Challenge](07-advanced-blind-evaluation/challenge.md) · [Reflection](07-advanced-blind-evaluation/reflection.md) | Error severity, source fidelity, instruction compliance and reasoning validity |
+| Realistic response review | [Six-case assessment](08-realistic-response-review/scenarios.md) · [Protocol](08-realistic-response-review/review-protocol.md) | Contextual evaluation across realistic work scenarios; completion pending |
 
-| Advanced blind evaluation | [Five-case challenge](07-advanced-blind-evaluation/challenge.md), [methodology](07-advanced-blind-evaluation/methodology.md), [evaluation template](07-advanced-blind-evaluation/evaluation-template.csv), and [reference answer key](07-advanced-blind-evaluation/answer-key.md), [evaluator reflection](07-advanced-blind-evaluation/reflection.md) |
+## Evaluation workflow
 
-| Realistic AI response review | [Six-case scenario pack](08-realistic-response-review/scenarios.md), [review protocol](08-realistic-response-review/review-protocol.md), [evaluation template](08-realistic-response-review/evaluation-template.csv), and [reference answer key](08-realistic-response-review/answer-key.md) |
+1. Parse the task and identify explicit constraints.
+2. Establish what evidence is available and what remains unknown.
+3. Apply the relevant rubric or annotation schema.
+4. Record observable evidence and explain material decisions.
+5. Flag uncertainty rather than inventing missing details.
+6. Review labels, calculations, and dataset structure before reporting.
 
-## How I approach evaluation
+## Scope and limitations
 
-1. Read the task and identify explicit constraints.
-2. Separate claims that can be checked from opinions or stylistic preferences.
-3. Score each criterion against the rubric rather than relying on an overall impression.
-4. Record observable evidence for low or high scores.
-5. Flag uncertainty instead of filling gaps with assumptions.
-6. Review labels and calculations before reporting results.
+All names, messages, prompts, responses, and datasets are synthetic and created for demonstration. These are self-directed practice exercises, not evidence of paid annotation work, employment, client engagements, or access to proprietary model systems.
 
-## Important scope note
-
-These are self-directed practice exercises, not evidence of paid annotation work, employment, client engagements, or access to proprietary model systems. The scores are illustrative judgments made by the portfolio author; they are not benchmark results or claims about any named AI model.
-
-## Suggested review order
-
-Start with the rubric, inspect a sample of the scored rows, then read the findings report. For the annotation exercise, read the guidelines before inspecting the CSV. The QA report explains the checks applied to the practice labels.
+Scores and preference results are illustrative judgments against author-created reference material. They are not independently adjudicated benchmark results, and no production throughput or professional inter-annotator agreement is claimed.
 
 ## Contact
 
