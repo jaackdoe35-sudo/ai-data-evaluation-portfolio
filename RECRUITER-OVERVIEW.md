@@ -4,33 +4,33 @@
 
 **AI Data Annotation & Evaluation Specialist**
 
-This portfolio presents practical, self-directed work samples in AI response evaluation, text annotation, annotation guidelines, quality assurance, ambiguity handling, search relevance evaluation, and structured reporting. It is intended for annotation, AI evaluation, and data quality roles.
+Portfolio evidence focuses on structured text annotation, AI response evaluation, search relevance assessment, annotation QA, ambiguity handling and concise reporting. Small Python utilities are included only as supporting tools for data validation and quality review.
 
-## Relevant work samples
+## Selected work samples
 
-| Work sample | Evidence available | What it demonstrates |
+| Priority | Work sample | Evidence and relevance |
 |---|---|---|
-| [AI response evaluation rubric](01-ai-response-evaluation/evaluation-rubric.md) | Five scoring dimensions, rating anchors, severity tags and evidence-note rules | Structured evaluation criteria |
-| [30-example evaluation dataset](01-ai-response-evaluation/evaluated-responses.csv) | Synthetic prompt/response examples with scores and rationales | Rubric application and evidence-based judgments |
-| [Evaluation findings report](01-ai-response-evaluation/findings-report.md) | Descriptive score summary, observed patterns and limitations | Clear findings and limitations |
-| [Annotation guidelines](02-data-annotation/annotation-guidelines.md) | Label definitions and boundary rules | Taxonomy-based annotation |
-| [50-row annotated dataset](02-data-annotation/annotated-dataset.csv) | Synthetic messages with intent and sentiment labels | Structured text labeling |
-| [Quality assurance report](03-quality-assurance/quality-assurance-report.md) | Row counts, unique IDs, populated fields and label distribution | Dataset checks and transparent QA reporting |
-| [Advanced blind evaluation](07-advanced-blind-evaluation/challenge.md) | Five paired-response cases | Comparative judgment and error analysis |
-| [Evaluator reflection](07-advanced-blind-evaluation/reflection.md) | 5/5 preference agreement with an author-created key, plus qualitative rationale review | Reflective practice and transparent reporting |
-| [Realistic response review](08-realistic-response-review/README.md) | Six completed cases, scoring results and reflection | Contextual evaluation and five-dimensional scoring |
-| [End-to-end annotation case study](09-end-to-end-annotation-case-study/README.md) | 40-row dataset, methodology, taxonomy, ambiguity log, QA report and findings | End-to-end annotation workflow and quality documentation |
-| [Annotation CSV Validator](10-annotation-csv-validator/README.md) | Python utility, sample CSV and unit tests | Structural and categorical validation |
-| [Annotation Consistency Checker](11-annotation-consistency-checker/README.md) | Python utility, sample CSV and unit tests | Rule-based flags for human review |
-| [AI Response Evaluation Score Calculator](12-ai-response-score-calculator/README.md) | Python utility, sample evaluations, generated report and unit tests | Rubric arithmetic, score summaries and severity counts |
-| [Annotation Data Quality Review Dashboard](13-annotation-qa-dashboard/README.md) | Python utility, sample annotations, HTML dashboard and unit tests | Label distributions and structural QA reporting |
-| [Search and Content Relevance Evaluation](14-search-relevance-evaluation/README.md) | 20 synthetic query-result cases, relevance grades, rationales and QA summary | Search intent identification, constraint matching and relevance judgment |
+| 1 | [End-to-end support annotation case study](09-end-to-end-annotation-case-study/README.md) | 40 synthetic support messages; documented task methodology, detailed intent taxonomy, sentiment and urgency labels, synthetic PII tags, clarification flags, ambiguity log, QA report and findings. |
+| 2 | [AI response evaluation](01-ai-response-evaluation/README.md) | Five-dimension evaluation rubric, 30 synthetic prompt/response examples, evidence rationales, severity tags and descriptive findings. |
+| 3 | [Text annotation](02-data-annotation/README.md) | Annotation guidelines and 50 synthetic messages labeled for primary intent and sentiment, with a separate QA report. |
+| 4 | [Search relevance evaluation](14-search-relevance-evaluation/README.md) | 20 synthetic query-result examples covering intent identification, relevance grades, constraint matching and evidence-based rationales. |
+| 5 | [Realistic response review](08-realistic-response-review/README.md) | Six longer scenario-based comparisons, five-dimension scoring, documented revision of an initial decision and reflection. |
+| 6 | [Paired-response challenge](06-paired-response-challenge/README.md) and [advanced blind evaluation](07-advanced-blind-evaluation/README.md) | Comparative response judgments, severity analysis, source fidelity, instruction compliance and actionable feedback. |
+
+## Supporting quality tools
+
+These modest Python demonstrations support annotation and evaluation workflows. They are not a separate software-development offering.
+
+- [Annotation CSV Validator](10-annotation-csv-validator/README.md) — required-field, schema, categorical, duplicate-ID and synthetic PII-token checks.
+- [Annotation Consistency Checker](11-annotation-consistency-checker/README.md) — selected cross-record and cross-field flags for human review.
+- [AI Response Score Calculator](12-ai-response-score-calculator/README.md) — arithmetic recalculation and descriptive score reporting.
+- [Annotation QA Dashboard](13-annotation-qa-dashboard/README.md) — structural and categorical summaries in a static HTML report.
 
 ## Working approach
 
 - Translate task instructions into explicit criteria and schemas.
 - Separate source-supported facts from unsupported claims.
-- Record evidence for evaluation and annotation decisions.
+- Record evidence for annotation and evaluation decisions.
 - Treat missing information as unknown rather than filling gaps.
 - Validate structured data for completeness, consistency and allowed values.
 - Document ambiguity, limitations and corrective actions.
@@ -38,15 +38,17 @@ This portfolio presents practical, self-directed work samples in AI response eva
 
 ## Supporting technical skills
 
-Basic scripting and spreadsheet skills can support data cleaning, CSV validation, duplicate detection, label checks, and evaluation summaries. The four small Python demonstrations in this portfolio show how simple rule-based checks can support annotation QA and evaluation reporting. They are supporting methods for annotation and quality work—not a separate software-development role or a claim of expertise in complex engineering.
+Basic scripting, CSV handling and spreadsheet workflows can support data cleaning, duplicate detection, label validation and evaluation summaries. The included Python tools demonstrate selected rule-based checks. They are supporting capabilities for annotation and quality work, not a claim of complex software-engineering expertise.
 
 ## Experience and evidence boundary
 
-The AI evaluation, annotation and search-relevance examples are synthetic and self-directed. They are not paid work, employment, client engagements, or independent benchmark results. Preference scores are agreement with author-created reference keys, not externally validated proficiency scores.
+All annotation, response-evaluation and search-relevance examples are synthetic and self-directed. They are not paid work, employment, client engagements, proprietary production data or independent benchmark results.
 
-The end-to-end annotation case study was produced in a single pass and self-audited. It does not establish independent annotator agreement, production QA, throughput, or professional client experience.
+Preference scores represent agreement with author-created reference material only. The end-to-end annotation case study was completed in a single pass and self-audited; it does not establish independent annotator agreement, production QA, throughput or professional client experience.
 
-The supporting tools are small demonstrations against documented synthetic schemas. Their tests cover selected rule behavior; they do not prove semantic annotation accuracy or production readiness.
+The supporting tools are small demonstrations against the documented synthetic schemas. Their automated tests cover selected rule behavior; they do not prove semantic annotation accuracy or production readiness.
+
+The transcription-formatting sample is constructed text, not an audio transcription. It should not be interpreted as evidence of completed audio transcription work.
 
 ## Suitable role families
 
@@ -57,7 +59,7 @@ The supporting tools are small demonstrations against documented synthetic schem
 - Data Quality Assurance Analyst
 - Search and Content Relevance Evaluator
 
-Actual eligibility depends on each employer's location restrictions, language requirements, assessment, device requirements, schedule, and payment arrangements.
+Actual eligibility depends on each employer's location restrictions, language requirements, assessment, device requirements, schedule and payment arrangements.
 
 ## Contact
 
