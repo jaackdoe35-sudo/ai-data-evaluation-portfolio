@@ -1,0 +1,7 @@
+record_id,message_text,primary_intent,clarification_flag,pii_types,pii_span_to_redact
+C001,"I need help with my card.",intent_unclear,yes,none,
+C002,"My debit card was charged twice.",duplicate_charge,no,none,
+C003,"  my debit card was charged twice. ",suspected_fraud,no,none,
+C004,"Please call me at [PHONE].",profile_update,no,phone,[PHONE]
+C005,"Contact me at [EMAIL].",profile_update,no,email,[PHONE]
+C006,"I have a question.",intent_unclear,no,none,
