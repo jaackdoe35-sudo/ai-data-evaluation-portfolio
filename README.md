@@ -4,7 +4,7 @@
 
 This portfolio contains practical, self-directed work samples relevant to AI data annotation, LLM response evaluation, annotation quality review, search relevance evaluation, and data quality roles.
 
-**[Recruiter overview](RECRUITER-OVERVIEW.md)**
+**[Recruiter overview](RECRUITER-OVERVIEW.md)** · **[Semantic and reference-key audit](15-semantic-and-reference-audit/README.md)**
 
 ## Core work samples
 
