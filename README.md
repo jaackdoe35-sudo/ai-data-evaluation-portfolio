@@ -21,6 +21,8 @@ This repository demonstrates practical skills in AI response evaluation, text an
 
 | Advanced blind evaluation | [Five-case challenge](07-advanced-blind-evaluation/challenge.md), [methodology](07-advanced-blind-evaluation/methodology.md), [evaluation template](07-advanced-blind-evaluation/evaluation-template.csv), and [reference answer key](07-advanced-blind-evaluation/answer-key.md), [evaluator reflection](07-advanced-blind-evaluation/reflection.md) |
 
+| Realistic AI response review | [Six-case scenario pack](08-realistic-response-review/scenarios.md), [review protocol](08-realistic-response-review/review-protocol.md), [evaluation template](08-realistic-response-review/evaluation-template.csv), and [reference answer key](08-realistic-response-review/answer-key.md) |
+
 ## How I approach evaluation
 
 1. Read the task and identify explicit constraints.
