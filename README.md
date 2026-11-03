@@ -47,7 +47,7 @@ The AI evaluation and annotation datasets in this repository are synthetic, self
 
 Scores and preference results are illustrative judgments against author-created reference material. They are not independently adjudicated benchmark results. The end-to-end annotation case study was completed in a single pass and self-audited; it does not establish independent annotator agreement, production throughput, or professional client experience.
 
-The supporting tools are small rule-based demonstrations. Their passing tests establish only the behavior covered by those tests, not production readiness or semantic annotation accuracy.
+The supporting tools are small rule-based demonstrations. The included test cases are limited to selected rule behavior; test execution and production readiness are not established by file presence alone.
 
 ## Roles this portfolio is designed to support
 
