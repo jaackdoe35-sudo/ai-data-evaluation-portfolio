@@ -15,11 +15,11 @@
 ## Label distribution
 
 ### Intent
-- `account_access`: 7
+- `account_access`: 6
 - `billing`: 9
 - `cancellation`: 5
 - `feedback`: 8
-- `other`: 1
+- `other`: 2
 - `product_information`: 6
 - `shipping`: 7
 - `technical_support`: 7
@@ -32,14 +32,14 @@
 
 ## Manual consistency review
 
-The dataset was authored against the definitions in `annotation-guidelines.md`. The following boundary decisions were applied:
+The dataset was reviewed against the definitions in `annotation-guidelines.md`. During semantic review, A016 (changing the email address linked to a profile) was reclassified from `account_access` to `other`: it is a profile update, not a login or authentication issue, and the taxonomy has no dedicated profile-update label. The following boundary decisions were applied:
 
 - Price, invoice, payment, and charge questions use `billing`.
 - Login, password, and verification-code problems use `account_access`.
 - Malfunction and error reports use `technical_support`.
 - Delivery tracking and arrival questions use `shipping`.
 - Clear praise plus criticism uses `mixed` sentiment.
-- The row with an unspecified “message” is labeled `other` because the content does not support a more specific intent.
+- The row with an unspecified “message” and the profile-email change request are labeled `other`: the latter is a profile-update task, but this introductory taxonomy has no dedicated profile-update label.
 
 ## Limitations
 
