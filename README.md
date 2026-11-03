@@ -1,53 +1,56 @@
 # AI Data Annotation & Evaluation Portfolio
 
-**AI data annotation · AI response evaluation · Data quality assurance · Search relevance evaluation**
+**Target roles:** AI Data Annotator · AI Response Evaluator · LLM Evaluator · Annotation Quality Reviewer · Data Quality Analyst · Search Relevance Evaluator
 
-This portfolio contains practical, self-directed work samples relevant to AI data annotation, LLM response evaluation, annotation quality review, search relevance evaluation, and data quality roles.
+This repository contains self-directed, synthetic work samples demonstrating structured annotation, response evaluation, search relevance judgment, quality checks, and small supporting data-validation tools.
 
-**[Recruiter overview](RECRUITER-OVERVIEW.md)** · **[Semantic and reference-key audit](15-semantic-and-reference-audit/README.md)**
+**[Recruiter overview](RECRUITER-OVERVIEW.md)** · **[Documentation, semantic and reference audit](15-semantic-and-reference-audit/README.md)**
 
-## Core work samples
+## Start here — strongest work samples
 
-| Area | Evidence | Demonstrated focus |
+| Priority | Work sample | What a reviewer can inspect |
 |---|---|---|
-| AI response evaluation | [Rubric](01-ai-response-evaluation/evaluation-rubric.md) · [30-example dataset](01-ai-response-evaluation/evaluated-responses.csv) · [Findings](01-ai-response-evaluation/findings-report.md) | Factuality, instruction-following, completeness, clarity, safety and judgment |
-| Data annotation | [Guidelines](02-data-annotation/annotation-guidelines.md) · [50-row dataset](02-data-annotation/annotated-dataset.csv) | Intent and sentiment labeling |
-| Quality assurance | [QA report](03-quality-assurance/quality-assurance-report.md) | Structural completeness, unique IDs, label distributions and limitations |
-| Transcription | [Transcription sample](04-transcription/transcription-sample.md) | Illustrative transcript and uncertainty conventions |
-| Evaluation methodology | [Workflow and methods](05-skills/skills-and-methodology.md) | Evidence-based evaluation and annotation process |
-| Comparative evaluation | [Paired-response challenge](06-paired-response-challenge/challenge.md) · [Advanced blind evaluation](07-advanced-blind-evaluation/challenge.md) | Comparative judgment, error severity, source fidelity and instruction compliance |
-| Contextual response review | [Six-case assessment](08-realistic-response-review/README.md) · [Results](08-realistic-response-review/evaluation-results.csv) | Contextual evaluation, five-dimensional scoring and evidence-based reflection |
-| End-to-end annotation case study | [Case study](09-end-to-end-annotation-case-study/README.md) · [Dataset](09-end-to-end-annotation-case-study/annotated_dataset.csv) · [QA report](09-end-to-end-annotation-case-study/qa-report.md) | Task design, taxonomy, 40-row annotation, ambiguity handling, PII tagging and schema QA |
-| Search relevance evaluation | [Project 5](14-search-relevance-evaluation/README.md) · [20-case dataset](14-search-relevance-evaluation/search_relevance_dataset.csv) · [QA summary](14-search-relevance-evaluation/qa_summary.md) | Query intent, result relevance grades, constraint matching and evidence-based rationales |
+| 1 | [End-to-end support annotation case study](09-end-to-end-annotation-case-study/README.md) | Task methodology, detailed taxonomy, 40 annotated messages, ambiguity log, QA report and findings |
+| 2 | [AI response evaluation](01-ai-response-evaluation/README.md) | Five-dimension rubric, 30 scored prompt/response examples, evidence rationales and findings |
+| 3 | [Text annotation](02-data-annotation/README.md) | Annotation guidelines and 50 synthetic messages labeled by intent and sentiment |
+| 4 | [Search relevance evaluation](14-search-relevance-evaluation/README.md) | 20 synthetic query-result cases, intent types, relevance grades and rationales |
+| 5 | [Realistic response review](08-realistic-response-review/README.md) | Six scenario-based reviews, five-dimension scores, decision revision and reflection |
+| 6 | [Paired-response evaluation](06-paired-response-challenge/README.md) and [advanced blind evaluation](07-advanced-blind-evaluation/README.md) | Comparative judgment, error severity, evidence-based preference and evaluator feedback |
 
-## Practical supporting tools
+## Supporting QA tools
 
-These small, self-directed tools support annotation and quality workflows:
+These are small, rule-based utilities supporting annotation and evaluation workflows. They are not marketed as separate software-development services.
 
-- [Project 10 — Annotation CSV Validator](10-annotation-csv-validator/README.md): checks required columns, missing values, duplicate IDs, allowed labels and PII-token consistency.
-- [Project 11 — Annotation Consistency Checker](11-annotation-consistency-checker/README.md): flags selected cross-record and cross-field patterns for human review.
-- [Project 12 — AI Response Evaluation Score Calculator](12-ai-response-score-calculator/README.md): recalculates rubric scores and generates a summary report.
-- [Project 13 — Annotation Data Quality Review Dashboard](13-annotation-qa-dashboard/README.md): summarizes annotation distributions and displays configured QA flags.
+- [Annotation CSV Validator](10-annotation-csv-validator/README.md) — checks schema, required values, duplicate IDs, labels and synthetic PII-token consistency.
+- [Annotation Consistency Checker](11-annotation-consistency-checker/README.md) — flags selected cross-record and cross-field patterns for human review.
+- [AI Response Score Calculator](12-ai-response-score-calculator/README.md) — recalculates rubric arithmetic and produces a Markdown summary.
+- [Annotation QA Dashboard](13-annotation-qa-dashboard/README.md) — summarizes configured annotation distributions and structural/categorical flags.
 
-They are supporting workflow tools, not separate software-development services. Each includes source code, sample data, tests and stated limitations.
+The tools use Python's standard library. Their tests cover selected behaviors; they do not establish semantic correctness or production readiness.
 
-## Evaluation workflow
+## Additional practice materials
 
-1. Parse task requirements, schemas, and constraints.
+- [Quality assurance report](03-quality-assurance/quality-assurance-report.md) — structural checks and label distributions for the 50-row annotation sample.
+- [Evaluation methodology](05-skills/skills-and-methodology.md) — documented evaluation and annotation workflows.
+- [Transcription-formatting example](04-transcription/transcription-sample.md) — constructed text demonstrating speaker labels and uncertainty conventions; **not an audio transcription**.
+
+## Working approach
+
+1. Parse task requirements, schemas and constraints.
 2. Identify available evidence and unknowns.
-3. Apply a defined rubric or annotation taxonomy.
-4. Record observable evidence and decision rationales.
+3. Apply the task-specific rubric or annotation taxonomy.
+4. Record observable evidence and concise rationales.
 5. Flag ambiguity instead of inventing missing information.
-6. Validate data structure, labels, and calculations.
+6. Validate structure, allowed labels and calculations.
 7. Report findings with limitations and reproducible references.
 
-## Scope and evidence boundaries
+## Evidence boundaries and limitations
 
-The AI evaluation and annotation datasets in this repository are synthetic, self-directed practice materials. They are not paid work, employment, client engagements, or proprietary production data.
+All annotation, evaluation and search-relevance examples are synthetic, self-directed practice materials. They are not paid work, employment, client engagements, proprietary production data, or externally sourced benchmark results.
 
-Scores and preference results are illustrative judgments against author-created reference material. They are not independently adjudicated benchmark results. The end-to-end annotation case study was completed in a single pass and self-audited; it does not establish independent annotator agreement, production throughput, or professional client experience.
+Preference scores are agreement with author-created reference material, not independently validated proficiency scores. The semantic and reference-key audit records corrections and limitations. The end-to-end annotation case study was produced in a single pass and self-audited; it does not establish independent annotator agreement, production throughput, or professional client experience.
 
-The supporting tools are small rule-based demonstrations. The included test cases are limited to selected rule behavior; test execution and production readiness are not established by file presence alone.
+The supporting tools are small rule-based demonstrations. Passing tests verifies only the behaviors covered by those tests. No claim of production readiness, independent semantic accuracy, or complex engineering expertise is made.
 
 ## Roles this portfolio is designed to support
 
@@ -58,7 +61,7 @@ The supporting tools are small rule-based demonstrations. The included test case
 - Data Quality Assurance Analyst
 - Search and Content Relevance Evaluator
 
-Actual role fit and eligibility depend on each employer's requirements, location restrictions, assessment, schedule, device requirements, and payment arrangements.
+Actual eligibility depends on each employer's location restrictions, language requirements, assessment, schedule, device requirements and payment arrangements.
 
 ## Contact
 
