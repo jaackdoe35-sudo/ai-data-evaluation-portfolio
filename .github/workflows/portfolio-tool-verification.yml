@@ -1,6 +1,28 @@
 name: Portfolio Tool Verification
 
 on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "01-ai-response-evaluation/**"
+      - "02-data-annotation/**"
+      - "03-quality-assurance/**"
+      - "04-transcription/**"
+      - "05-skills/**"
+      - "06-paired-response-challenge/**"
+      - "07-advanced-blind-evaluation/**"
+      - "08-realistic-response-review/**"
+      - "09-end-to-end-annotation-case-study/**"
+      - "10-annotation-csv-validator/**"
+      - "11-annotation-consistency-checker/**"
+      - "12-ai-response-score-calculator/**"
+      - "13-annotation-qa-dashboard/**"
+      - "14-search-relevance-evaluation/**"
+      - "15-semantic-and-reference-audit/**"
+      - "16-annotation-qa-stress-test/**"
+      - "README.md"
+      - "RECRUITER-OVERVIEW.md"
+      - ".github/workflows/portfolio-tool-verification.yml"
   push:
     branches: [main]
     paths:
