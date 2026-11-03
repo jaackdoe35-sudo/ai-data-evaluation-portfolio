@@ -18,6 +18,7 @@ This repository contains practical exercises in AI response evaluation, text ann
 | Paired-response challenge | [Challenge](06-paired-response-challenge/challenge.md) · [Methodology](06-paired-response-challenge/methodology.md) | Comparative response judgment |
 | Advanced blind evaluation | [Challenge](07-advanced-blind-evaluation/challenge.md) · [Reflection](07-advanced-blind-evaluation/reflection.md) | Error severity, source fidelity, instruction compliance and reasoning validity |
 | Realistic response review | [Six-case assessment](08-realistic-response-review/README.md) · [Results and reflection](08-realistic-response-review/reflection.md) · [Scores](08-realistic-response-review/evaluation-results.csv) | Contextual evaluation, pairwise judgment, five-dimensional scoring and evidence-based reflection |
+| End-to-end annotation case study | [Case study](09-end-to-end-annotation-case-study/README.md) · [Dataset](09-end-to-end-annotation-case-study/annotated_dataset.csv) · [QA report](09-end-to-end-annotation-case-study/qa-report.md) | Task design, taxonomy, 40-row annotation, ambiguity handling, PII tagging and schema QA |
 
 ## Evaluation workflow
 
