@@ -57,10 +57,26 @@ jobs:
         run: |
           case "${{ matrix.project }}" in
             10-annotation-csv-validator)
-              python validator.py sample_annotations.csv
+              set +e
+              output=$(python validator.py sample_annotations.csv 2>&1)
+              status=$?
+              set -e
+              printf '%s\\n' "$output"
+              test "$status" -eq 1
+              grep -q "invalid primary_intent" <<< "$output"
+              grep -q "duplicate record_id" <<< "$output"
+              grep -q "requires redaction token" <<< "$output"
               ;;
             11-annotation-consistency-checker)
-              python consistency_checker.py sample_annotations.csv
+              set +e
+              output=$(python consistency_checker.py sample_annotations.csv 2>&1)
+              status=$?
+              set -e
+              printf '%s\\n' "$output"
+              test "$status" -eq 1
+              grep -q "identical message text has conflicting" <<< "$output"
+              grep -q "does not match expected token" <<< "$output"
+              grep -q "intent_unclear is paired" <<< "$output"
               ;;
             12-ai-response-score-calculator)
               python score_calculator.py sample_evaluations.csv --output /tmp/evaluation-summary.md
