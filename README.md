@@ -17,7 +17,7 @@ This repository contains practical exercises in AI response evaluation, text ann
 | Skills and methodology | [Workflow and methods](05-skills/skills-and-methodology.md) | Evaluation and annotation process |
 | Paired-response challenge | [Challenge](06-paired-response-challenge/challenge.md) · [Methodology](06-paired-response-challenge/methodology.md) | Comparative response judgment |
 | Advanced blind evaluation | [Challenge](07-advanced-blind-evaluation/challenge.md) · [Reflection](07-advanced-blind-evaluation/reflection.md) | Error severity, source fidelity, instruction compliance and reasoning validity |
-| Realistic response review | [Six-case assessment](08-realistic-response-review/scenarios.md) · [Protocol](08-realistic-response-review/review-protocol.md) | Contextual evaluation across realistic work scenarios; completion pending |
+| Realistic response review | [Six-case assessment](08-realistic-response-review/README.md) · [Results and reflection](08-realistic-response-review/reflection.md) · [Scores](08-realistic-response-review/evaluation-results.csv) | Contextual evaluation, pairwise judgment, five-dimensional scoring and evidence-based reflection |
 
 ## Evaluation workflow
 
