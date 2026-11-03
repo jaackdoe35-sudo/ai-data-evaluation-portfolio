@@ -26,6 +26,10 @@ These modest Python demonstrations support annotation and evaluation workflows. 
 - [AI Response Score Calculator](12-ai-response-score-calculator/README.md) — arithmetic recalculation and descriptive score reporting.
 - [Annotation QA Dashboard](13-annotation-qa-dashboard/README.md) — structural and categorical summaries in a static HTML report.
 
+## Supporting QA scale-test evidence
+
+The four supporting utilities were exercised on deterministic synthetic datasets of up to 100,000 rows in a successful GitHub Actions run. The [scale-test report](16-annotation-qa-stress-test/scale-test-report.md) publishes the measured runtimes, Python-tracked memory allocations, runner details and limitations. This is a bounded synthetic test, not evidence of client-data performance or production readiness.
+
 ## Working approach
 
 - Translate task instructions into explicit criteria and schemas.
