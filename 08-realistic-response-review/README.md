@@ -1,4 +1,4 @@
-# Project 05 — Realistic AI Response Review
+# Realistic AI Response Review
 
 A completed six-case scenario-based assessment using longer responses, competing quality dimensions, incomplete evidence, and realistic user-facing tasks.
 
