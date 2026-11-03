@@ -1,4 +1,4 @@
-# Project 04 Reflection — Advanced Blind Evaluation
+# Advanced Blind Evaluation — Reflection
 
 ## Exercise
 
