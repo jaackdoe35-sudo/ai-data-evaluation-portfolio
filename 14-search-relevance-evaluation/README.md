@@ -1,4 +1,4 @@
-# Project 5 — Search and Content Relevance Evaluation
+# Search and Content Relevance Evaluation
 
 ## Purpose
 A practical, self-directed sample of search-result evaluation. Each case includes a user query, inferred intent type, result title and snippet, relevance grade, and concise rationale.
