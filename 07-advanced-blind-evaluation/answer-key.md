@@ -6,7 +6,7 @@ This is an author-created reference judgment, not an independently adjudicated g
 
 | Case | Reference preference | Main issue |
 |---|---|---|
-| C01 | Tie | Each response contains one arithmetic error in a requested subtotal; both final totals are wrong relative to the correct total. |
+| C01 | A | A has correct subtotals but adds them incorrectly; B also has an incorrect pen subtotal. A is materially better, although its final answer remains wrong. |
 | C02 | A | B violates the exact three-bullet instruction despite using only correct source facts. |
 | C03 | A | B invents a 48-hour submission deadline absent from the excerpt. |
 | C04 | A | B adds unjustified uncertainty to a straightforward calculation. |
@@ -14,14 +14,14 @@ This is an author-created reference judgment, not an independently adjudicated g
 
 ## Case-by-case rationale
 
-### C01 — Tie
+### C01 — A
 
 Correct calculation:
 - Notebooks: 8 × ₦1,250 = ₦10,000.
 - Pens: 5 × ₦400 = ₦2,000.
 - Total: ₦12,000.
 
-A reports the pen subtotal correctly but gives an incorrect final total of ₦12,500. B gives an incorrect pen subtotal of ₦2,500, while also reporting the same incorrect final total. Both fail the requested arithmetic and final answer. Neither has a material overall advantage: A's subtotal is correct but its final total is wrong; B's subtotal is wrong and its final total is also wrong. The reference preference is Tie. A strong evaluator should explicitly note the distinct error locations rather than simply counting errors.
+A reports both subtotals correctly (₦10,000 and ₦2,000) but adds them incorrectly as ₦12,500. B reports the pen subtotal incorrectly as ₦2,500 and also gives the incorrect total ₦12,500. A is materially better because its component calculations are accurate and only the final addition is wrong; B contains an additional arithmetic error. The reference preference is A. A strong evaluator should identify the distinct error locations and their consequences rather than merely count errors.
 
 ### C02 — A
 
@@ -47,7 +47,7 @@ A gives a correct and consistent calculation. B first divides by 80, which produ
 Compare your preferences and rationales with the reference judgments. Count preference agreement out of five, but do not treat that figure as a professional qualification score. Review dimension scores separately: the exercise is intended to reveal reasoning patterns, not establish a statistically reliable proficiency level from five cases.
 
 For a useful self-review, ask:
-1. Did I distinguish the location and impact of errors in C01?
+1. Did I identify that A is better in C01 because its subtotals are correct, even though its final addition is wrong?
 2. Did I enforce the exact constraint in C02?
 3. Did I detect the unsupported detail in C03?
 4. Did I penalize unjustified hedging in C04?
