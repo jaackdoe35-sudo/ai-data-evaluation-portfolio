@@ -1,0 +1,7 @@
+case_id,preference_A_B_or_Tie,A_factuality_source_fidelity_1_to_5,A_instruction_following_1_to_5,A_completeness_1_to_5,A_clarity_usability_1_to_5,A_judgment_calibration_1_to_5,B_factuality_source_fidelity_1_to_5,B_instruction_following_1_to_5,B_completeness_1_to_5,B_clarity_usability_1_to_5,B_judgment_calibration_1_to_5,confidence_1_to_5,decisive_evidence,revision_for_weaker_response
+C01,,,,,,,,,,,,,,
+C02,,,,,,,,,,,,,,
+C03,,,,,,,,,,,,,,
+C04,,,,,,,,,,,,,,
+C05,,,,,,,,,,,,,,
+C06,,,,,,,,,,,,,,
