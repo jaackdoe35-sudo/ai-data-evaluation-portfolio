@@ -52,7 +52,7 @@ C01 is a defensible tie: both answers are mathematically correct, while B explai
 - Response A has both subtotals correct but adds them incorrectly as ₦12,500.
 - Response B reports the pen subtotal incorrectly as ₦2,500 and also gives ₦12,500.
 
-A is materially better because its component calculations are correct and its only arithmetic error is the final addition. The key is corrected to A, and the rationale now explains why. C02–C05 key decisions are consistent with the supplied constraints and arithmetic.
+A is materially better because its component calculations are correct and its only arithmetic error is the final addition. The key is corrected to A, and the rationale now explains why. The recorded participant preference was Tie, so the reflection was also corrected: agreement is now 4/5 (80%), not the previously reported 5/5. C02–C05 key decisions are consistent with the supplied constraints and arithmetic.
 
 ### Project 8 — Realistic response review (6 cases)
 
@@ -93,6 +93,14 @@ The labels distinguish direct matches (for example SR001–SR006, SR010–SR011,
 - Project 7 C01: corrected from Tie to A because B contains an additional incorrect subtotal.
 - Project 8 C01–C06: rationales align with the supplied notes and task constraints. C04 preserves date ambiguity; C05 retains product-label and exposure caveats.
 - All keys are author-created references. None is represented as an independently adjudicated gold standard.
+
+## Documentation and recruiter audit
+
+The portfolio index and recruiter overview were rewritten to put the strongest annotation and evaluation evidence first: the 40-row end-to-end case study, 30-response evaluation, 50-row introductory annotation, 20-case search relevance sample, and realistic response review. Supporting Python tools are explicitly framed as small QA utilities, not a separate software-development offering.
+
+The recruiter-facing material now clearly discloses that the samples are synthetic and self-directed, that answer keys are author-created, that the end-to-end case study is single-pass/self-audited, and that the transcription-formatting example is not an audio transcription. It does not claim paid work, client experience, independent benchmark performance, inter-annotator agreement, production throughput, or production readiness.
+
+Documentation was reconciled for the corrected A016 label counts, corrected advanced C01 reference decision and recalculated 4/5 agreement, the dashboard's primary-intent validation, the realistic-review confidence field left blank, and consistent descriptive work-sample titles instead of conflicting project numbers. The top-level index now directs reviewers to the strongest evidence and the audit.
 
 ## Tool robustness audit — executed
 
