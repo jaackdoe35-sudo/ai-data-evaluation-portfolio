@@ -1,8 +1,8 @@
 # AI Data Annotation & Evaluation Portfolio
 
-**AI data annotation · AI response evaluation · Data quality assurance**
+**AI data annotation · AI response evaluation · Data quality assurance · Search relevance evaluation**
 
-This portfolio contains practical, self-directed work samples relevant to AI data annotation, LLM response evaluation, annotation quality review, and data quality roles.
+This portfolio contains practical, self-directed work samples relevant to AI data annotation, LLM response evaluation, annotation quality review, search relevance evaluation, and data quality roles.
 
 **[Recruiter overview](RECRUITER-OVERVIEW.md)**
 
@@ -18,6 +18,7 @@ This portfolio contains practical, self-directed work samples relevant to AI dat
 | Comparative evaluation | [Paired-response challenge](06-paired-response-challenge/challenge.md) · [Advanced blind evaluation](07-advanced-blind-evaluation/challenge.md) | Comparative judgment, error severity, source fidelity and instruction compliance |
 | Contextual response review | [Six-case assessment](08-realistic-response-review/README.md) · [Results](08-realistic-response-review/evaluation-results.csv) | Contextual evaluation, five-dimensional scoring and evidence-based reflection |
 | End-to-end annotation case study | [Case study](09-end-to-end-annotation-case-study/README.md) · [Dataset](09-end-to-end-annotation-case-study/annotated_dataset.csv) · [QA report](09-end-to-end-annotation-case-study/qa-report.md) | Task design, taxonomy, 40-row annotation, ambiguity handling, PII tagging and schema QA |
+| Search relevance evaluation | [Project 5](14-search-relevance-evaluation/README.md) · [20-case dataset](14-search-relevance-evaluation/search_relevance_dataset.csv) · [QA summary](14-search-relevance-evaluation/qa_summary.md) | Query intent, result relevance grades, constraint matching and evidence-based rationales |
 
 ## Practical supporting tools
 
