@@ -1,0 +1,80 @@
+name: Portfolio Tool Verification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "10-annotation-csv-validator/**"
+      - "11-annotation-consistency-checker/**"
+      - "12-ai-response-score-calculator/**"
+      - "13-annotation-qa-dashboard/**"
+      - "14-search-relevance-evaluation/**"
+      - ".github/workflows/portfolio-tool-verification.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Verify Python tools and datasets
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - "10-annotation-csv-validator"
+          - "11-annotation-consistency-checker"
+          - "12-ai-response-score-calculator"
+          - "13-annotation-qa-dashboard"
+          - "14-search-relevance-evaluation"
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile Python source
+        if: matrix.project != '14-search-relevance-evaluation'
+        run: python -m py_compile $(find "${{ matrix.project }}" -maxdepth 1 -name '*.py' -print)
+
+      - name: Run unit tests
+        working-directory: ${{ matrix.project }}
+        run: |
+          if [ -d tests ]; then
+            python -m unittest discover -s tests -v
+          else
+            echo "No unit-test directory found"
+            exit 1
+          fi
+
+      - name: Exercise command-line tool with sample data
+        if: matrix.project != '14-search-relevance-evaluation'
+        working-directory: ${{ matrix.project }}
+        run: |
+          case "${{ matrix.project }}" in
+            10-annotation-csv-validator)
+              python validator.py sample_annotations.csv
+              ;;
+            11-annotation-consistency-checker)
+              python consistency_checker.py sample_annotations.csv
+              ;;
+            12-ai-response-score-calculator)
+              python score_calculator.py sample_evaluations.csv --output /tmp/evaluation-summary.md
+              test -s /tmp/evaluation-summary.md
+              ;;
+            13-annotation-qa-dashboard)
+              python qa_dashboard.py sample_annotations.csv --output /tmp/annotation-dashboard.html
+              test -s /tmp/annotation-dashboard.html
+              ;;
+          esac
+
+      - name: Upload generated report
+        if: matrix.project == '13-annotation-qa-dashboard'
+        uses: actions/upload-artifact@v4
+        with:
+          name: annotation-qa-dashboard
+          path: /tmp/annotation-dashboard.html
