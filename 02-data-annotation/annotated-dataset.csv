@@ -14,7 +14,7 @@
 "A013","I would like to cancel order 4832, please.","cancellation","neutral","Direct cancellation request."
 "A014","Your support team was patient and very helpful.","feedback","positive","General praise rather than a new support request."
 "A015","Why did the renewal price increase this month?","billing","negative","Questions an unexpected price increase."
-"A016","Can I change the email address linked to my profile?","account_access","neutral","Requests an account credential/profile change."
+"A016","Can I change the email address linked to my profile?","other","neutral","Requests a profile-detail change; the introductory taxonomy has no dedicated profile-update label, so other is the least misleading available category."
 "A017","The headphones arrived damaged and the sound cuts out.","technical_support","negative","Reports a product defect requiring support."
 "A018","Is the annual plan cheaper than paying monthly?","billing","neutral","Asks for a price comparison."
 "A019","My delivery address is wrong. Can it still be corrected?","shipping","negative","Requests correction to delivery details."
