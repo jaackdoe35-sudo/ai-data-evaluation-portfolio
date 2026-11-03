@@ -55,9 +55,9 @@
 ## Urgency distribution
 
 - elevated: 9
-- routine: 11
-- standard: 11
-- urgent: 9
+- routine: 9
+- standard: 14
+- urgent: 8
 
 ## PII distribution
 
