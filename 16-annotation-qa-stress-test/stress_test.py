@@ -165,11 +165,12 @@ def main():
         assert any("Missing required column" in item for item in missing_columns)
         negative_checks.append("consistency checker reports missing required columns")
 
-        duplicate_dashboard = dashboard.inspect(
-            ["record_id", "record_id"], []
-        )
-        # The dashboard's inspect function rejects duplicate headers before row processing.
-        raise_if_duplicate_dashboard_not_rejected(duplicate_dashboard)
+        try:
+            dashboard.inspect(["record_id", "record_id"], [])
+        except ValueError as exc:
+            assert "duplicate column" in str(exc).lower()
+        else:
+            raise AssertionError("Dashboard accepted duplicate headers")
         negative_checks.append("dashboard rejects duplicate headers")
 
         before_after = (
@@ -214,10 +215,6 @@ def _write_text(path, content):
     path.write_text(content, encoding="utf-8")
     return path
 
-
-def raise_if_duplicate_dashboard_not_rejected(result):
-    # inspect raises ValueError on duplicate headers; reaching here means it failed to reject.
-    raise AssertionError(f"Dashboard unexpectedly accepted duplicate headers: {result}")
 
 
 if __name__ == "__main__":
