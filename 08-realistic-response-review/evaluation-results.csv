@@ -1,0 +1,7 @@
+case_id,final_preference,A_factuality_source_fidelity_1_to_5,A_instruction_following_1_to_5,A_completeness_1_to_5,A_clarity_usability_1_to_5,A_judgment_calibration_1_to_5,B_factuality_source_fidelity_1_to_5,B_instruction_following_1_to_5,B_completeness_1_to_5,B_clarity_usability_1_to_5,B_judgment_calibration_1_to_5,confidence_1_to_5
+C01,A,5,5,5,5,5,1,4,3,5,1,
+C02,B,1,3,2,3,1,5,4,3,4,5,
+C03,B,3,2,3,2,1,5,4,5,4,4,
+C04,B,3,2,2,3,2,4,5,5,4,5,
+C05,A,5,4,4,5,4,3,2,1,2,2,
+C06,B,3,2,2,2,2,5,4,5,4,4,
