@@ -17,6 +17,8 @@ This repository demonstrates practical skills in AI response evaluation, text an
 | [Transcription sample](04-transcription/transcription-sample.md) | Short illustrative transcript with uncertainty conventions |
 | [Skills and methodology](05-skills/skills-and-methodology.md) | Workflow, tools, and working principles |
 
+| Paired-response challenge | [Challenge worksheet](06-paired-response-challenge/challenge.md), [evaluation template](06-paired-response-challenge/evaluation-template.csv), [methodology](06-paired-response-challenge/methodology.md), and [reference answer key](06-paired-response-challenge/answer-key.md) |
+
 ## How I approach evaluation
 
 1. Read the task and identify explicit constraints.
