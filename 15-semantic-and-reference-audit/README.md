@@ -115,6 +115,14 @@ The final verification run completed successfully. Test counts: validator 9, con
 
 The added checks exposed an important test-design issue: the first HTML-escaping test put script-like text in a field that the dashboard does not render. The test was corrected to place it in a rendered label field, then the full workflow passed. Earlier workflow runs failed during this process; they are not the final result.
 
+## Production-oriented QA scale test — executed
+
+The separate [Annotation QA Stress Test](../16-annotation-qa-stress-test/README.md) exercised the CSV validator, consistency checker, dashboard and score calculator against deterministic synthetic workloads of 10,000, 50,000 and 100,000 rows. GitHub Actions run [41640720649](https://github.com/jaackdoe35-sudo/ai-data-evaluation-portfolio/actions/runs/41640720649) completed successfully; the uploaded result JSON reported PASS. The [scale-test report](../16-annotation-qa-stress-test/scale-test-report.md) records the exact wall-clock and `tracemalloc` measurements.
+
+At 100,000 rows, the longest measured operation was the score calculator (6.1846 seconds); the largest tracked Python allocation peak was the consistency checker (106.018 MiB). The test verified expected row counts, no unexpected findings on the generated clean data, deterministic generation, unchanged input files, and four negative cases.
+
+**Evidence boundary:** These are sequential synthetic tests on one GitHub-hosted runner using CPython 3.15.1. `tracemalloc` is not process RSS or total memory. This does not test concurrency, sustained load, production data, semantic correctness, streaming, or production readiness.
+
 ## Release implications
 
 This audit improves internal consistency and corrects two material reference/label issues. It does **not** establish independent annotation accuracy or professional proficiency. For an employer-facing portfolio, keep the synthetic/self-directed disclosure and these limitations visible. Independent review remains the strongest next evidence improvement.
