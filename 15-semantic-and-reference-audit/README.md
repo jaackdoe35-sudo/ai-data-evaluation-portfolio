@@ -94,6 +94,19 @@ The labels distinguish direct matches (for example SR001–SR006, SR010–SR011,
 - Project 8 C01–C06: rationales align with the supplied notes and task constraints. C04 preserves date ambiguity; C05 retains product-label and exposure caveats.
 - All keys are author-created references. None is represented as an independently adjudicated gold standard.
 
+## Tool robustness audit — executed
+
+Additional negative and edge-case tests were added and executed in GitHub Actions:
+
+- CSV validator: empty datasets, duplicate headers, absent required columns, PII tokens missing from source text, and valid PII token acceptance.
+- Consistency checker: empty datasets, PII token/source mismatch, matching PII token acceptance, and duplicate normalized text with the same label.
+- Score calculator: empty datasets, all-N/A scores, fractional scores, non-finite scores, invalid severity, and missing headers.
+- QA dashboard: empty datasets, invalid primary intent, duplicate headers, and HTML escaping of rendered label values.
+
+The final verification run completed successfully. Test counts: validator 9, consistency checker 7, score calculator 11, dashboard 9, search relevance 5 — **41 tests passed**. The four command-line tools also executed against their sample CSVs; the generated score report and dashboard were checked for non-empty output. The dashboard HTML artifact was uploaded by the workflow.
+
+The added checks exposed an important test-design issue: the first HTML-escaping test put script-like text in a field that the dashboard does not render. The test was corrected to place it in a rendered label field, then the full workflow passed. Earlier workflow runs failed during this process; they are not the final result.
+
 ## Release implications
 
 This audit improves internal consistency and corrects two material reference/label issues. It does **not** establish independent annotation accuracy or professional proficiency. For an employer-facing portfolio, keep the synthetic/self-directed disclosure and these limitations visible. Independent review remains the strongest next evidence improvement.
