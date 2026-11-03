@@ -1,0 +1,11 @@
+case_id,response_a_factuality,response_a_instruction_following,response_a_completeness,response_a_clarity,response_a_safety,response_b_factuality,response_b_instruction_following,response_b_completeness,response_b_clarity,response_b_safety,preferred_response,confidence_1_to_5,decisive_evidence,actionable_feedback
+C01,,,,,,,,,,,,,,
+C02,,,,,,,,,,,,,,
+C03,,,,,,,,,,,,,,
+C04,,,,,,,,,,,,,,
+C05,,,,,,,,,,,,,,
+C06,,,,,,,,,,,,,,
+C07,,,,,,,,,,,,,,
+C08,,,,,,,,,,,,,,
+C09,,,,,,,,,,,,,,
+C10,,,,,,,,,,,,,,
