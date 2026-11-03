@@ -38,7 +38,7 @@ This portfolio presents practical, self-directed work samples in AI response eva
 
 ## Supporting technical skills
 
-Basic scripting and spreadsheet skills can support data cleaning, CSV validation, duplicate detection, label checks, and evaluation summaries. The small Python demonstrations in this portfolio show how simple rule-based checks can support annotation QA. They are supporting methods for annotation and quality work—not a separate software-development role or a claim of expertise in complex engineering.
+Basic scripting and spreadsheet skills can support data cleaning, CSV validation, duplicate detection, label checks, and evaluation summaries. The four small Python demonstrations in this portfolio show how simple rule-based checks can support annotation QA and evaluation reporting. They are supporting methods for annotation and quality work—not a separate software-development role or a claim of expertise in complex engineering.
 
 ## Experience and evidence boundary
 
