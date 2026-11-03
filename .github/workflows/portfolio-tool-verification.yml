@@ -4,6 +4,15 @@ on:
   push:
     branches: [main]
     paths:
+      - "01-ai-response-evaluation/**"
+      - "02-data-annotation/**"
+      - "03-quality-assurance/**"
+      - "04-transcription/**"
+      - "05-skills/**"
+      - "06-paired-response-challenge/**"
+      - "07-advanced-blind-evaluation/**"
+      - "08-realistic-response-review/**"
+      - "09-end-to-end-annotation-case-study/**"
       - "10-annotation-csv-validator/**"
       - "11-annotation-consistency-checker/**"
       - "12-ai-response-score-calculator/**"
@@ -94,3 +103,129 @@ jobs:
         with:
           name: annotation-qa-dashboard
           path: /tmp/annotation-dashboard.html
+
+  audit-portfolio:
+    name: Audit portfolio datasets and internal links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify datasets, reported statistics and internal Markdown links
+        run: |
+          python - <<'PY'
+          import csv
+          import math
+          import re
+          from collections import Counter
+          from pathlib import Path
+
+          root = Path(".")
+          def load(path):
+              with path.open(encoding="utf-8-sig", newline="") as f:
+                  return list(csv.DictReader(f))
+
+          def require(condition, message):
+              if not condition:
+                  raise AssertionError(message)
+              print("PASS:", message)
+
+          # Main response-evaluation dataset and reported score statistics.
+          p = Path("01-ai-response-evaluation/evaluated-responses.csv")
+          rows = load(p)
+          require(len(rows) == 30, "response-evaluation dataset has 30 rows")
+          require(len({r["id"] for r in rows}) == len(rows), "response-evaluation IDs are unique")
+          dims = ["factuality", "instruction_following", "completeness", "clarity", "safety_judgment"]
+          for r in rows:
+              scores = [float(r[k]) for k in dims]
+              require_score = all(1 <= x <= 5 for x in scores)
+              if not require_score:
+                  raise AssertionError(f"out-of-range dimension score: {r['id']}")
+              expected = round(sum(scores) / len(scores), 1)
+              if not math.isclose(float(r["overall_mean"]), expected, abs_tol=1e-9):
+                  raise AssertionError(f"overall_mean mismatch for {r['id']}")
+          require(True, "all response-evaluation scores and row means are valid")
+          mean = sum(float(r["overall_mean"]) for r in rows) / len(rows)
+          require(round(mean, 2) == 3.98, "response-evaluation overall mean matches findings report")
+          severity = Counter(r["issue_severity"] for r in rows)
+          require(severity == {"None": 15, "Major": 10, "Minor": 4, "Critical": 1},
+                  "response-evaluation severity counts match findings report")
+
+          # Introductory annotation dataset.
+          rows = load(Path("02-data-annotation/annotated-dataset.csv"))
+          require(len(rows) == 50, "introductory annotation dataset has 50 rows")
+          require(len({r["id"] for r in rows}) == len(rows), "introductory annotation IDs are unique")
+          require(all(r["message"].strip() and r["annotation_rationale"].strip() for r in rows),
+                  "introductory annotation messages and rationales are populated")
+
+          # End-to-end annotation case study.
+          rows = load(Path("09-end-to-end-annotation-case-study/annotated_dataset.csv"))
+          require(len(rows) == 40, "end-to-end annotation dataset has 40 rows")
+          require(len({r["record_id"] for r in rows}) == len(rows), "end-to-end annotation IDs are unique")
+          require(all(r["message_text"].strip() and r["annotation_rationale"].strip() for r in rows),
+                  "end-to-end messages and rationales are populated")
+          allowed = {
+              "sentiment": {"positive", "neutral", "negative", "mixed"},
+              "urgency": {"routine", "standard", "elevated", "urgent"},
+              "pii_types": {"none", "phone", "email", "card_last4"},
+              "clarification_flag": {"yes", "no"},
+          }
+          for field, values in allowed.items():
+              invalid = [r["record_id"] for r in rows if r[field] not in values]
+              require(not invalid, f"end-to-end {field} values are valid")
+          for r in rows:
+              pii, span = r["pii_types"], r["pii_span_to_redact"]
+              require((pii == "none" and span == "") or
+                      (pii != "none" and span in {"[PHONE]", "[EMAIL]", "[LAST4]"}),
+                      f"PII tag/span consistent for {r['record_id']}")
+          counts = Counter(r["urgency"] for r in rows)
+          require(counts == {"standard": 14, "routine": 9, "elevated": 9, "urgent": 8},
+                  "end-to-end urgency distribution matches QA report")
+          require(sum(r["clarification_flag"] == "yes" for r in rows) == 6,
+                  "end-to-end clarification count matches QA report")
+
+          # Completed realistic response-review worksheet.
+          rows = load(Path("08-realistic-response-review/evaluation-results.csv"))
+          require(len(rows) == 6 and len({r["case_id"] for r in rows}) == 6,
+                  "realistic response-review results contain six unique cases")
+          require(all(r["final_preference"] in {"A", "B", "Tie"} for r in rows),
+                  "realistic response-review preferences are valid")
+          for r in rows:
+              for field, value in r.items():
+                  if "_1_to_5" in field and value:
+                      require(1 <= int(value) <= 5, f"{r['case_id']} {field} is within 1–5")
+
+          # Search relevance practice dataset and summary.
+          rows = load(Path("14-search-relevance-evaluation/search_relevance_dataset.csv"))
+          require(len(rows) == 20 and len({r["case_id"] for r in rows}) == 20,
+                  "search relevance dataset has 20 unique cases")
+          require(all(r["intent_type"] in {"informational", "navigational", "transactional", "local"}
+                      and r["relevance_grade"] in {"0", "1", "2", "3"}
+                      and r["rationale"].strip() for r in rows),
+                  "search relevance labels, grades and rationales are valid")
+
+          # Check relative Markdown links and image references within repository.
+          broken = []
+          for md in root.rglob("*.md"):
+              if ".git" in md.parts:
+                  continue
+              text = md.read_text(encoding="utf-8")
+              for target in re.findall(r"!?(?:\[[^\]]*\])\(([^)]+)\)", text):
+                  target = target.strip().split()[0].strip("<>")
+                  if not target or target.startswith(("https://", "http://", "mailto:", "#", "data:")):
+                      continue
+                  target = target.split("#", 1)[0]
+                  if not target:
+                      continue
+                  resolved = (md.parent / target).resolve()
+                  if not resolved.exists():
+                      broken.append(f"{md}: {target}")
+          require(not broken, "all relative Markdown links resolve" if not broken else
+                  "broken Markdown links: " + "; ".join(broken))
+          print("Portfolio dataset and link audit completed.")
+          PY
