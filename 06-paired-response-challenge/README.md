@@ -1,4 +1,4 @@
-# Project 03 — Paired AI Response Evaluation Challenge
+# Paired AI Response Evaluation Challenge
 
 **Purpose:** Demonstrate comparative evaluation, evidence-based preference decisions, error detection, and actionable evaluator feedback.
 
