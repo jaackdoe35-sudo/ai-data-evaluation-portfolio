@@ -150,6 +150,11 @@ jobs:
               if not math.isclose(float(r["overall_mean"]), expected, abs_tol=1e-9):
                   raise AssertionError(f"overall_mean mismatch for {r['id']}")
           require(True, "all response-evaluation scores and row means are valid")
+          dimension_means = {d: sum(float(r[d]) for r in rows) / len(rows) for d in dims}
+          expected_dimensions = {"factuality": 3.53, "instruction_following": 3.80,
+                                 "completeness": 3.63, "clarity": 4.70, "safety_judgment": 4.23}
+          require(all(round(dimension_means[k], 2) == v for k, v in expected_dimensions.items()),
+                  "response-evaluation dimension means match findings report")
           mean = sum(float(r["overall_mean"]) for r in rows) / len(rows)
           require(round(mean, 2) == 3.98, "response-evaluation overall mean matches findings report")
           severity = Counter(r["issue_severity"] for r in rows)
@@ -162,6 +167,17 @@ jobs:
           require(len({r["id"] for r in rows}) == len(rows), "introductory annotation IDs are unique")
           require(all(r["message"].strip() and r["annotation_rationale"].strip() for r in rows),
                   "introductory annotation messages and rationales are populated")
+          require(all(r["intent"] in {"account_access", "billing", "cancellation", "feedback",
+                                     "other", "product_information", "shipping", "technical_support"}
+                      and r["sentiment"] in {"positive", "neutral", "negative", "mixed"} for r in rows),
+                  "introductory annotation labels match the documented taxonomy")
+          require(Counter(r["intent"] for r in rows) ==
+                  {"account_access": 7, "billing": 9, "cancellation": 5, "feedback": 8,
+                   "other": 1, "product_information": 6, "shipping": 7, "technical_support": 7},
+                  "introductory annotation intent counts match QA report")
+          require(Counter(r["sentiment"] for r in rows) ==
+                  {"mixed": 3, "negative": 20, "neutral": 21, "positive": 6},
+                  "introductory annotation sentiment counts match QA report")
 
           # End-to-end annotation case study.
           rows = load(Path("09-end-to-end-annotation-case-study/annotated_dataset.csv"))
@@ -170,6 +186,14 @@ jobs:
           require(all(r["message_text"].strip() and r["annotation_rationale"].strip() for r in rows),
                   "end-to-end messages and rationales are populated")
           allowed = {
+              "primary_intent": {"account_access", "account_closure", "profile_update", "card_activation",
+                  "card_delivery", "card_replacement_address", "card_not_working", "card_payment_declined",
+                  "contactless_payment_issue", "card_payment_dispute", "card_bill_payment_status",
+                  "card_retained_by_atm", "lost_card", "suspected_fraud", "cash_withdrawal_dispute",
+                  "withdrawal_limit", "withdrawal_limit_change", "transfer_status", "transfer_information",
+                  "transfer_cancellation", "transfer_reversal_request", "transfer_reference_issue",
+                  "duplicate_transaction", "duplicate_charge", "fee_information", "refund_status",
+                  "pin_help", "intent_unclear"},
               "sentiment": {"positive", "neutral", "negative", "mixed"},
               "urgency": {"routine", "standard", "elevated", "urgent"},
               "pii_types": {"none", "phone", "email", "card_last4"},
@@ -183,11 +207,33 @@ jobs:
               require((pii == "none" and span == "") or
                       (pii != "none" and span in {"[PHONE]", "[EMAIL]", "[LAST4]"}),
                       f"PII tag/span consistent for {r['record_id']}")
+              require((pii == "none" and not any(t in r["message_text"] for t in
+                      ("[PHONE]", "[EMAIL]", "[LAST4]"))) or
+                      (pii != "none" and span in r["message_text"]),
+                      f"PII token appears in source message for {r['record_id']}")
           counts = Counter(r["urgency"] for r in rows)
           require(counts == {"standard": 14, "routine": 9, "elevated": 9, "urgent": 8},
                   "end-to-end urgency distribution matches QA report")
           require(sum(r["clarification_flag"] == "yes" for r in rows) == 6,
                   "end-to-end clarification count matches QA report")
+          require(Counter(r["sentiment"] for r in rows) == {"negative": 24, "neutral": 16},
+                  "end-to-end sentiment distribution matches QA report")
+          require(Counter(r["pii_types"] for r in rows) ==
+                  {"none": 37, "phone": 1, "email": 1, "card_last4": 1},
+                  "end-to-end PII distribution matches QA report")
+          require(Counter(r["primary_intent"] for r in rows) ==
+                  {"account_access": 2, "account_closure": 1, "card_activation": 1,
+                   "card_bill_payment_status": 1, "card_delivery": 2, "card_not_working": 1,
+                   "card_payment_declined": 1, "card_payment_dispute": 1,
+                   "card_replacement_address": 1, "card_retained_by_atm": 1,
+                   "cash_withdrawal_dispute": 1, "contactless_payment_issue": 1,
+                   "duplicate_charge": 1, "duplicate_transaction": 1, "fee_information": 3,
+                   "intent_unclear": 3, "lost_card": 1, "pin_help": 1, "profile_update": 1,
+                   "refund_status": 2, "suspected_fraud": 4, "transfer_cancellation": 1,
+                   "transfer_information": 1, "transfer_reference_issue": 1,
+                   "transfer_reversal_request": 1, "transfer_status": 3,
+                   "withdrawal_limit": 1, "withdrawal_limit_change": 1},
+                  "end-to-end primary intent counts match QA report")
 
           # Completed realistic response-review worksheet.
           rows = load(Path("08-realistic-response-review/evaluation-results.csv"))
@@ -208,6 +254,12 @@ jobs:
                       and r["relevance_grade"] in {"0", "1", "2", "3"}
                       and r["rationale"].strip() for r in rows),
                   "search relevance labels, grades and rationales are valid")
+          require(Counter(r["relevance_grade"] for r in rows) ==
+                  {"3": 10, "2": 3, "1": 5, "0": 2},
+                  "search relevance grade distribution matches QA summary")
+          require(Counter(r["intent_type"] for r in rows) ==
+                  {"informational": 10, "navigational": 4, "transactional": 3, "local": 3},
+                  "search relevance intent distribution matches QA summary")
 
           # Check relative Markdown links and image references within repository.
           broken = []
