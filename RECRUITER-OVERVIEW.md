@@ -22,6 +22,10 @@ Portfolio evidence focuses on structured text annotation, AI response evaluation
 - [Image annotation and visual QA](18-image-annotation/README.md) — completed self-directed practice sample using an original synthetic vector scene, four object categories, pixel bounding boxes, structured JSON and documented quality checks. It is not a natural-image benchmark or independently adjudicated dataset.
 - [Video transcript and caption QA](19-video-annotation/README.md) — completed 22-cue sample checked against NASA's published SRT for cue IDs, timestamps and caption text. It is not independent transcription, audio verification, visual verification or frame-level object annotation.
 
+## Security-focused evaluation practice
+
+- [LLM security evaluation case study](20-llm-security-evaluation/README.md) — 12 controlled test specifications covering prompt injection, instruction hierarchy, untrusted-data boundaries, tool authorization, data disclosure, secret handling and refusal consistency. The scenario catalogue and structural validator are completed. **No live model execution, vulnerability discovery, exploitability validation or mitigation testing is claimed.** This is foundational self-directed practice, not professional red-team experience.
+
 ## Supporting quality tools
 
 These modest Python demonstrations support annotation and evaluation workflows; they are not a separate software-development offering.
@@ -55,7 +59,7 @@ All annotation, response-evaluation and search-relevance examples are synthetic 
 
 Preference scores represent agreement with author-created reference material only. The end-to-end annotation case study was completed in a single pass and self-audited; it does not establish independent annotator agreement, production QA, throughput or professional client experience.
 
-The image sample is synthetic and has not been independently adjudicated. The video transcript/caption sample is source-matched to NASA's SRT but has not been checked against the audio or video. No completed independent audio-transcription or frame-level visual-annotation capability is claimed.
+The image sample is synthetic and has not been independently adjudicated. The video transcript/caption sample is source-matched to NASA's SRT but has not been checked against the audio or video. The security evaluation catalogue has not been executed against a live model. No completed independent audio-transcription or frame-level visual-annotation capability is claimed.
 
 ## Suitable role families
 
@@ -80,6 +84,7 @@ The image sample is synthetic and has not been independently adjudicated. The vi
 - Data Validation Assistant
 - Research Data Assistant
 - Taxonomy / Ontology Assistant
+- AI Safety Evaluation Assistant / LLM Security Evaluation Trainee — only where foundational practice is accepted and the role does not require professional penetration-testing experience
 
 These are adjacent role families, not claims of prior employment or specialist credentials. Apply where the task requirements match the demonstrated skills and any additional assessment requirements can be met.
 
