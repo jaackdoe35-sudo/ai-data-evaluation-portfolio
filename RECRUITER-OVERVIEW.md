@@ -17,23 +17,18 @@ Portfolio evidence focuses on structured text annotation, AI response evaluation
 | 5 | [Realistic response review](08-realistic-response-review/README.md) | Six longer scenario-based comparisons, five-dimension scoring, documented revision of an initial decision and reflection. |
 | 6 | [Paired-response challenge](06-paired-response-challenge/README.md) and [advanced blind evaluation](07-advanced-blind-evaluation/README.md) | Comparative response judgments, severity analysis, source fidelity, instruction compliance and actionable feedback. |
 
-## Modality-specific work
-
-- [Image annotation and visual QA](18-image-annotation/README.md) — completed self-directed practice sample using an original synthetic vector scene, four object categories, pixel bounding boxes, structured JSON and documented quality checks. It is not a natural-image benchmark or independently adjudicated dataset.
-- [Video annotation and temporal event review](19-video-annotation/README.md) — source and CC0 file licence are documented; frame-level annotations remain in development and are not claimed as completed experience.
-
 ## Supporting quality tools
 
-These modest Python demonstrations support annotation and evaluation workflows; they are not a separate software-development offering.
+These modest Python demonstrations support annotation and evaluation workflows. They are not a separate software-development offering.
 
-- [Annotation CSV Validator](10-annotation-csv-validator/README.md)
-- [Annotation Consistency Checker](11-annotation-consistency-checker/README.md)
-- [AI Response Score Calculator](12-ai-response-score-calculator/README.md)
-- [Annotation QA Dashboard](13-annotation-qa-dashboard/README.md)
+- [Annotation CSV Validator](10-annotation-csv-validator/README.md) — required-field, schema, categorical, duplicate-ID and synthetic PII-token checks.
+- [Annotation Consistency Checker](11-annotation-consistency-checker/README.md) — selected cross-record and cross-field flags for human review.
+- [AI Response Score Calculator](12-ai-response-score-calculator/README.md) — arithmetic recalculation and descriptive score reporting.
+- [Annotation QA Dashboard](13-annotation-qa-dashboard/README.md) — structural and categorical summaries in a static HTML report.
 
 ## Supporting QA scale-test evidence
 
-The four supporting utilities were exercised on deterministic synthetic datasets of up to 100,000 rows in a successful GitHub Actions run. The [scale-test report](16-annotation-qa-stress-test/scale-test-report.md) publishes measured runtimes, Python-tracked memory allocations, runner details and limitations. This is a bounded synthetic test, not evidence of client-data performance or production readiness.
+The four supporting utilities were exercised on deterministic synthetic datasets of up to 100,000 rows in a successful GitHub Actions run. The [scale-test report](16-annotation-qa-stress-test/scale-test-report.md) publishes the measured runtimes, Python-tracked memory allocations, runner details and limitations. This is a bounded synthetic test, not evidence of client-data performance or production readiness.
 
 ## Working approach
 
@@ -55,34 +50,21 @@ All annotation, response-evaluation and search-relevance examples are synthetic 
 
 Preference scores represent agreement with author-created reference material only. The end-to-end annotation case study was completed in a single pass and self-audited; it does not establish independent annotator agreement, production QA, throughput or professional client experience.
 
-The image sample is synthetic and has not been independently adjudicated. Video annotation remains in development. No completed audio-transcription capability is claimed.
+The supporting tools are small demonstrations against the documented synthetic schemas. Their automated tests cover selected rule behavior; they do not prove semantic annotation accuracy or production readiness.
+
+The transcription-formatting sample is constructed text, not an audio transcription. It should not be interpreted as evidence of completed audio transcription work.
 
 ## Suitable role families
 
-### Strongest current evidence
-
 - AI Data Annotator / Annotation Specialist
-- Text Data Labeler
 - AI Response Evaluator / LLM Evaluator
 - AI Trainer / AI Data Reviewer
-- Search Relevance Evaluator
-- Content Relevance Analyst
 - Annotation Quality Reviewer
-- Data Labeling Quality Reviewer
-
-### Adjacent roles to target selectively
-
 - Data Quality Assurance Analyst
-- AI Quality Analyst
-- Content Quality Reviewer
-- Trust & Safety / Content Reviewer
-- Ad Quality Rater
-- Data Validation Assistant
-- Research Data Assistant
-- Taxonomy / Ontology Assistant
+- Search and Content Relevance Evaluator
 
-These are adjacent role families, not claims of prior employment or specialist credentials. Apply where the task requirements match the demonstrated skills and any additional assessment requirements can be met.
+Actual eligibility depends on each employer's location restrictions, language requirements, assessment, device requirements, schedule and payment arrangements.
 
 ## Contact
 
-Contact: **tobepatrickjnr@gmail.com**
+Use the repository owner's GitHub profile to contact the candidate.
