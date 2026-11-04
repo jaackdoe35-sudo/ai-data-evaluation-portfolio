@@ -63,8 +63,6 @@ The transcription-formatting sample is constructed text, not an audio transcript
 - Data Quality Assurance Analyst
 - Search and Content Relevance Evaluator
 
-Actual eligibility depends on each employer's location restrictions, language requirements, assessment, device requirements, schedule and payment arrangements.
-
 ## Contact
 
-Use the repository owner's GitHub profile to contact the candidate.
+Contact: **tobepatrickjnr@gmail.com**
