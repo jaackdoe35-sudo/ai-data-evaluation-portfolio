@@ -17,6 +17,13 @@ Portfolio evidence focuses on structured text annotation, AI response evaluation
 | 5 | [Realistic response review](08-realistic-response-review/README.md) | Six longer scenario-based comparisons, five-dimension scoring, documented revision of an initial decision and reflection. |
 | 6 | [Paired-response challenge](06-paired-response-challenge/README.md) and [advanced blind evaluation](07-advanced-blind-evaluation/README.md) | Comparative response judgments, severity analysis, source fidelity, instruction compliance and actionable feedback. |
 
+## Modality projects — in development
+
+- [Audio transcription and annotation](17-audio-transcription-annotation/README.md) — source release and licence recorded; individual clip selection, independent transcription and QA are pending.
+- [Image annotation and visual QA](18-image-annotation/README.md) — annotation schema and quality checks documented; exact image source and annotation are pending.
+
+These are development projects, not yet evidence of completed audio or image annotation work.
+
 ## Supporting quality tools
 
 These modest Python demonstrations support annotation and evaluation workflows. They are not a separate software-development offering.
