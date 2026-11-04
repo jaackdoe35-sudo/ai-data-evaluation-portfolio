@@ -20,7 +20,7 @@ This repository contains self-directed practice and evaluation work demonstratin
 ## Modality projects
 
 - [Image annotation and visual QA](18-image-annotation/README.md) — completed self-directed synthetic sample with four object labels, pixel bounding boxes, JSON output and documented QA.
-- [Video annotation and temporal event review](19-video-annotation/README.md) — source and file-level licence verified; frame-level annotation remains in development.
+- [Video transcript annotation and caption QA](19-video-annotation/README.md) — completed 22-cue sample derived from NASA's published SRT; transcript text and timestamps checked against the source file, but not independently verified against audio or video.
 
 ## Supporting QA tools
 
