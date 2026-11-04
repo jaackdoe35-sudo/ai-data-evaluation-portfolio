@@ -1,51 +1,38 @@
 # 18 — Image Annotation and Visual Quality Review
 
-<badge>PLANNED — no image annotated yet</badge>
+**Status: completed self-directed synthetic practice sample**
 
-## Objective
+## Source and task
 
-Demonstrate image annotation using a source image whose individual licence and reuse conditions can be verified.
+The included `sample-scene.svg` is an original vector illustration created for this exercise, not a third-party photograph or dataset asset.
 
-## Planned task
+- Source type: original synthetic vector artwork
+- Licence: CC0 1.0 dedication for this original portfolio asset
+- Dimensions: 1440 × 900 pixels
+- Task: object categorisation and axis-aligned bounding-box annotation
+- Coordinate convention: absolute pixels, origin at top-left; boxes are [x_min, y_min, x_max, y_max]
 
-A compact image-annotation case study will include:
+![Synthetic kitchen-counter scene](sample-scene.svg)
 
-- Image-level description grounded only in visible content
-- Object/category labels
-- Attributes such as colour, state and count where visually supportable
-- Bounding boxes for clearly identifiable objects when useful
-- Occlusion, truncation and ambiguity flags
-- A QA pass for missed objects, duplicate boxes, invalid labels and unsupported descriptions
+## Annotations
 
-## Source and rights policy
+| Object ID | Category | Bounding box | Visible attributes | Occlusion | Truncation | Confidence |
+|---|---|---:|---|---|---|---:|
+| IMG-001 | mug | [280, 495, 665, 765] | red body; light interior; attached handle | none | no | 0.99 |
+| IMG-002 | bottle | [820, 150, 1000, 740] | transparent body; silver-coloured cap | none | no | 0.98 |
+| IMG-003 | banana | [690, 638, 1156, 860] | yellow peel; brown stem | none | no | 0.98 |
+| IMG-004 | spoon | [175, 758, 700, 855] | metallic appearance; bowl and handle | none | no | 0.97 |
 
-Select an individual image from Wikimedia Commons or another source only after checking the exact file page, author, licence, attribution requirements, and any restrictions. Do not assume that every image on a platform has the same licence. Record the source URL and licence in the completed sample. If the licence requires attribution or share-alike terms, comply with them.
+Structured version: [annotations.json](annotations.json).
 
-## Annotation schema
+## QA review
 
-| Field | Description |
-|---|---|
-| image_id | Stable sample identifier |
-| image_source | Exact source-file page |
-| licence | Exact file-level licence |
-| object_id | Unique object annotation ID |
-| category | Controlled object label |
-| bbox | Coordinates using a documented convention |
-| attributes | Visible, task-relevant properties |
-| occlusion | None / partial / substantial |
-| truncation | Whether the object crosses the image boundary |
-| confidence | Annotator confidence with defined scale |
-| reviewer_note | Evidence-based ambiguity or QA note |
+- Four visible foreground objects annotated once each.
+- All boxes have positive width and height and remain within the 1440 × 900 image.
+- Labels use singular common-object categories.
+- Attributes are limited to visible appearance; no identity, intent or hidden properties are inferred.
+- No object is materially obscured in this deliberately simple scene.
 
-## Quality checks
+## Limitations
 
-- Bounding boxes use one documented coordinate convention.
-- Boxes stay within image dimensions and have positive width and height.
-- Labels come from the declared taxonomy.
-- Duplicate or overlapping boxes are reviewed rather than automatically treated as errors.
-- Descriptions do not infer identity, intent, relationships or hidden properties.
-- Ambiguous and partially visible objects are flagged consistently.
-
-## Evidence boundary
-
-This is a planned project. No image has yet been selected, annotated or reviewed. It must not be presented as completed image-annotation experience until those steps are documented.
+This is a controlled synthetic vector scene, not a natural-image benchmark. Coordinates were manually defined from the authored vector geometry and have not been independently adjudicated. The sample demonstrates basic object labelling, bounding-box conventions, structured output and a documented QA pass; it does not establish production speed or independent inter-annotator agreement.
