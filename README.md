@@ -2,11 +2,11 @@
 
 **Target roles:** AI Data Annotator · AI Response Evaluator · LLM Evaluator · Annotation Quality Reviewer · Data Quality Analyst · Search Relevance Evaluator
 
-This repository contains self-directed, synthetic work samples demonstrating structured annotation, response evaluation, search relevance judgment, quality checks, and small supporting data-validation tools.
+This repository contains self-directed practice and evaluation work demonstrating structured text annotation, response evaluation, search relevance judgment, quality checks, and supporting data-validation tools. Modality-specific projects are being added with explicit source, licence and evidence records.
 
 **[Recruiter overview](RECRUITER-OVERVIEW.md)** · **[Documentation, semantic and reference audit](15-semantic-and-reference-audit/README.md)** · **[QA scale-test report](16-annotation-qa-stress-test/scale-test-report.md)**
 
-## Start here — strongest work samples
+## Start here — strongest completed work samples
 
 | Priority | Work sample | What a reviewer can inspect |
 |---|---|---|
@@ -16,6 +16,15 @@ This repository contains self-directed, synthetic work samples demonstrating str
 | 4 | [Search relevance evaluation](14-search-relevance-evaluation/README.md) | 20 synthetic query-result cases, intent types, relevance grades and rationales |
 | 5 | [Realistic response review](08-realistic-response-review/README.md) | Six scenario-based reviews, five-dimension scores, decision revision and reflection |
 | 6 | [Paired-response evaluation](06-paired-response-challenge/README.md) and [advanced blind evaluation](07-advanced-blind-evaluation/README.md) | Comparative judgment, error severity, evidence-based preference and evaluator feedback |
+
+## Modality projects — in development
+
+These projects are scaffolds until their sample annotations and quality reviews are complete. They are not yet evidence of completed modality-specific work.
+
+- [Audio transcription and annotation](17-audio-transcription-annotation/README.md) — planned independent transcription and QA using a selected Common Voice Nigerian Pidgin English source clip. Source release and licence recorded; clip selection and transcription remain pending.
+- [Image annotation and visual QA](18-image-annotation/README.md) — planned image-level descriptions, object labels, bounding boxes and annotation quality checks. Exact image and file-level licence remain to be selected and verified.
+
+Video annotation and multimodal evaluation will be added after the audio and image exercises have been completed and reviewed.
 
 ## Supporting QA tools
 
@@ -32,7 +41,7 @@ The tools use Python's standard library. Their tests cover selected behaviors; t
 
 - [Quality assurance report](03-quality-assurance/quality-assurance-report.md) — structural checks and label distributions for the 50-row annotation sample.
 - [Evaluation methodology](05-skills/skills-and-methodology.md) — documented evaluation and annotation workflows.
-- [Transcription-formatting example](04-transcription/transcription-sample.md) — constructed text demonstrating speaker labels and uncertainty conventions; **not an audio transcription**.
+- [Transcription-formatting example](04-transcription/transcription-sample.md) — constructed text demonstrating speaker labels and uncertainty conventions; **not an audio transcription**. The new audio project is intended to provide real audio-based evidence after completion.
 
 ## Working approach
 
@@ -46,7 +55,7 @@ The tools use Python's standard library. Their tests cover selected behaviors; t
 
 ## Evidence boundaries and limitations
 
-All annotation, evaluation and search-relevance examples are synthetic, self-directed practice materials. They are not paid work, employment, client engagements, proprietary production data, or externally sourced benchmark results.
+Existing annotation, evaluation and search-relevance examples are synthetic, self-directed practice materials. They are not paid work, employment, client engagements, proprietary production data, or externally sourced benchmark results.
 
 Preference scores are agreement with author-created reference material, not independently validated proficiency scores. The semantic and reference-key audit records corrections and limitations. The end-to-end annotation case study was produced in a single pass and self-audited; it does not establish independent annotator agreement, production throughput, or professional client experience.
 
@@ -61,8 +70,6 @@ The supporting tools are small rule-based demonstrations. Passing tests verifies
 - Data Quality Assurance Analyst
 - Search and Content Relevance Evaluator
 
-Actual eligibility depends on each employer's location restrictions, language requirements, assessment, schedule, device requirements and payment arrangements.
-
 ## Contact
 
-Use the repository owner's GitHub profile to contact the candidate.
+Contact: **tobepatrickjnr@gmail.com**
