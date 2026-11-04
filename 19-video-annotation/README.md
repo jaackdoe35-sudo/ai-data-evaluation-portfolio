@@ -1,6 +1,6 @@
 # 19 — Video Transcript Annotation and Caption QA
 
-**Status: source and transcript verified; sample is caption-derived and not audio-verified.**
+**Status: source and transcript verified; caption-based sample published; video binary remains hosted by NASA.**
 
 ## Selected video
 
@@ -10,35 +10,36 @@
 - [Direct WebM video file](https://svs.gsfc.nasa.gov/vis/a010000/a013200/a013270/Apollo11.webm) — 154.4 MB, 1920 × 1080
 - [Official SRT caption file](https://svs.gsfc.nasa.gov/vis/a010000/a013200/a013270/Apollo11.en_US.srt)
 - [Official WebVTT caption file](https://svs.gsfc.nasa.gov/vis/a010000/a013200/a013270/Apollo11.en_US.vtt)
-- Duration: source page identifies the work as a 1969 documentary; the supplied SRT runs beyond the first minute and contains timed captions.
 - Source credit: NASA's Goddard Space Flight Center.
 
-NASA states that its content is generally not subject to copyright in the United States and may be used for educational or informational purposes, subject to its media guidelines and third-party-material exceptions. This page credits NASA Goddard Space Flight Center. The portfolio sample is an educational, factual annotation exercise and does not imply NASA endorsement. See [NASA media usage guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/).
+NASA states that its content is generally not subject to copyright in the United States and may be used for educational or informational purposes, subject to its media guidelines and third-party-material exceptions. See [NASA media usage guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/). This portfolio exercise does not imply NASA endorsement.
 
 ## Sample contents
 
-- `caption-sample.json`: a short, source-attributed excerpt of the official SRT, preserving cue IDs, timestamps, speaker labels and non-speech descriptions.
-- `README.md`: annotation scope, QA checks and evidence limitations.
+- [`caption-sample.json`](./caption-sample.json): 22 source-attributed caption cues with IDs, timestamps, text, speaker labels where supplied, cue classifications and QA notes.
+- The excerpt covers 00:00:00–00:01:31.960 of the official SRT.
 
 ## Annotation scope
 
-This is **video-transcript / caption annotation**, not visual object tracking. The text is taken from NASA's published caption file. The sample preserves source wording rather than silently correcting it.
+This is **video-transcript / caption annotation**, not visual object tracking. The sample is derived from NASA's published SRT. Source wording is preserved rather than silently corrected.
 
 Review dimensions:
 1. Timestamp syntax and chronological order.
 2. Cue segmentation and readability.
 3. Speaker-label consistency where labels are present in the source.
-4. Treatment of non-speech descriptions such as `[cheering in Goddard control room]`.
-5. Uncertainty and possible source-caption defects flagged without inventing corrections.
+4. Classification of on-screen text versus speech.
+5. Source-caption irregularities flagged without inventing corrections.
 
 ## Evidence boundary
 
-The official NASA page lists the video and downloadable SRT/VTT captions and states that a complete transcript is available. The SRT content was inspected directly. The video has **not** been independently listened to or visually reviewed in this workflow. Therefore:
+The official SRT was retrieved and inspected. The video file itself was not successfully downloaded into this workflow, so it has not been uploaded into the GitHub repository or independently listened to / visually reviewed. The source video remains directly downloadable from NASA using the link above.
+
+Therefore:
 - Caption wording is source-derived, not independently transcribed.
 - Audio-to-caption accuracy is unverified.
-- Speaker identity and sound-event labels are retained from the source captions, not independently confirmed.
+- Speaker identity and visual text are retained from the source captions, not independently confirmed.
 - This sample does not establish professional production experience or independent transcription accuracy.
 
 ## Reproducibility
 
-Use the official NASA resource page and caption links above to retrieve the source material. The original recording remains hosted by NASA; this repository links to the source rather than redistributing the 154.4 MB video binary.
+Use the official NASA resource page and caption links above to retrieve the source media. The repository stores the compact annotation sample and links to NASA's original video rather than redistributing the 154.4 MB binary.
