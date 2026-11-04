@@ -20,7 +20,7 @@ This repository contains self-directed practice and evaluation work demonstratin
 ## Modality projects
 
 - [Image annotation and visual QA](18-image-annotation/README.md) — completed self-directed synthetic sample with four object labels, pixel bounding boxes, JSON output and documented QA.
-- [Video transcript annotation and caption QA](19-video-annotation/README.md) — transcript-based sample; source-to-sample validation is pending, and audio/video verification has not been performed.
+- [Video transcript annotation and caption QA](19-video-annotation/README.md) — 22-cue excerpt checked against NASA's official SRT; audio/video verification has not been performed.
 
 ## Supporting QA tools
 
