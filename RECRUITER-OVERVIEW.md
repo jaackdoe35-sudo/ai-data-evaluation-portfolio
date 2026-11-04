@@ -56,12 +56,33 @@ The transcription-formatting sample is constructed text, not an audio transcript
 
 ## Suitable role families
 
+### Strongest current evidence
+
 - AI Data Annotator / Annotation Specialist
+- Text Data Labeler
 - AI Response Evaluator / LLM Evaluator
 - AI Trainer / AI Data Reviewer
+- Search Relevance Evaluator
+- Content Relevance Analyst
 - Annotation Quality Reviewer
+- Data Labeling Quality Reviewer
+
+### Adjacent roles to target selectively
+
 - Data Quality Assurance Analyst
-- Search and Content Relevance Evaluator
+- AI Quality Analyst
+- Content Quality Reviewer
+- Trust & Safety / Content Reviewer
+- Ad Quality Rater
+- Data Validation Assistant
+- Research Data Assistant
+- Taxonomy / Ontology Assistant
+
+These are adjacent role families, not claims of prior employment or specialist credentials. Apply where the task requirements match the demonstrated skills and any additional assessment requirements can be met.
+
+### Modality-specific roles — evidence in development
+
+The portfolio is being expanded beyond text. Audio transcription and audio annotation, image annotation, video annotation and multimodal evaluation should be listed as demonstrated capabilities only after each has a completed, documented sample with source/licence information, annotation guidelines, quality checks and limitations. Until then, these are development targets rather than established experience.
 
 ## Contact
 
