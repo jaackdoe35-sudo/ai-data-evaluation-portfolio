@@ -8,7 +8,7 @@ class SiteParser(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.ids=set(); self.fragments=[]; self.https_links=[]
-        self.buttons=0; self.main_count=0; self.errors=[]; self.skip_link=False
+        self.buttons=0; self.main_count=0; self.errors=[]; self.skip_link=False; self.skip_link=False
     def handle_starttag(self, tag, attrs):
         attrs=dict(attrs)
         ident=attrs.get("id")
@@ -18,6 +18,7 @@ class SiteParser(HTMLParser):
         if tag=="a":
             href=attrs.get("href","")
             if href.startswith("#"): self.fragments.append(href[1:])
+            if "skip" in attrs.get("class","").split() and href=="#main": self.skip_link=True
             elif href.startswith("https://"): self.https_links.append(href)
             elif href and not href.startswith(("mailto:","tel:")):
                 self.errors.append("unsupported link target: "+href)
