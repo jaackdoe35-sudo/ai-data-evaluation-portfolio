@@ -1,0 +1,24 @@
+name: Portfolio website quality checks
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'scripts/validate_portfolio_site.py'
+      - '.github/workflows/website-quality.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'scripts/validate_portfolio_site.py'
+      - '.github/workflows/website-quality.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate-static-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate portfolio HTML structure and accessibility safeguards
+        run: python3 scripts/validate_portfolio_site.py
