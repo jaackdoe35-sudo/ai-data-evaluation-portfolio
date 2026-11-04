@@ -1,0 +1,205 @@
+{
+  "source": {
+    "title": "Apollo 11: This Is Goddard",
+    "publisher": "NASA Goddard Space Flight Center",
+    "video_url": "https://svs.gsfc.nasa.gov/13270",
+    "caption_url": "https://svs.gsfc.nasa.gov/vis/a010000/a013200/a013270/Apollo11.en_US.srt",
+    "caption_format": "SRT",
+    "excerpt": "00:00:00.000–00:01:31.960",
+    "method": "Transcribed text copied from the publisher-provided SRT; not independently checked against audio."
+  },
+  "annotations": [
+    {
+      "cue_id": 1,
+      "start": "00:00:00,000",
+      "end": "00:00:03,300",
+      "text": "[words on screen]\nNational Archives, www.archives.gov",
+      "type": "on_screen_text",
+      "qa": "Preserve bracketed visual-text cue; not spoken dialogue."
+    },
+    {
+      "cue_id": 2,
+      "start": "00:00:03,300",
+      "end": "00:00:06,180",
+      "text": "255.GSFC.69-510\nSource: 16mm RCK (P Copy)",
+      "type": "on_screen_text",
+      "qa": "Preserve source wording and punctuation."
+    },
+    {
+      "cue_id": 3,
+      "start": "00:00:06,380",
+      "end": "00:00:09,420",
+      "speaker": "JFK",
+      "text": "I believe that this nation should commit itself",
+      "type": "speech",
+      "qa": "Speaker label retained as supplied."
+    },
+    {
+      "cue_id": 4,
+      "start": "00:00:09,480",
+      "end": "00:00:13,500",
+      "text": "to achieving the goal before\nthis decade is out",
+      "type": "speech_continuation",
+      "qa": "No speaker label in source cue; do not infer one."
+    },
+    {
+      "cue_id": 5,
+      "start": "00:00:13,560",
+      "end": "00:00:17,200",
+      "text": "of landing a man on the Moon\nand returning him safely to the Earth.",
+      "type": "speech_continuation",
+      "qa": "Line break retained."
+    },
+    {
+      "cue_id": 6,
+      "start": "00:00:19,380",
+      "end": "00:00:24,040",
+      "speaker": "NARRATOR",
+      "text": "All is in readiness for the launch of Apollo 11 from Cape Kennedy.",
+      "type": "speech",
+      "qa": "Speaker label retained."
+    },
+    {
+      "cue_id": 7,
+      "start": "00:00:24,160",
+      "end": "00:00:28,080",
+      "text": "Mission Control at the Cape reports the countdown is proceeding on schedule.",
+      "type": "speech_continuation",
+      "qa": "No speaker label in source cue."
+    },
+    {
+      "cue_id": 8,
+      "start": "00:00:28,700",
+      "end": "00:00:31,600",
+      "text": "Astronauts Armstrong, Aldrin and Collins have suited up",
+      "type": "speech_continuation",
+      "qa": "Source spelling and punctuation retained."
+    },
+    {
+      "cue_id": 9,
+      "start": "00:00:31,600",
+      "end": "00:00:37,120",
+      "text": "and ingressed the Command Module aboard this 363-foot-high Saturn Apollo configuration.",
+      "type": "speech_continuation",
+      "qa": "Adjacent cue boundary is contiguous; valid chronological order."
+    },
+    {
+      "cue_id": 10,
+      "start": "00:00:37,200",
+      "end": "00:00:42,820",
+      "text": "Weather is satisfactory at the cape. It is estimated that about 1 million tourists",
+      "type": "speech_continuation",
+      "qa": "Source uses lowercase 'cape'; do not silently normalize."
+    },
+    {
+      "cue_id": 11,
+      "start": "00:00:42,820",
+      "end": "00:00:46,120",
+      "text": "are now converging toward the beaches for the launch.",
+      "type": "speech_continuation",
+      "qa": "Cue starts at previous cue end; chronological sequence valid."
+    },
+    {
+      "cue_id": 12,
+      "start": "00:00:46,120",
+      "end": "00:00:52,700",
+      "text": "12, 11, 10, 9 --\nIgnition sequence start --",
+      "type": "speech_or_countdown",
+      "qa": "Retain source dash punctuation."
+    },
+    {
+      "cue_id": 13,
+      "start": "00:00:52,700",
+      "end": "00:00:59,080",
+      "text": "6, 5, 4, 3, 2, 1, zero.",
+      "type": "speech_or_countdown",
+      "qa": "Cue boundary contiguous with cue 12."
+    },
+    {
+      "cue_id": 14,
+      "start": "00:00:59,080",
+      "end": "00:01:01,060",
+      "text": "All engine running.",
+      "type": "speech",
+      "qa": "Source wording retained; do not correct based on expectation."
+    },
+    {
+      "cue_id": 15,
+      "start": "00:01:01,060",
+      "end": "00:01:05,860",
+      "text": "Liftoff! We have a liftoff, 32 minutes past the hour.",
+      "type": "speech",
+      "qa": "Source punctuation retained."
+    },
+    {
+      "cue_id": 16,
+      "start": "00:01:05,880",
+      "end": "00:01:07,300",
+      "text": "Liftoff on Apollo 11.",
+      "type": "speech",
+      "qa": "Valid chronological sequence."
+    },
+    {
+      "cue_id": 17,
+      "start": "00:01:10,900",
+      "end": "00:01:12,220",
+      "text": "Tower cleared.",
+      "type": "speech",
+      "qa": "No speaker label in source cue."
+    },
+    {
+      "cue_id": 18,
+      "start": "00:01:12,220",
+      "end": "00:01:14,960",
+      "speaker": "ARMSTRONG",
+      "text": "We got a roll program.",
+      "type": "speech",
+      "qa": "Speaker label retained."
+    },
+    {
+      "cue_id": 19,
+      "start": "00:01:14,960",
+      "end": "00:01:19,400",
+      "speaker": "NARRATOR",
+      "text": "Neil Armstrong reporting the roll and pitch program, which puts Apollo 11 on a proper heading.",
+      "type": "speech",
+      "qa": "Cue starts at previous cue end; labels preserved."
+    },
+    {
+      "cue_id": 20,
+      "start": "00:01:19,400",
+      "end": "00:01:23,420",
+      "text": "[Text on screen: APOLLO 11... THIS IS GODDARD]",
+      "type": "on_screen_text",
+      "qa": "Classified as on-screen text, not speech."
+    },
+    {
+      "cue_id": 21,
+      "start": "00:01:23,420",
+      "end": "00:01:28,440",
+      "text": "[A LOOK BEHIND THE SCENES AT THE GODDARD SPACE FLIGHT CENTER",
+      "type": "on_screen_text",
+      "qa": "Source caption appears to leave bracketed text unclosed; flagged, not silently repaired."
+    },
+    {
+      "cue_id": 22,
+      "start": "00:01:28,440",
+      "end": "00:01:31,960",
+      "text": "DURING THE APOLLO 11 MISSION]",
+      "type": "on_screen_text",
+      "qa": "Continuation of preceding on-screen text; split across cues in source."
+    }
+  ],
+  "qa_summary": {
+    "cues_in_sample": 22,
+    "chronological_order": "PASS",
+    "timestamp_format": "PASS",
+    "source_wording_preserved": true,
+    "speaker_labels_inferred": false,
+    "source_caption_issues_flagged": [
+      "Cue 21 opens a bracketed on-screen text description that is closed in cue 22; preserve the source split but note its cross-cue structure."
+    ],
+    "audio_accuracy": "NOT VERIFIED",
+    "visual_accuracy": "NOT VERIFIED"
+  }
+}
