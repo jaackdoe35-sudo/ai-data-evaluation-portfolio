@@ -18,20 +18,21 @@ The included `sample-scene.svg` is an original vector illustration created for t
 
 | Object ID | Category | Bounding box | Visible attributes | Occlusion | Truncation | Confidence |
 |---|---|---:|---|---|---|---:|
-| IMG-001 | mug | [280, 495, 665, 765] | red body; light interior; attached handle | none | no | 0.99 |
-| IMG-002 | bottle | [820, 150, 1000, 740] | transparent body; silver-coloured cap | none | no | 0.98 |
-| IMG-003 | banana | [690, 638, 1156, 860] | yellow peel; brown stem | none | no | 0.98 |
-| IMG-004 | spoon | [175, 758, 700, 855] | metallic appearance; bowl and handle | none | no | 0.97 |
+| IMG-001 | mug | [276, 478, 683, 769] | red body; light interior; attached handle | none | no | 0.99 |
+| IMG-002 | bottle | [816, 146, 1004, 744] | transparent body; silver-coloured cap | none | no | 0.98 |
+| IMG-003 | banana | [685, 646, 1135, 865] | yellow peel; brown stem | none | no | 0.98 |
+| IMG-004 | spoon | [170, 747, 694, 859] | metallic appearance; bowl and handle | none | no | 0.97 |
 
 Structured version: [annotations.json](annotations.json).
 
 ## QA review
 
 - Four visible foreground objects annotated once each.
-- All boxes have positive width and height and remain within the 1440 × 900 image.
+- Bounding boxes include the visible object outlines and strokes in the authored SVG, have positive width and height, and remain within the 1440 × 900 image.
 - Labels use singular common-object categories.
 - Attributes are limited to visible appearance; no identity, intent or hidden properties are inferred.
 - No object is materially obscured in this deliberately simple scene.
+- Confidence values are author-assigned practice estimates, not calibrated probabilities or independently adjudicated scores.
 
 ## Limitations
 
