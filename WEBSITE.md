@@ -1,21 +1,29 @@
 # Portfolio website
 
-This is the public presentation layer for the AI Data Annotation & Evaluation portfolio.
+This is the public presentation layer for Patrick Tobe's AI Data Annotation & Evaluation portfolio.
 
 ## Design and behavior
 
-- Responsive, mobile-first single-page site.
-- Hybrid visual identity: dark editorial hero and demonstration area, warm neutral case-study sections, forest-green closing section.
-- Includes a self-contained response-evaluation interaction using a synthetic policy example.
-- Uses no external JavaScript libraries, fonts, analytics, tracking pixels, image dependencies or backend.
-- Honors reduced-motion preferences and uses semantic landmarks, keyboard-operable controls and accessible labels.
+- Responsive, mobile-first, single-page recruiter portfolio.
+- Clear name, target roles, strongest work samples and direct contact are visible without navigating away.
+- Forest-green and warm-neutral visual system with a dark editorial hero and evidence snapshot.
+- Nine focused sample links connect the landing page to the underlying GitHub materials.
+- Includes a keyboard-operable response-evaluation exercise with immediate explanatory feedback.
+- Uses no external JavaScript libraries, web fonts, analytics, tracking pixels, image dependencies or backend.
+- Includes semantic landmarks, a skip link, visible keyboard focus and reduced-motion support.
 
 ## Evidence policy
 
-All portfolio samples are synthetic and self-directed. The website links to the repository as the authoritative evidence source. It does not claim paid client experience, independent benchmark performance, production readiness or independent annotator agreement.
+Practice examples are self-directed. Datasets are synthetic except the caption exercise, which is based on a published NASA SRT. The page does not claim paid client work, independent benchmark performance, independent annotator agreement, production throughput or audio/video verification of the caption sample. The repository is the source of truth for full samples and limitations.
 
 ## Deployment
 
-The GitHub Actions workflow at `.github/workflows/pages.yml` publishes the repository root to GitHub Pages when changes to `index.html` or the workflow are pushed to `main`, or when manually dispatched. The repository's Pages build/deployment setting may need to be configured to use GitHub Actions. A successful workflow run and a reachable Pages URL must be verified before claiming the site is live.
+The production site is hosted by the Vercel project `ai-evaluation-lab` at:
+
+- https://ai-evaluation-lab-three.vercel.app
+
+The current production deployment was created from an inline source upload and verified as READY. Vercel's Git integration is **not connected** to this repository, so pushes to GitHub do not automatically deploy this Vercel project. Vercel SSO protection has been disabled to allow public recruiter access.
+
+The repository also contains an optional GitHub Pages workflow at `.github/workflows/pages.yml`. It is not the active production deployment path; GitHub Pages availability and configuration must be checked separately before using it.
 
 No custom domain or paid hosting is required.
