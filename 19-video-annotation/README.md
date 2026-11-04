@@ -1,6 +1,6 @@
 # 19 — Video Transcript Annotation and Caption QA
 
-**Status: transcript-based sample published; direct source-file validation is pending.**
+**Status: 22-cue transcript sample validated against NASA's official SRT; audio/video verification not performed.**
 
 ## Selected video
 
@@ -32,7 +32,7 @@ Review dimensions:
 
 ## Evidence boundary
 
-The SRT URL and NASA resource page are recorded, but direct retrieval of the SRT could not be completed in this workflow. The sample's exact correspondence to the published SRT is therefore not yet verified. The video file itself was not downloaded or uploaded into the GitHub repository, and has not been independently listened to or visually reviewed. The source video remains directly downloadable from NASA using the link above.
+The official NASA SRT was opened and compared cue-by-cue with all 22 sample records. Cue IDs, start/end timestamps and caption wording match the source excerpt. Source speaker prefixes (for example, `JFK:` and `NARRATOR:`) are represented in separate `speaker` fields where present. The video file itself was not downloaded or uploaded into the GitHub repository, and has not been independently listened to or visually reviewed. The source video remains directly downloadable from NASA using the link above.
 
 Therefore:
 - Caption wording is source-derived, not independently transcribed.
@@ -42,4 +42,4 @@ Therefore:
 
 ## Reproducibility
 
-Use the official NASA resource page and caption links above to retrieve the source media. Before treating this sample as validated, compare all 22 cue IDs, timestamps and text against the SRT. The repository stores the compact annotation sample and links to NASA's original video rather than redistributing the 154.4 MB binary.
+Use the official NASA resource page and caption links above to retrieve the source media. The 22-cue excerpt was checked against the SRT source; the comparison covers cue IDs, timestamps and caption wording. The repository stores the compact annotation sample and links to NASA's original video rather than redistributing the 154.4 MB binary.
