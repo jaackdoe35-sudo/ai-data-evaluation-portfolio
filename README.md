@@ -4,7 +4,7 @@
 
 This repository contains self-directed practice and evaluation work demonstrating structured text annotation, response evaluation, search relevance judgment, quality checks, and supporting data-validation tools.
 
-**[Recruiter overview](RECRUITER-OVERVIEW.md)** · **[Documentation, semantic and reference audit](15-semantic-and-reference-audit/README.md)** · **[QA scale-test report](16-annotation-qa-stress-test/scale-test-report.md)**
+**[Recruiter overview](RECRUITER-OVERVIEW.md)** · **[LLM security evaluation case study](20-llm-security-evaluation/README.md)** · **[Documentation, semantic and reference audit](15-semantic-and-reference-audit/README.md)** · **[QA scale-test report](16-annotation-qa-stress-test/scale-test-report.md)**
 
 ## Start here — strongest completed work samples
 
@@ -33,6 +33,10 @@ These are small, rule-based utilities supporting annotation and evaluation workf
 
 The tools use Python's standard library. Their tests cover selected behaviors; they do not establish semantic correctness or production readiness.
 
+## Security-focused evaluation practice
+
+- [LLM security evaluation case study](20-llm-security-evaluation/README.md) — 12 controlled scenario specifications covering prompt injection, instruction boundaries, tool authorization, data disclosure and refusal consistency. The catalogue and its structural validator are completed; **no live model tests have been run**, and no vulnerability or exploitability claim is made.
+
 ## Additional practice materials
 
 - [Quality assurance report](03-quality-assurance/quality-assurance-report.md)
@@ -55,7 +59,7 @@ Existing annotation, evaluation and search-relevance examples are synthetic, sel
 
 Preference scores are agreement with author-created reference material, not independently validated proficiency scores. The semantic and reference-key audit records corrections and limitations. The end-to-end annotation case study was produced in a single pass and self-audited; it does not establish independent annotator agreement, production throughput, or professional client experience.
 
-The image sample uses original synthetic vector artwork and has not been independently adjudicated. Video annotation remains in development. No completed audio-transcription capability is claimed.
+The image sample uses original synthetic vector artwork and has not been independently adjudicated. The video sample is transcript/caption QA only, not audio- or video-verified. The LLM security case study currently contains test specifications only; live model execution and security findings remain unverified. No completed audio-transcription capability is claimed.
 
 ## Roles this portfolio is designed to support
 
@@ -65,6 +69,7 @@ The image sample uses original synthetic vector artwork and has not been indepen
 - Annotation Quality Reviewer
 - Data Quality Assurance Analyst
 - Search and Content Relevance Evaluator
+- AI Safety / LLM Security Evaluation (foundational practice; subject to role requirements)
 
 ## Contact
 

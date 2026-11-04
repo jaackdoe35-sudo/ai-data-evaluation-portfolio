@@ -20,6 +20,7 @@ on:
       - "14-search-relevance-evaluation/**"
       - "15-semantic-and-reference-audit/**"
       - "16-annotation-qa-stress-test/**"
+      - "20-llm-security-evaluation/**"
       - "README.md"
       - "RECRUITER-OVERVIEW.md"
       - ".github/workflows/portfolio-tool-verification.yml"
@@ -60,6 +61,7 @@ jobs:
           - "12-ai-response-score-calculator"
           - "13-annotation-qa-dashboard"
           - "14-search-relevance-evaluation"
+          - "20-llm-security-evaluation"
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -117,6 +119,9 @@ jobs:
             13-annotation-qa-dashboard)
               python qa_dashboard.py sample_annotations.csv --output /tmp/annotation-dashboard.html
               test -s /tmp/annotation-dashboard.html
+              ;;
+            20-llm-security-evaluation)
+              python validator.py
               ;;
           esac
 
