@@ -17,25 +17,23 @@ Portfolio evidence focuses on structured text annotation, AI response evaluation
 | 5 | [Realistic response review](08-realistic-response-review/README.md) | Six longer scenario-based comparisons, five-dimension scoring, documented revision of an initial decision and reflection. |
 | 6 | [Paired-response challenge](06-paired-response-challenge/README.md) and [advanced blind evaluation](07-advanced-blind-evaluation/README.md) | Comparative response judgments, severity analysis, source fidelity, instruction compliance and actionable feedback. |
 
-## Modality projects — in development
+## Modality-specific work
 
-- [Audio transcription and annotation](17-audio-transcription-annotation/README.md) — source release and licence recorded; individual clip selection, independent transcription and QA are pending.
-- [Image annotation and visual QA](18-image-annotation/README.md) — annotation schema and quality checks documented; exact image source and annotation are pending.
-
-These are development projects, not yet evidence of completed audio or image annotation work.
+- [Image annotation and visual QA](18-image-annotation/README.md) — completed self-directed practice sample using an original synthetic vector scene, four object categories, pixel bounding boxes, structured JSON and documented quality checks. It is not a natural-image benchmark or independently adjudicated dataset.
+- [Video annotation and temporal event review](19-video-annotation/README.md) — source and CC0 file licence are documented; frame-level annotations remain in development and are not claimed as completed experience.
 
 ## Supporting quality tools
 
-These modest Python demonstrations support annotation and evaluation workflows. They are not a separate software-development offering.
+These modest Python demonstrations support annotation and evaluation workflows; they are not a separate software-development offering.
 
-- [Annotation CSV Validator](10-annotation-csv-validator/README.md) — required-field, schema, categorical, duplicate-ID and synthetic PII-token checks.
-- [Annotation Consistency Checker](11-annotation-consistency-checker/README.md) — selected cross-record and cross-field flags for human review.
-- [AI Response Score Calculator](12-ai-response-score-calculator/README.md) — arithmetic recalculation and descriptive score reporting.
-- [Annotation QA Dashboard](13-annotation-qa-dashboard/README.md) — structural and categorical summaries in a static HTML report.
+- [Annotation CSV Validator](10-annotation-csv-validator/README.md)
+- [Annotation Consistency Checker](11-annotation-consistency-checker/README.md)
+- [AI Response Score Calculator](12-ai-response-score-calculator/README.md)
+- [Annotation QA Dashboard](13-annotation-qa-dashboard/README.md)
 
 ## Supporting QA scale-test evidence
 
-The four supporting utilities were exercised on deterministic synthetic datasets of up to 100,000 rows in a successful GitHub Actions run. The [scale-test report](16-annotation-qa-stress-test/scale-test-report.md) publishes the measured runtimes, Python-tracked memory allocations, runner details and limitations. This is a bounded synthetic test, not evidence of client-data performance or production readiness.
+The four supporting utilities were exercised on deterministic synthetic datasets of up to 100,000 rows in a successful GitHub Actions run. The [scale-test report](16-annotation-qa-stress-test/scale-test-report.md) publishes measured runtimes, Python-tracked memory allocations, runner details and limitations. This is a bounded synthetic test, not evidence of client-data performance or production readiness.
 
 ## Working approach
 
@@ -57,9 +55,7 @@ All annotation, response-evaluation and search-relevance examples are synthetic 
 
 Preference scores represent agreement with author-created reference material only. The end-to-end annotation case study was completed in a single pass and self-audited; it does not establish independent annotator agreement, production QA, throughput or professional client experience.
 
-The supporting tools are small demonstrations against the documented synthetic schemas. Their automated tests cover selected rule behavior; they do not prove semantic annotation accuracy or production readiness.
-
-The transcription-formatting sample is constructed text, not an audio transcription. It should not be interpreted as evidence of completed audio transcription work.
+The image sample is synthetic and has not been independently adjudicated. Video annotation remains in development. No completed audio-transcription capability is claimed.
 
 ## Suitable role families
 
@@ -86,10 +82,6 @@ The transcription-formatting sample is constructed text, not an audio transcript
 - Taxonomy / Ontology Assistant
 
 These are adjacent role families, not claims of prior employment or specialist credentials. Apply where the task requirements match the demonstrated skills and any additional assessment requirements can be met.
-
-### Modality-specific roles — evidence in development
-
-The portfolio is being expanded beyond text. Audio transcription and audio annotation, image annotation, video annotation and multimodal evaluation should be listed as demonstrated capabilities only after each has a completed, documented sample with source/licence information, annotation guidelines, quality checks and limitations. Until then, these are development targets rather than established experience.
 
 ## Contact
 
