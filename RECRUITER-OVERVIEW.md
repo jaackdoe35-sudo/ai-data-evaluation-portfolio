@@ -20,7 +20,7 @@ Portfolio evidence focuses on structured text annotation, AI response evaluation
 ## Modality-specific work
 
 - [Image annotation and visual QA](18-image-annotation/README.md) — completed self-directed practice sample using an original synthetic vector scene, four object categories, pixel bounding boxes, structured JSON and documented quality checks. It is not a natural-image benchmark or independently adjudicated dataset.
-- [Video annotation and temporal event review](19-video-annotation/README.md) — source and CC0 file licence are documented; frame-level annotations remain in development and are not claimed as completed experience.
+- [Video transcript and caption QA](19-video-annotation/README.md) — completed 22-cue sample checked against NASA's published SRT for cue IDs, timestamps and caption text. It is not independent transcription, audio verification, visual verification or frame-level object annotation.
 
 ## Supporting quality tools
 
@@ -55,7 +55,7 @@ All annotation, response-evaluation and search-relevance examples are synthetic 
 
 Preference scores represent agreement with author-created reference material only. The end-to-end annotation case study was completed in a single pass and self-audited; it does not establish independent annotator agreement, production QA, throughput or professional client experience.
 
-The image sample is synthetic and has not been independently adjudicated. Video annotation remains in development. No completed audio-transcription capability is claimed.
+The image sample is synthetic and has not been independently adjudicated. The video transcript/caption sample is source-matched to NASA's SRT but has not been checked against the audio or video. No completed independent audio-transcription or frame-level visual-annotation capability is claimed.
 
 ## Suitable role families
 
