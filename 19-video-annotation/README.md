@@ -1,43 +1,44 @@
-# 19 — Video Annotation and Temporal Event Review
+# 19 — Video Transcript Annotation and Caption QA
 
-**Status: in development — source and file-level licence verified; frame annotations not completed**
+**Status: source and transcript verified; sample is caption-derived and not audio-verified.**
 
-## Selected source
+## Selected video
 
-[Tochi speaking Nigerian Pidgin.webm](https://commons.wikimedia.org/wiki/File:Tochi_speaking_Nigerian_Pidgin.webm), donated by Wikitongues through its oral-histories project.
+**Apollo 11: This Is Goddard** — NASA Goddard Space Flight Center, released July 31, 2019.
 
-- Duration: 3 minutes 21 seconds
-- Format: WebM (VP9 video / Opus audio)
-- Dimensions: 1920 × 1080
-- File-page licence: CC0 1.0 Universal Public Domain Dedication
+- [Official NASA video and resource page](https://svs.gsfc.nasa.gov/13270)
+- [Direct WebM video file](https://svs.gsfc.nasa.gov/vis/a010000/a013200/a013270/Apollo11.webm) — 154.4 MB, 1920 × 1080
+- [Official SRT caption file](https://svs.gsfc.nasa.gov/vis/a010000/a013200/a013270/Apollo11.en_US.srt)
+- [Official WebVTT caption file](https://svs.gsfc.nasa.gov/vis/a010000/a013200/a013270/Apollo11.en_US.vtt)
+- Duration: source page identifies the work as a 1969 documentary; the supplied SRT runs beyond the first minute and contains timed captions.
+- Source credit: NASA's Goddard Space Flight Center.
 
-The individual file page is the rights reference. The media has not yet been downloaded or inspected frame by frame in this workflow.
+NASA states that its content is generally not subject to copyright in the United States and may be used for educational or informational purposes, subject to its media guidelines and third-party-material exceptions. This page credits NASA Goddard Space Flight Center. The portfolio sample is an educational, factual annotation exercise and does not imply NASA endorsement. See [NASA media usage guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/).
 
-## Planned annotation schema
+## Sample contents
 
-| Field | Description |
-|---|---|
-| video_id | Stable source identifier |
-| start_time / end_time | Clip and event boundaries in seconds |
-| frame_time | Timestamp of sampled frame |
-| track_id | Stable ID for a visible object across frames |
-| category | Controlled visible-object label |
-| bbox | Frame-level pixel coordinates |
-| action_or_event | Observable event, if any |
-| scene_change | Yes/no with timestamp |
-| uncertainty_flag | Unclear boundaries or object continuity |
-| reviewer_note | Evidence-based QA note |
+- `caption-sample.json`: a short, source-attributed excerpt of the official SRT, preserving cue IDs, timestamps, speaker labels and non-speech descriptions.
+- `README.md`: annotation scope, QA checks and evidence limitations.
 
-## Quality protocol
+## Annotation scope
 
-1. Record exact source, licence, dimensions, frame rate and excerpt.
-2. Document the frame-sampling interval.
-3. Maintain track IDs only while visual continuity is supported.
-4. Mark entry, exit, occlusion and scene changes at measured timestamps.
-5. Validate boxes against frame dimensions.
-6. Review temporal order, ID switches, missed objects and unsupported action labels.
-7. State that sparse frame sampling is not continuous motion tracking.
+This is **video-transcript / caption annotation**, not visual object tracking. The text is taken from NASA's published caption file. The sample preserves source wording rather than silently correcting it.
+
+Review dimensions:
+1. Timestamp syntax and chronological order.
+2. Cue segmentation and readability.
+3. Speaker-label consistency where labels are present in the source.
+4. Treatment of non-speech descriptions such as `[cheering in Goddard control room]`.
+5. Uncertainty and possible source-caption defects flagged without inventing corrections.
 
 ## Evidence boundary
 
-The source page and CC0 licence are verified. No frames have been inspected and no timestamped object/event annotations have been produced. This is a sourced protocol, not a completed video-annotation sample.
+The official NASA page lists the video and downloadable SRT/VTT captions and states that a complete transcript is available. The SRT content was inspected directly. The video has **not** been independently listened to or visually reviewed in this workflow. Therefore:
+- Caption wording is source-derived, not independently transcribed.
+- Audio-to-caption accuracy is unverified.
+- Speaker identity and sound-event labels are retained from the source captions, not independently confirmed.
+- This sample does not establish professional production experience or independent transcription accuracy.
+
+## Reproducibility
+
+Use the official NASA resource page and caption links above to retrieve the source material. The original recording remains hosted by NASA; this repository links to the source rather than redistributing the 154.4 MB video binary.
