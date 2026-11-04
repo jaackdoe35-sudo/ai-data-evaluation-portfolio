@@ -1,6 +1,6 @@
 # 19 — Video Transcript Annotation and Caption QA
 
-**Status: source and transcript verified; caption-based sample published; video binary remains hosted by NASA.**
+**Status: transcript-based sample published; direct source-file validation is pending.**
 
 ## Selected video
 
@@ -32,7 +32,7 @@ Review dimensions:
 
 ## Evidence boundary
 
-The official SRT was retrieved and inspected. The video file itself was not successfully downloaded into this workflow, so it has not been uploaded into the GitHub repository or independently listened to / visually reviewed. The source video remains directly downloadable from NASA using the link above.
+The SRT URL and NASA resource page are recorded, but direct retrieval of the SRT could not be completed in this workflow. The sample's exact correspondence to the published SRT is therefore not yet verified. The video file itself was not downloaded or uploaded into the GitHub repository, and has not been independently listened to or visually reviewed. The source video remains directly downloadable from NASA using the link above.
 
 Therefore:
 - Caption wording is source-derived, not independently transcribed.
@@ -42,4 +42,4 @@ Therefore:
 
 ## Reproducibility
 
-Use the official NASA resource page and caption links above to retrieve the source media. The repository stores the compact annotation sample and links to NASA's original video rather than redistributing the 154.4 MB binary.
+Use the official NASA resource page and caption links above to retrieve the source media. Before treating this sample as validated, compare all 22 cue IDs, timestamps and text against the SRT. The repository stores the compact annotation sample and links to NASA's original video rather than redistributing the 154.4 MB binary.
