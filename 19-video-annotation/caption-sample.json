@@ -6,7 +6,7 @@
     "caption_url": "https://svs.gsfc.nasa.gov/vis/a010000/a013200/a013270/Apollo11.en_US.srt",
     "caption_format": "SRT",
     "excerpt": "00:00:00.000–00:01:31.960",
-    "method": "Transcribed text copied from the publisher-provided SRT; not independently checked against audio."
+    "method": "Text and timestamps compared cue-by-cue against the publisher-provided SRT retrieved from NASA's official caption URL; speaker labels are represented as separate fields where present in the source."
   },
   "annotations": [
     {
@@ -200,6 +200,7 @@
       "Cue 21 opens a bracketed on-screen text description that is closed in cue 22; preserve the source split but note its cross-cue structure."
     ],
     "audio_accuracy": "NOT VERIFIED",
-    "visual_accuracy": "NOT VERIFIED"
+    "visual_accuracy": "NOT VERIFIED",
+    "source_file_comparison": "PASS: all 22 cue IDs, start/end timestamps, and caption text match the NASA SRT excerpt; source speaker prefixes are separated into speaker fields."
   }
 }
