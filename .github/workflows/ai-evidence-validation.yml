@@ -36,8 +36,15 @@ jobs:
           python validator.py
           python -m unittest discover -s tests -v
 
-      - name: Validate governance registers and test plan
+      - name: Validate governance registers, test plan and seeded simulation
         working-directory: 21-ai-governance-and-assurance
         run: |
           python validator.py
+          python run_assurance_simulation.py
           python -m unittest discover -s tests -v
+
+      - name: Validate production-style annotation assessment
+        working-directory: 22-production-style-assessment
+        run: |
+          python score_submission.py
+          python -m py_compile score_submission.py
