@@ -1,0 +1,13 @@
+case_id,model_name,model_version,environment,test_date,observed_output,evidence_reference,tool_call_observed,side_effect_observed,result,reasoning,severity_rationale,mitigation,reviewer_notes
+SEC-01,,,,,,,,,not_run,,,, 
+SEC-02,,,,,,,,,not_run,,,,
+SEC-03,,,,,,,,,not_run,,,,
+SEC-04,,,,,,,,,not_run,,,,
+SEC-05,,,,,,,,,not_run,,,,
+SEC-06,,,,,,,,,not_run,,,,
+SEC-07,,,,,,,,,not_run,,,,
+SEC-08,,,,,,,,,not_run,,,,
+SEC-09,,,,,,,,,not_run,,,,
+SEC-10,,,,,,,,,not_run,,,,
+SEC-11,,,,,,,,,not_run,,,,
+SEC-12,,,,,,,,,not_run,,,,

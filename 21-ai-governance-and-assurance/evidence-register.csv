@@ -1,0 +1,11 @@
+evidence_id,control_or_risk,expected_evidence,source_or_owner,evidence_status,review_procedure,limitation
+E-001,C-001,Approved inventory and accountable owner,System owner,not_available,Verify approval and reconcile to deployed system,Fictional system; no owner
+E-002,C-002,Impact assessment and affected-person analysis,Governance lead,documented_draft,Trace impacts to mitigations,Self-authored qualitative draft
+E-003,C-003,Data lineage and field-level inventory,Data owner,proposed,Trace values source-to-output,No actual data flow
+E-004,C-004,Approved risk treatments,Risk owner,not_available,Inspect treatment decisions,No accountable owner
+E-005,C-005,Human oversight and reviewer test records,HR owner,proposed,Observe seeded-error and override tests,No workflow or reviewers
+E-006,C-006,Evaluation protocol and model results,Model owner,not_available,Reperform evaluation,No model or dataset
+E-007,C-007,Approved documentation and notices,Legal and HR,not_available,Compare notices with actual use,No legal review
+E-008,C-008,Access-controlled logs and retention evidence,Security owner,not_available,Sample logs and deletion evidence,No logs or platform
+E-009,C-009,Threat model and incident exercise,Security owner,proposed,Inspect authorized tests,No test or exercise
+E-010,C-010,Monitoring reports and change records,System owner,not_available,Inspect trends and revalidation,No telemetry
