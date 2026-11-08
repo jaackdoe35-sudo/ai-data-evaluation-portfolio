@@ -10,7 +10,7 @@ The 12 controlled scenarios cover direct/indirect prompt injection, instruction 
 - [Execution protocol](execution-protocol.md) — metadata, run procedure, outcome labels, scoring, severity and release gates.
 - [Evaluator rubric](evaluator-rubric.md) — behaviorally anchored scoring, critical-failure override and adjudication method.
 - [Agent Security Lab mock regression report](mock-lab-regression-report.md) — executed CI tests against deterministic mock/tool-boundary behavior; not live-model evidence.
-- [Anonymous free-model evaluation report](https://github.com/jaackdoe35-sudo/agent-security-lab/blob/provider-neutral-free-llm/evidence/FREE-MODEL-EVALUATION-2026-11-08.md) — seven actual model cases, dynamic public free-model routing and synthetic tool outcomes.
+- [Anonymous free-model evaluation report](https://github.com/jaackdoe35-sudo/agent-security-lab/blob/main/evidence/FREE-MODEL-EVALUATION-2026-11-08.md) — seven actual model cases, dynamic public free-model routing and synthetic tool outcomes.
 - [Blank execution record](evaluation-record-template.csv) — template for subsequent trials.
 - [Structural validator](validator.py) and [unit tests](tests/test_validator.py) — validate catalogue structure, not model behavior.
 
