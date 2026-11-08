@@ -16,6 +16,7 @@ TalentScreen is an illustrative AI-assisted recruitment screening system. It ext
 - [Data governance and lineage](data-governance-and-lineage.md), [human oversight](human-oversight.md), [monitoring plan](monitoring-plan.md) and [incident response](incident-response.md).
 - [Regulatory mapping](regulatory-mapping.md) — preliminary issue map, not a legal determination.
 - [Assurance report](assurance-report.md) and [assurance workpaper](assurance-workpaper.md) — bounded findings, evidence quality and closure requirements.
+- [Recruiter evidence matrix](recruiter-evidence-matrix.md) — role-to-artifact mapping and explicit evidence gaps.
 - [Validator](validator.py) — structural CSV/reference checks only.
 
 ## Assurance approach
