@@ -91,7 +91,7 @@ This is a conceptual workflow, not a claim that every artifact is an input to a 
 
 - [Project 20 — LLM security evaluation](20-llm-security-evaluation/README.md) extends the portfolio's rubric, evidence-recording and QA discipline to 12 controlled security scenario specifications.
 
-**Connection:** the same evaluation principles apply—define expected behavior, identify observable evidence, record actual outcomes and limitations—but the subject becomes security-relevant behavior such as prompt injection, instruction hierarchy, tool authorization and secret handling. The catalogue has not been executed against a live model; it is a test specification, not a vulnerability finding.
+**Connection:** the same evaluation principles apply—define expected behavior, identify observable evidence, record actual outcomes and limitations—but the subject becomes security-relevant behavior such as prompt injection, instruction hierarchy, tool authorization and secret handling. Project 20 itself remains a test specification, not a vulnerability finding. Separately, the Agent Security Lab repository contains a seven-scenario free-model evaluation executed twice using synthetic tools and dynamic free-model routing. Those preliminary observations are not a benchmark, independent audit or real-world security validation.
 
 ### 6. AI governance and assurance
 

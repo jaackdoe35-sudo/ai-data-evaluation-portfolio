@@ -44,7 +44,7 @@ The four supporting utilities were exercised on deterministic synthetic datasets
 ## AI governance and security-evaluation samples
 
 - [AI governance and assurance case study](21-ai-governance-and-assurance/README.md): fictional recruitment-screening use case with an inventory, impact assessment, qualitative risk register, proposed controls, data-lineage model, human-oversight design, monitoring and incident procedures, regulatory issue map and bounded assurance review.
-- [LLM security evaluation catalogue](20-llm-security-evaluation/README.md): 12 controlled test specifications with expected behavior, failure indicators and blank execution records. No live model execution or vulnerability finding is represented.
+- [LLM security evaluation catalogue](20-llm-security-evaluation/README.md): 12 controlled test specifications with expected behavior, failure indicators and blank execution records. Separately, the [Agent Security Lab free-model report](https://github.com/jaackdoe35-sudo/agent-security-lab/blob/main/evidence/FREE-MODEL-EVALUATION-2026-11-08.md) documents seven scenarios across two trials each, using a dynamically routed free-model endpoint and synthetic tools. This is preliminary model-behavior evidence, not a benchmark or vulnerability finding.
 
 These samples support documentation, evaluation coordination, evidence tracking and control-mapping work. They do not establish professional audit experience, legal expertise, certification, real-world control implementation or operating effectiveness.
 
