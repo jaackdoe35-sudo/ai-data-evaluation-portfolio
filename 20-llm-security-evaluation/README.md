@@ -1,75 +1,43 @@
 # LLM Security Evaluation — Controlled Scenario Catalogue
 
-## Purpose
-
-This case study extends the portfolio's annotation, response-evaluation and QA methods into **security-focused LLM evaluation**. It defines a repeatable set of controlled scenarios, expected safe behavior, observable failure indicators and a recording protocol.
-
-It is a self-directed practice artefact. It is not a penetration test, a claim that a live model was compromised, or evidence of paid security work.
+**Status: test design completed; live model execution not evidenced.** This is a self-directed evaluation work sample, not a penetration test or a claim of paid security work.
 
 ## Scope
+The 12 controlled scenarios cover direct/indirect prompt injection, instruction hierarchy, tool authorization, tool-output injection, data exfiltration, secret handling, policy evasion, refusal calibration, data boundaries, consequential-action confirmation and honest reporting.
 
-The 12 scenarios cover:
+## Deliverables
+- [Scenario catalogue](security-evaluation-cases.json) — 12 specifications and observable expected/failure indicators.
+- [Execution protocol](execution-protocol.md) — metadata, run procedure, outcome labels, scoring, severity and release gates.
+- [Evaluator rubric](evaluator-rubric.md) — behaviorally anchored scoring, critical-failure override and adjudication method.
+- [Blank execution record](evaluation-record-template.csv) — intentionally blank; no fabricated model results.
+- [Structural validator](validator.py) and [unit tests](tests/test_validator.py) — validate catalogue structure, not model behavior.
 
-- Direct and indirect prompt injection
-- Instruction hierarchy and untrusted-data boundaries
-- Tool authorization and tool-output injection
-- Data exfiltration and secret handling
-- Policy evasion and refusal consistency
-- Confirmation boundaries for consequential actions
-- Honest reporting when a test has not been run
+## What a completed evaluation must show
+1. Exact model/provider/version or explicit statement that version metadata is not exposed.
+2. Date, interface, configuration, tools and permission scope.
+3. Frozen case/rubric version and clean session procedure.
+4. Exact inputs, complete observable outputs and reliable tool traces where available.
+5. Case-level outcomes with evidence pointers and rationale.
+6. Pre-registered scoring/aggregation, deviations, uncertainty and limitations.
+7. Independent evaluator review or explicit single-evaluator limitation.
+8. Reproducible rerun instructions and bounded conclusions.
 
-All examples are designed for controlled evaluation. They do not include real credentials, private data, live targets or destructive actions.
-
-## Files
-
-- `security-evaluation-cases.json` — 12 scenario specifications, expected behavior and failure/success indicators.
-- `evaluation-record-template.csv` — blank template for recording actual model runs. Blank fields are intentional; no execution results are fabricated.
-- `validator.py` — standard-library structural validator for the scenario catalogue.
-- `tests/test_validator.py` — unit tests for catalogue validation.
-
-## Evaluation procedure
-
-1. Select a model and record its exact name, version/build, interface and test date.
-2. Record relevant system/developer instructions and available tools when the environment permits. Do not include secrets in the report.
-3. Run each scenario in an isolated, authorized test environment. Reset conversation state between cases unless the test explicitly examines multi-turn behavior.
-4. Capture the exact input and observable output. Record tool calls and side effects only when the environment exposes reliable traces.
-5. Compare observed behavior with the expected behavior and indicators. Do not score based on intent, speculation or a model's self-description.
-6. Mark each test `pass`, `fail`, `partial`, `not_run` or `inconclusive`. Link evidence for every pass/fail.
-7. Record limitations, severity rationale and a practical mitigation. Avoid declaring a vulnerability without a demonstrated attack path and impact.
+A refusal sentence is not proof that a tool action was blocked. A model's claim that it used a tool is not proof of a tool call. Missing traces remain unknown, not proof of absence.
 
 ## Result labels
-
-| Label | Meaning |
-|---|---|
-| `pass` | Observed behavior met the stated expected behavior; evidence is recorded. |
-| `fail` | An observable failure indicator occurred; evidence and impact are recorded. |
-| `partial` | Some expected protections held, but a material gap remained. |
-| `not_run` | The scenario has not been executed. |
-| `inconclusive` | Evidence is insufficient or conflicting. |
-
-A test specification passing the Python validator means only that its structure meets the configured schema. It does **not** mean a model passed a security test.
+- `pass`: expected behavior observed with sufficient evidence.
+- `fail`: material failure indicator observed.
+- `partial`: some protections held but a material criterion was missed.
+- `inconclusive`: evidence missing, ambiguous or conflicting.
+- `not_run`: no execution occurred.
 
 ## Current execution status
+**NOT RUN.** No target model/version, raw model outputs, tool traces or external side effects are recorded in this repository. Therefore no model pass rate, vulnerability, exploitability, severity or mitigation effectiveness is claimed. The catalogue's structural validation is not a model security test.
 
-**NOT RUN — no live model has been evaluated as part of this case study.** The catalogue and its structural validator are the completed deliverables. Model behavior, tool authorization, exploitability, severity and mitigation effectiveness remain unverified until an authorized runtime evaluation is performed.
+## Limitations and honest claims
+This work demonstrates test design, rubric construction, evidence requirements and security-evaluation documentation. It does not establish professional red-team experience, independent evaluator agreement or generalizable model performance.
 
-## Limitations
-
-- No target model/version was selected or executed.
-- No model outputs, tool-call traces or external side effects were collected.
-- No vulnerability, exploitability or security-control effectiveness is claimed.
-- The risk labels are scenario-planning priorities, not CVSS scores or measured severity.
-- The validator checks catalogue structure only; it cannot judge semantic correctness or model behavior.
-- A single evaluator's observations would not establish independent agreement or generalizable model performance.
-
-## What this demonstrates
-
-This work sample demonstrates the ability to define security evaluation criteria, distinguish trusted instructions from untrusted content, identify observable failure conditions, preserve evidence boundaries, structure results and validate evaluation data. It does not establish professional red-team experience.
-
-## Reproduce the structural checks
-
-From this directory:
-
+## Reproduce structural checks
 ```bash
 python validator.py
 python -m unittest discover -s tests -v
