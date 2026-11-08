@@ -5,6 +5,7 @@ on:
     paths:
       - "20-llm-security-evaluation/**"
       - "21-ai-governance-and-assurance/**"
+      - "22-production-style-assessment/**"
       - ".github/workflows/ai-evidence-validation.yml"
   push:
     branches:
@@ -13,6 +14,7 @@ on:
     paths:
       - "20-llm-security-evaluation/**"
       - "21-ai-governance-and-assurance/**"
+      - "22-production-style-assessment/**"
       - ".github/workflows/ai-evidence-validation.yml"
 
 permissions:
@@ -40,4 +42,13 @@ jobs:
         working-directory: 21-ai-governance-and-assurance
         run: |
           python validator.py
+          python run_assurance_simulation.py
           python -m unittest discover -s tests -v
+
+      - name: Validate production-style annotation assessment
+        working-directory: 22-production-style-assessment
+        run: |
+          python validate_pack.py
+          python -m unittest discover -s . -p "test_*.py" -v
+          python score_submission.py
+          python -m py_compile score_submission.py

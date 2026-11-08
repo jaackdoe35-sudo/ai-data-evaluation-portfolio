@@ -1,0 +1,148 @@
+{
+  "case_id": "TALENTSCREEN-SIM-001",
+  "case_type": "fictional_recruitment_ai_governance_simulation",
+  "notice": "All system records, control evidence, logs, reviewer records and test results in this fixture are synthetic. This is an audit-training simulation, not evidence from a real organization or deployed AI system.",
+  "as_of": "2026-11-08",
+  "controls": [
+    {
+      "control_id": "C-001",
+      "objective": "Approved system inventory and accountable owner",
+      "expected": "inventory_approved",
+      "evidence": {
+        "inventory_approved": false,
+        "owner_assigned": false,
+        "system_boundary_documented": true
+      },
+      "expected_result": "fail",
+      "seeded_issue": "No approved inventory or accountable owner."
+    },
+    {
+      "control_id": "C-002",
+      "objective": "Impact assessment covers affected applicants and challenge routes",
+      "expected": "impact_assessment_complete",
+      "evidence": {
+        "impact_assessment_complete": true,
+        "affected_groups_mapped": true,
+        "challenge_route_defined": false
+      },
+      "expected_result": "partial",
+      "seeded_issue": "Impact mapping exists but applicant challenge/correction route is missing."
+    },
+    {
+      "control_id": "C-003",
+      "objective": "Data lineage and retention are traceable",
+      "expected": "lineage_complete",
+      "evidence": {
+        "lineage_complete": true,
+        "retention_schedule_approved": true,
+        "deletion_test_passed": true
+      },
+      "expected_result": "pass",
+      "seeded_issue": null
+    },
+    {
+      "control_id": "C-004",
+      "objective": "Material risks have owners and treatment decisions",
+      "expected": "all_material_risks_owned",
+      "evidence": {
+        "material_risks": 4,
+        "risks_with_owner": 2,
+        "treatments_approved": 2
+      },
+      "expected_result": "fail",
+      "seeded_issue": "Two of four material risks have no assigned owner; treatment approvals are incomplete."
+    },
+    {
+      "control_id": "C-005",
+      "objective": "Human reviewers can identify and override material model errors",
+      "expected": "reviewer_test_passed",
+      "evidence": {
+        "reviewer_test_cases": 12,
+        "material_errors_seeded": 4,
+        "material_errors_detected": 3,
+        "overrides_logged": 3,
+        "reviewer_test_passed": false
+      },
+      "expected_result": "fail",
+      "seeded_issue": "One of four seeded material errors was missed; reviewer test did not meet the stated criterion."
+    },
+    {
+      "control_id": "C-006",
+      "objective": "Model accuracy and subgroup evaluation meet approved thresholds",
+      "expected": "evaluation_thresholds_met",
+      "evidence": {
+        "evaluation_run_exists": true,
+        "thresholds_pre_registered": false,
+        "overall_accuracy_pct": 91,
+        "subgroup_results_available": false,
+        "evaluation_thresholds_met": false
+      },
+      "expected_result": "fail",
+      "seeded_issue": "No pre-registered thresholds or subgroup results; aggregate accuracy alone is insufficient."
+    },
+    {
+      "control_id": "C-007",
+      "objective": "Notices and system documentation match actual use",
+      "expected": "notice_approved",
+      "evidence": {
+        "notice_approved": true,
+        "purpose_described": true,
+        "limitations_described": true,
+        "challenge_route_described": true
+      },
+      "expected_result": "pass",
+      "seeded_issue": null
+    },
+    {
+      "control_id": "C-008",
+      "objective": "Decision logs are complete, attributable and protected",
+      "expected": "log_sample_complete",
+      "evidence": {
+        "sample_size": 20,
+        "records_with_actor": 20,
+        "records_with_timestamp": 20,
+        "records_with_model_version": 16,
+        "records_with_source_reference": 20,
+        "access_control_test_passed": true
+      },
+      "expected_result": "partial",
+      "seeded_issue": "Four of twenty sampled records omit model version, limiting reproducibility."
+    },
+    {
+      "control_id": "C-009",
+      "objective": "Security access and incident response are tested",
+      "expected": "security_test_passed",
+      "evidence": {
+        "access_test_run": true,
+        "unauthorized_access_attempts": 5,
+        "blocked_attempts": 5,
+        "incident_tabletop_run": false,
+        "incident_roles_assigned": true
+      },
+      "expected_result": "partial",
+      "seeded_issue": "Access tests blocked all five synthetic attempts, but incident response was not exercised."
+    },
+    {
+      "control_id": "C-010",
+      "objective": "Monitoring thresholds trigger escalation and revalidation",
+      "expected": "monitoring_test_passed",
+      "evidence": {
+        "metrics_defined": true,
+        "thresholds_approved": true,
+        "alert_test_run": true,
+        "alert_received": true,
+        "pause_decision_recorded": false,
+        "revalidation_completed": false
+      },
+      "expected_result": "partial",
+      "seeded_issue": "Alert was received, but pause decision and revalidation evidence are missing."
+    }
+  ],
+  "grading_rules": {
+    "pass": "All required evidence predicates for the control are true and complete.",
+    "partial": "Some evidence exists but at least one required element is missing or incomplete.",
+    "fail": "A critical requirement is false or evidence demonstrates a material control failure.",
+    "not_tested": "No evidence or test execution is supplied.",
+    "note": "These are exercise-specific rules. They are not an audit standard, certification scheme or real system assurance opinion."
+  }
+}

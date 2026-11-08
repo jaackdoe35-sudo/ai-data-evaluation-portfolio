@@ -17,6 +17,8 @@ TalentScreen is an illustrative AI-assisted recruitment screening system. It ext
 - [Regulatory mapping](regulatory-mapping.md) — preliminary issue map, not a legal determination.
 - [Assurance report](assurance-report.md) and [assurance workpaper](assurance-workpaper.md) — bounded findings, evidence quality and closure requirements.
 - [Recruiter evidence matrix](recruiter-evidence-matrix.md) — role-to-artifact mapping and explicit evidence gaps.
+- [Synthetic control evidence fixture](synthetic-control-evidence.json), [simulation runner](run_assurance_simulation.py) and [simulation report](simulation-report.md) — seeded evidence, deterministic control classifications and remediation findings; all fictional.
+- [Independent review template](independent-review-template.csv) — blank template for a genuinely separate reviewer.
 - [Validator](validator.py) — structural CSV/reference checks only.
 
 ## Assurance approach
