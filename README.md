@@ -9,6 +9,7 @@ This is a connected, self-directed portfolio across the AI data lifecycle: task 
 - [Portfolio system map](PORTFOLIO-MAP.md)
 - [AI Safety Evaluation — execution protocol](20-llm-security-evaluation/execution-protocol.md)
 - [AI Governance — assurance workpaper](21-ai-governance-and-assurance/assurance-workpaper.md)
+- [Production-style annotation assessment](22-production-style-assessment/README.md)
 
 ## Selected evidence
 1. [End-to-end support annotation](09-end-to-end-annotation-case-study/README.md) — 40 synthetic messages, taxonomy, rationales, ambiguity log and QA.
@@ -19,8 +20,9 @@ This is a connected, self-directed portfolio across the AI data lifecycle: task 
 6. [Caption QA](19-video-annotation/README.md) — 22 transcript cues checked against NASA's published SRT; no audio/video verification claimed.
 
 ## AI safety, governance and assurance
-- [AI Governance & Assurance](21-ai-governance-and-assurance/README.md) — fictional recruitment-screening case, inventory, impact assessment, risk methodology, risk register, proposed controls, test plan, evidence register and assurance workpaper. Design-only; no real system or operating controls.
-- [LLM Security Evaluation](20-llm-security-evaluation/README.md) — 12 controlled scenarios, evaluator rubric and execution protocol. Live model execution has not been performed; no vulnerability result is claimed.
+- [AI Governance & Assurance](21-ai-governance-and-assurance/README.md) — fictional recruitment-screening case, risk methodology, control test plan, evidence register and assurance workpaper. Includes a deterministic seeded-evidence simulation with explicit synthetic findings; not a real audit or control assessment.
+- [LLM Security Evaluation](20-llm-security-evaluation/README.md) — 12 controlled scenarios, evaluator rubric and execution protocol. No independently verified live-model run is claimed in this portfolio.
+- [Agent Security Lab](https://github.com/jaackdoe35-sudo/agent-security-lab) — separate synthetic-tool sandbox with an optional server-side Gemini adapter. A deployed build and configuration metadata exist, but no successful live-model test trace has been verified for this portfolio.
 
 ## Supporting QA tools
 - [CSV validator](10-annotation-csv-validator/README.md)
@@ -31,9 +33,9 @@ This is a connected, self-directed portfolio across the AI data lifecycle: task 
 These are modest rule-based tools supporting data quality, not a separate software-development service claim.
 
 ## Evidence boundaries
-All examples are self-directed. Datasets are synthetic unless a source is explicitly identified. They are not paid client work, proprietary production data or independently validated benchmark results. Scores against author-created references do not establish independent proficiency. No independent annotator agreement or production throughput is claimed.
+All examples are self-directed. Datasets are synthetic unless a source is explicitly identified. They are not paid client work, proprietary production data or independently validated benchmark results. Scores against author-created references do not establish independent proficiency. Independent annotator agreement and candidate production throughput remain unmeasured. The production-style assessment pack is prepared but has not been completed by the candidate.
 
-Governance artifacts are fictional proposed designs, not legal advice, audit opinion, certification, compliance determination or evidence of operating effectiveness. Security scenarios are specifications only; no live model results are represented.
+Governance simulation results are generated from synthetic fixtures and deterministic exercise rules. They do not establish real system control implementation or operating effectiveness. Governance artifacts are not legal advice, audit opinion, certification or compliance determination. No live model security result is represented without raw provider-backed traces and reproducible run metadata.
 
 ## Method
 Parse instructions; identify evidence and unknowns; apply a documented rubric; record source-grounded rationale; flag ambiguity; validate structure; document limitations and corrective actions.
