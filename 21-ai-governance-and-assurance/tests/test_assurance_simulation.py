@@ -20,7 +20,7 @@ class AssuranceSimulationTests(unittest.TestCase):
     def test_fixture_is_explicitly_synthetic(self):
         result = run()
         self.assertIn("synthetic", result["notice"].lower())
-        self.assertIn("not a real", result["notice"].lower())
+        self.assertIn("not evidence from a real", result["notice"].lower())
 
 
 if __name__ == "__main__":
