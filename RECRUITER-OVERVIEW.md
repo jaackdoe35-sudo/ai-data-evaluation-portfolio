@@ -35,6 +35,13 @@ These modest Python demonstrations support annotation and evaluation workflows; 
 
 The four supporting utilities were exercised on deterministic synthetic datasets of up to 100,000 rows in a successful GitHub Actions run. The [scale-test report](16-annotation-qa-stress-test/scale-test-report.md) publishes measured runtimes, Python-tracked memory allocations, runner details and limitations. This is a bounded synthetic test, not evidence of client-data performance or production readiness.
 
+## AI governance and security-evaluation samples
+
+- [AI governance and assurance case study](21-ai-governance-and-assurance/README.md): fictional recruitment-screening use case with an inventory, impact assessment, qualitative risk register, proposed controls, data-lineage model, human-oversight design, monitoring and incident procedures, regulatory issue map and bounded assurance review.
+- [LLM security evaluation catalogue](20-llm-security-evaluation/README.md): 12 controlled test specifications with expected behavior, failure indicators and blank execution records. No live model execution or vulnerability finding is represented.
+
+These samples support documentation, evaluation coordination, evidence tracking and control-mapping work. They do not establish professional audit experience, legal expertise, certification, real-world control implementation or operating effectiveness.
+
 ## Working approach
 
 - Translate task instructions into explicit criteria and schemas.
