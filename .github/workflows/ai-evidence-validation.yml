@@ -1,0 +1,43 @@
+name: AI Safety and Governance Evidence Checks
+
+on:
+  pull_request:
+    paths:
+      - "20-llm-security-evaluation/**"
+      - "21-ai-governance-and-assurance/**"
+      - ".github/workflows/ai-evidence-validation.yml"
+  push:
+    branches:
+      - main
+      - "evidence-upgrade/**"
+    paths:
+      - "20-llm-security-evaluation/**"
+      - "21-ai-governance-and-assurance/**"
+      - ".github/workflows/ai-evidence-validation.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-evidence-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate LLM security scenario catalogue
+        working-directory: 20-llm-security-evaluation
+        run: |
+          python validator.py
+          python -m unittest discover -s tests -v
+
+      - name: Validate governance registers and test plan
+        working-directory: 21-ai-governance-and-assurance
+        run: |
+          python validator.py
+          python -m unittest discover -s tests -v
