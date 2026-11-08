@@ -1,10 +1,16 @@
-# Recruiter Overview — AI Data Annotation & Evaluation
+# Recruiter Overview — AI Data Quality, Evaluation & Governance
 
 ## Candidate positioning
 
 **AI Data Annotation & Evaluation Specialist**
 
 Portfolio evidence focuses on structured text annotation, AI response evaluation, search relevance assessment, annotation QA, ambiguity handling and concise reporting. Small Python utilities are included only as supporting tools for data validation and quality review.
+
+## How the portfolio fits together
+
+The projects form a connected AI data and assurance lifecycle rather than unrelated exercises. The [Portfolio System Map](PORTFOLIO-MAP.md) explains the relationship between task design, annotation, modality-specific labeling, quality checks, response/search evaluation, security-focused test design and governance documentation. Each stage links to supporting projects and explains what evidence it produces or consumes.
+
+The portfolio website presents the same structure through its [connected project map](https://patricktobe.vercel.app/#portfolio-map).
 
 ## Selected work samples
 
