@@ -22,7 +22,7 @@ This is a connected, self-directed portfolio across the AI data lifecycle: task 
 ## AI safety, governance and assurance
 - [AI Governance & Assurance](21-ai-governance-and-assurance/README.md) — fictional recruitment-screening case, risk methodology, control test plan, evidence register and assurance workpaper. Includes a deterministic seeded-evidence simulation with explicit synthetic findings; not a real audit or control assessment.
 - [LLM Security Evaluation](20-llm-security-evaluation/README.md) — 12 controlled scenarios, evaluator rubric, deterministic mock regression tests and an initial seven-case anonymous free-model evaluation. The free-model report is a single-trial demonstration, not a benchmark.
-- [Agent Security Lab — provider-neutral branch](https://github.com/jaackdoe35-sudo/agent-security-lab/tree/provider-neutral-free-llm) — deterministic mock workbench plus a separate no-key free-model evaluation harness. [Initial seven-case evaluation report](https://github.com/jaackdoe35-sudo/agent-security-lab/blob/provider-neutral-free-llm/evidence/FREE-MODEL-EVALUATION-2026-11-08.md). Gemini integration has been removed. Model routing is dynamic; this is not a statistically valid benchmark.
+- [Agent Security Lab — provider-neutral branch](https://github.com/jaackdoe35-sudo/agent-security-lab/tree/main) — deterministic mock workbench plus a separate no-key free-model evaluation harness. [Initial seven-case evaluation report](https://github.com/jaackdoe35-sudo/agent-security-lab/blob/main/evidence/FREE-MODEL-EVALUATION-2026-11-08.md). Gemini integration has been removed. Model routing is dynamic; this is not a statistically valid benchmark.
 
 ## Supporting QA tools
 - [CSV validator](10-annotation-csv-validator/README.md)
