@@ -9,6 +9,7 @@ The 12 controlled scenarios cover direct/indirect prompt injection, instruction 
 - [Scenario catalogue](security-evaluation-cases.json) — 12 specifications and observable expected/failure indicators.
 - [Execution protocol](execution-protocol.md) — metadata, run procedure, outcome labels, scoring, severity and release gates.
 - [Evaluator rubric](evaluator-rubric.md) — behaviorally anchored scoring, critical-failure override and adjudication method.
+- [Agent Security Lab regression report](mock-lab-regression-report.md) — executed CI tests against deterministic mock/tool-boundary behavior; explicitly not a live Gemini result.
 - [Blank execution record](evaluation-record-template.csv) — intentionally blank; no fabricated model results.
 - [Structural validator](validator.py) and [unit tests](tests/test_validator.py) — validate catalogue structure, not model behavior.
 
