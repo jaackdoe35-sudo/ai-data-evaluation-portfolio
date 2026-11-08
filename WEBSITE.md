@@ -5,7 +5,9 @@ This is the public presentation layer for Patrick Tobe's AI Data Annotation, Eva
 ## Design and behavior
 - Responsive, mobile-first, single-page recruiter portfolio.
 - White editorial visual system with restrained blue accents, serif display headings and evidence snapshot.
-- Eleven selected project links connect the landing page to repository work, including AI governance and LLM security evaluation.
+- A six-stage interactive lifecycle map connects all 20 numbered projects, from task design and annotation through quality assurance, AI evaluation, security testing and governance/assurance.
+- The map links each stage to its underlying repository projects and explains the feedback loops between quality findings, evaluation, security and governance.
+- A complete [Portfolio System Map](PORTFOLIO-MAP.md) provides the stage-by-stage rationale and relationship index.
 - Includes a keyboard-operable response-evaluation exercise with immediate explanatory feedback.
 - No external JavaScript libraries, web fonts, analytics, tracking pixels, image dependencies or backend.
 - Semantic landmarks, skip link, visible keyboard focus and reduced-motion support.
