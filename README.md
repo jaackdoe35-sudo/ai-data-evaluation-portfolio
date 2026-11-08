@@ -1,16 +1,16 @@
 # AI Data Annotation, Evaluation & Governance Portfolio
 
-**Target roles:** AI Data Annotator · AI Response Evaluator · LLM Evaluator · Search Relevance Evaluator · Annotation Quality Reviewer · AI Quality Analyst · AI Governance / Assurance Support.
+**Target roles:** AI Data Annotator · AI Response Evaluator · LLM Evaluator · Search Relevance Evaluator · Annotation Quality Reviewer · AI Quality Analyst · AI Safety Evaluation Assistant · Junior AI Governance / Risk & Assurance Analyst.
 
-This repository is one connected, self-directed portfolio across the AI data lifecycle: task design and source understanding; text and multimodal annotation; quality assurance and evidence integrity; AI response and search evaluation; safety-focused testing; and AI governance and assurance. The projects use separate synthetic or explicitly sourced practice materials; the lifecycle map describes their conceptual relationships, not a shared production pipeline.
+This is a connected, self-directed portfolio across the AI data lifecycle: task design; annotation; quality assurance; AI response/search evaluation; safety-focused testing; and governance/risk/assurance documentation. Projects use separate synthetic or explicitly sourced practice materials; the lifecycle map describes conceptual relationships, not a shared production pipeline.
 
-## How the projects connect
+## Recruiter starting points
+- [Recruiter overview](RECRUITER-OVERVIEW.md)
+- [Portfolio system map](PORTFOLIO-MAP.md)
+- [AI Safety Evaluation — execution protocol](20-llm-security-evaluation/execution-protocol.md)
+- [AI Governance — assurance workpaper](21-ai-governance-and-assurance/assurance-workpaper.md)
 
-Start with the [Portfolio System Map](PORTFOLIO-MAP.md) for the end-to-end lifecycle, stage-by-stage explanations and a relationship index linking all 20 numbered projects. It explains how annotation produces structured data, QA checks it, evaluation assesses AI outputs, security testing examines risk-relevant behavior, and governance brings the evidence together at system level.
-
-The [portfolio website](https://patricktobe.vercel.app) presents this relationship as an interactive navigation path and links to the underlying repository evidence.
-
-## Selected samples
+## Selected evidence
 1. [End-to-end support annotation](09-end-to-end-annotation-case-study/README.md) — 40 synthetic messages, taxonomy, rationales, ambiguity log and QA.
 2. [AI response evaluation](01-ai-response-evaluation/README.md) — rubric and 30 synthetic response reviews.
 3. [Text annotation](02-data-annotation/README.md) — 50 synthetic labeled messages.
@@ -18,9 +18,9 @@ The [portfolio website](https://patricktobe.vercel.app) presents this relationsh
 5. [Image annotation](18-image-annotation/README.md) — synthetic vector-scene labels and boxes; not a natural-image benchmark.
 6. [Caption QA](19-video-annotation/README.md) — 22 transcript cues checked against NASA's published SRT; no audio/video verification claimed.
 
-## AI governance and security evaluation
-- [AI Governance & Assurance](21-ai-governance-and-assurance/README.md) — fictional recruitment-screening system, inventory, impact assessment, risk register, proposed controls, data lineage, human oversight, monitoring, incident response, preliminary regulatory mapping and evidence-bounded assurance review. Design-only; no real system or operating controls.
-- [LLM Security Evaluation](20-llm-security-evaluation/README.md) — 12 controlled scenarios and structural validator. Live model execution has not been performed; no vulnerability result is claimed.
+## AI safety, governance and assurance
+- [AI Governance & Assurance](21-ai-governance-and-assurance/README.md) — fictional recruitment-screening case, inventory, impact assessment, risk methodology, risk register, proposed controls, test plan, evidence register and assurance workpaper. Design-only; no real system or operating controls.
+- [LLM Security Evaluation](20-llm-security-evaluation/README.md) — 12 controlled scenarios, evaluator rubric and execution protocol. Live model execution has not been performed; no vulnerability result is claimed.
 
 ## Supporting QA tools
 - [CSV validator](10-annotation-csv-validator/README.md)
