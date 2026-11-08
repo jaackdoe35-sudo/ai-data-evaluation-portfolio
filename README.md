@@ -21,7 +21,7 @@ This is a connected, self-directed portfolio across the AI data lifecycle: task 
 
 ## AI safety, governance and assurance
 - [AI Governance & Assurance](21-ai-governance-and-assurance/README.md) — fictional recruitment-screening case, risk methodology, control test plan, evidence register and assurance workpaper. Includes a deterministic seeded-evidence simulation with explicit synthetic findings; not a real audit or control assessment.
-- [LLM Security Evaluation](20-llm-security-evaluation/README.md) — 12 controlled scenarios, evaluator rubric and execution protocol. No independently verified live-model run is claimed in this portfolio.
+- [LLM Security Evaluation](20-llm-security-evaluation/README.md) — 12 controlled scenarios, evaluator rubric and execution protocol, plus an executed deterministic mock/tool-boundary regression report. No independently verified live-model run is claimed in this portfolio.
 - [Agent Security Lab](https://github.com/jaackdoe35-sudo/agent-security-lab) — separate synthetic-tool sandbox with an optional server-side Gemini adapter. A deployed build and configuration metadata exist, but no successful live-model test trace has been verified for this portfolio.
 
 ## Supporting QA tools
