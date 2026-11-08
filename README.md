@@ -2,7 +2,13 @@
 
 **Target roles:** AI Data Annotator · AI Response Evaluator · LLM Evaluator · Search Relevance Evaluator · Annotation Quality Reviewer · AI Quality Analyst · AI Governance / Assurance Support.
 
-This repository contains self-directed practice in structured annotation, response evaluation, search relevance, quality review, data-validation tools, controlled LLM security evaluation specifications and a fictional AI governance case study.
+This repository is one connected, self-directed portfolio across the AI data lifecycle: task design and source understanding; text and multimodal annotation; quality assurance and evidence integrity; AI response and search evaluation; safety-focused testing; and AI governance and assurance. The projects use separate synthetic or explicitly sourced practice materials; the lifecycle map describes their conceptual relationships, not a shared production pipeline.
+
+## How the projects connect
+
+Start with the [Portfolio System Map](PORTFOLIO-MAP.md) for the end-to-end lifecycle, stage-by-stage explanations and a relationship index linking all 20 numbered projects. It explains how annotation produces structured data, QA checks it, evaluation assesses AI outputs, security testing examines risk-relevant behavior, and governance brings the evidence together at system level.
+
+The [portfolio website](https://patricktobe.vercel.app) presents this relationship as an interactive navigation path and links to the underlying repository evidence.
 
 ## Selected samples
 1. [End-to-end support annotation](09-end-to-end-annotation-case-study/README.md) — 40 synthetic messages, taxonomy, rationales, ambiguity log and QA.
