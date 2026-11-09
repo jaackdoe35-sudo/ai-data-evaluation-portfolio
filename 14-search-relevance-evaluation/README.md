@@ -42,8 +42,8 @@ A sound relevance judgment separates topical similarity from task satisfaction, 
 
 ## Deliverables and QA
 
-- [20-case dataset](search-relevance-evaluation.csv)
-- [Summary and QA report](summary-report.md)
+- [20-case dataset](search_relevance_dataset.csv)
+- [Summary and QA report](qa_summary.md)
 
 The schema checks establish structural completeness only. They do not independently validate the relevance labels or establish agreement between evaluators.
 
