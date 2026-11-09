@@ -1,13 +1,23 @@
-# TalentScreen — Connected AI Governance Case Study
+# Project 21 — TalentScreen Connected AI Governance Case Study
 
-**Case type:** fictional, self-directed governance and assurance exercise
-**System:** GOV-001 TalentScreen, an AI-assisted recruitment-screening workflow
+**Case type:** fictional, self-directed governance and assurance exercise  
+**System:** GOV-001 TalentScreen, an assumed AI-assisted recruitment-screening workflow  
+**Status:** design artifacts and deterministic synthetic evidence simulation completed  
 **Evidence boundary:** no real organization, applicant data, deployed model, production workflow, control owner or independent audit exists.
 
-## Executive question
-Can the organization justify using an AI-assisted system to extract candidate information and prioritize a recruiter review queue, while preventing the ranking from becoming an unreviewed employment decision?
+## Executive summary
 
-This is a connected governance programme, not a collection of standalone templates. Each phase produces an artifact used by the next phase.
+This case study asks how an organization should govern an AI-assisted workflow that extracts candidate information and prioritizes a recruiter review queue without allowing a ranking to become an unreviewed employment decision. It connects system inventory, impact assessment, risk analysis, control design, test planning, evidence tracking, synthetic simulation, remediation and an evidence-bounded assurance conclusion.
+
+The work demonstrates governance documentation and traceability. It does not establish implementation, compliance or operating effectiveness.
+
+## Problem and decision context
+
+The hypothetical organization needs to decide whether the proposed use is sufficiently defined and controlled to proceed to a real assessment. The critical governance distinction is between a tool that supports a human review queue and a system that effectively determines access to employment opportunities. The case therefore treats purpose, affected people, job-related criteria, data provenance, human authority, transparency, security and lifecycle change as linked questions.
+
+## Scope and assumptions
+
+The assumed workflow extracts information from applications, compares it with published role criteria and prioritizes a human review queue. Actual system architecture, provider, model, data, jurisdiction, owners and deployment status are deliberately unknown. Unknowns remain explicit; they are not filled with invented organizational facts.
 
 ## Governance lifecycle and artifact traceability
 
@@ -23,25 +33,6 @@ This is a connected governance programme, not a collection of standalone templat
 | 8. Findings and remediation | What gaps require action, ownership and closure evidence? | [Simulation report](simulation-report.md), [remediation tracker](remediation-tracker.csv) | Exercise findings with proposed corrective actions and closure tests |
 | 9. Assurance conclusion | What can be stated without overstating the evidence? | [Assurance workpaper](assurance-workpaper.md) and [report](assurance-report.md) | Design exercise completed; real system assurance not established |
 
-## Decision rights and governance gates
-The following are proposed case-study decision rights, not actual appointments or approvals:
-- **Business sponsor:** accountable for business purpose and whether the use case proceeds to assessment.
-- **AI governance lead:** coordinates inventory, impact assessment, risk treatment and evidence traceability.
-- **HR process owner:** defines job-related criteria, reviewer workflow and applicant challenge routes.
-- **Privacy/legal reviewer:** determines applicable jurisdictions, legal roles, privacy requirements and regulatory interpretation.
-- **Security lead:** reviews data flows, identity/access, integrations, logging and incident response.
-- **Model/system owner:** supplies model, data, evaluation, version and change evidence.
-- **Independent assurance reviewer:** challenges the evidence and tests; must not be the author of the controls being assessed.
-
-### Gate sequence
-1. **Intake:** purpose, system boundary, jurisdiction, provider and accountable owner must be identified or recorded as unresolved.
-2. **Impact/risk:** material impacts map to risks, mitigations, owners and evidence requirements. Unknowns remain open.
-3. **Design:** each control objective maps to risks and a test procedure.
-4. **Implementation:** proposed controls receive no operating-effectiveness credit until implementation evidence is inspected.
-5. **Pre-deployment:** unresolved critical legal, privacy, security, fairness or oversight questions prevent a positive readiness conclusion.
-6. **Monitoring:** model, data, role criteria, vendor or workflow changes trigger reassessment.
-7. **Independent assurance:** the reviewer receives source evidence, samples, test results and prior findings; disagreements and limitations are recorded.
-
 ## Risk-to-control traceability
 
 | Risk | Risk pathway | Proposed control(s) | Test(s) | Evidence expected |
@@ -55,15 +46,24 @@ The following are proposed case-study decision rights, not actual appointments o
 | R-007 Third-party/lifecycle | Provider changes behavior or terms without reassessment | C-001, C-010 | TP-001, TP-010 | Vendor due diligence, version history and change records |
 | R-008 Drift | Population or job criteria changes degrade outcomes | C-006, C-010 | TP-006, TP-010 | Baselines, monitoring trends, thresholds and revalidation records |
 
-## Exercise decision log
-The [decision log](decision-log.csv) records governance decisions a real programme would need to make. Every entry is marked as a proposed exercise decision. No board approval, legal determination, owner acceptance or deployment authorization is represented.
+## Decision rights and gates
 
-## Synthetic control simulation
-The deterministic simulation evaluates a deliberately seeded evidence fixture against ten exercise-specific control rules. It tests whether the runner correctly classifies the supplied fixture. It does **not** test TalentScreen, a model, an organization's actual controls or an actual auditor.
+The proposed roles—business sponsor, AI governance lead, HR process owner, privacy/legal reviewer, security lead, model/system owner and independent assurance reviewer—are design roles only. They are not actual appointments or approvals.
 
-The simulation demonstrates evidence-to-control reasoning: missing ownership remains a finding; incomplete lineage, retention or deletion evidence does not become a pass; a missed seeded material error is treated as a control failure in the exercise; an access test does not substitute for an incident tabletop; and an alert does not prove a pause decision or revalidation occurred.
+The proposed gate sequence is: define purpose and accountable ownership; assess impact and risk; map controls to risks and tests; inspect implementation evidence before assigning operating credit; block positive readiness conclusions while critical questions remain unresolved; reassess material changes; and obtain independent review before making assurance claims.
 
-## Required next evidence before any real assurance conclusion
+## Synthetic simulation and observed outcome
+
+The deterministic simulation evaluates a deliberately seeded evidence fixture against ten exercise-specific control rules. It tests whether the runner classifies the supplied fixture as designed. It does not test TalentScreen, a model, an organization's actual controls or an actual auditor.
+
+The simulation illustrates evidence-to-control reasoning: missing ownership remains a finding; incomplete lineage, retention or deletion evidence does not become a pass; a missed seeded material error is treated as a control failure in the exercise; an access test does not substitute for an incident tabletop; and an alert does not prove a pause decision or revalidation occurred.
+
+## Assurance conclusion
+
+The [assurance report](assurance-report.md) expresses no assurance opinion. The artifacts establish a structured design exercise with deterministic synthetic evidence simulation. They do not establish implementation, legal compliance, model fairness, operational effectiveness, certification or independent assurance. Residual risk is not assessed.
+
+## Evidence required before a real assurance conclusion
+
 1. Approved system description, named accountable owner, provider and jurisdiction.
 2. Actual data inventory, purpose analysis, lineage, retention and deletion configuration.
 3. Documented job-related criteria and a representative, legally appropriate evaluation design.
@@ -74,6 +74,3 @@ The simulation demonstrates evidence-to-control reasoning: missing ownership rem
 8. Vendor terms, change notification, model version history and exit controls.
 9. Monitoring baselines, thresholds, alerts, pause decisions and post-change revalidation.
 10. Independent reviewer workpapers and evidence-linked closure of findings.
-
-## Conclusion
-This connected case study demonstrates how inventory, impact analysis, risk, control design, testing, evidence collection, remediation and assurance conclusions fit together. The current artifacts establish a **structured design exercise with a deterministic synthetic evidence simulation**. They do not establish implementation, legal compliance, model fairness, operational effectiveness, certification or independent assurance.
