@@ -1,6 +1,6 @@
 # AI Governance & Assurance — Simulated Recruitment AI Case Study
 
-**Status: DESIGN ONLY.** TalentScreen is fictional. No real organization, model, applicant data, deployed workflow, owner or operating control was assessed.
+**Status: connected design case study with deterministic synthetic-evidence simulation.** TalentScreen is fictional. No real organization, model, applicant data, deployed workflow, owner or operating control was assessed.
 
 ## Scenario
 TalentScreen is an illustrative AI-assisted recruitment screening system. It extracts application information, compares it with published role criteria and prioritizes a human review queue. The assumed recruiter decision authority is a design requirement, not evidence of actual oversight.
@@ -17,9 +17,16 @@ TalentScreen is an illustrative AI-assisted recruitment screening system. It ext
 - [Regulatory mapping](regulatory-mapping.md) — preliminary issue map, not a legal determination.
 - [Assurance report](assurance-report.md) and [assurance workpaper](assurance-workpaper.md) — bounded findings, evidence quality and closure requirements.
 - [Recruiter evidence matrix](recruiter-evidence-matrix.md) — role-to-artifact mapping and explicit evidence gaps.
+- [Connected case study](connected-case-study.md) — lifecycle narrative linking inventory, impact, risks, controls, tests, evidence, remediation and assurance gates.
+- [Decision log](decision-log.csv) — proposed governance decisions, decision roles, evidence requirements and approval status.
+- [Remediation tracker](remediation-tracker.csv) — ten synthetic/design findings with owners by role, closure evidence and closure tests.
 - [Synthetic control evidence fixture](synthetic-control-evidence.json), [simulation runner](run_assurance_simulation.py) and [simulation report](simulation-report.md) — seeded evidence, deterministic control classifications and remediation findings; all fictional.
 - [Independent review template](independent-review-template.csv) — blank template for a genuinely separate reviewer.
 - [Validator](validator.py) — structural CSV/reference checks only.
+
+## Connected governance lifecycle
+
+The connected case study maps the nine stages from intake and inventory through impact analysis, risk treatment, control design, test planning, evidence collection, synthetic simulation, remediation and bounded assurance conclusion. The risk-to-control table traces R-001–R-008 to C-001–C-010, TP-001–TP-010 and evidence expectations. The decision log distinguishes proposed exercise positions from actual approvals; the remediation tracker distinguishes synthetic findings from real audit findings.
 
 ## Assurance approach
 The workpaper separates:
@@ -35,7 +42,7 @@ These are different evidence levels. A proposed control receives no risk-reducti
 NIST AI RMF 1.0, ISO/IEC 42001, EU AI Act Regulation (EU) 2024/1689 and the IAPP AI Governance Skills Framework are reference points, not certifications. Recruitment use raises an EU AI Act Annex III, point 4(a) classification question; applicability and any exception require fact-specific legal analysis. This project does not make a legal determination.
 
 ## Current conclusion
-**Documentation design exercise completed; system assurance not established.** The artifacts demonstrate a structured way to identify governance topics, formulate risk hypotheses, design controls, specify tests and track evidence gaps. They do not establish legal compliance, certification, real deployment, fairness, model performance, operating effectiveness, audit experience or acceptable residual risk. No assurance opinion is expressed.
+**Connected documentation design exercise completed; system assurance not established.** The artifacts demonstrate a structured way to identify governance topics, formulate risk hypotheses, design controls, specify tests and track evidence gaps. They do not establish legal compliance, certification, real deployment, fairness, model performance, operating effectiveness, audit experience or acceptable residual risk. No assurance opinion is expressed.
 
 ## Reproduction
 ```bash
