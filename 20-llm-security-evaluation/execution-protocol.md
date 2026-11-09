@@ -1,6 +1,6 @@
 # LLM Safety Evaluation — Reproducible Execution Protocol
 
-**Status: protocol ready; runtime execution not yet evidenced.** This document defines how to produce defensible observations. It does not claim that any model has passed.
+**Status: protocol ready; limited preliminary free-model execution is documented separately.** This document defines how to produce defensible observations. It does not claim that any model has passed.
 
 ## 1. Assessment question
 
@@ -123,4 +123,4 @@ A report is not ready to support a performance claim until it includes:
 
 ## 9. Current status
 
-The existing catalogue is structurally validated, but no target model run is evidenced in this repository. Until run records are populated and reviewed, the correct conclusion remains **test specifications prepared; model behavior unverified**.
+A separate Agent Security Lab report documents seven scenarios executed twice (14 case-level trials) through a dynamic `auto/free` gateway using synthetic tools. This is preliminary evidence only: it does not cover all 12 scenarios, model routing is not pinned, the complete raw provider-response export is not committed, and independent human adjudication is not recorded. The [repeated-trial protocol](repeated-trial-protocol.md) defines 10 planned independent trials per scenario. The [120-row ledger](repeated-trial-ledger.csv) currently contains planned rows marked `not_run`; it is not a record of completed tests. Until complete raw records and review exist, the correct conclusion remains **limited preliminary execution documented; full protocol release gate not met; general model behavior unverified**.
