@@ -14,6 +14,7 @@ This is a connected, self-directed portfolio across two complementary tracks: AI
 - [AI Governance — connected case study](21-ai-governance-and-assurance/connected-case-study.md)
 - [AI Governance — framework crosswalk](21-ai-governance-and-assurance/framework-crosswalk.md)
 - [AI Governance — evidence judgment and findings](21-ai-governance-and-assurance/evidence-judgment-and-findings.md)
+- [AI Governance — public-system assurance review](21-ai-governance-and-assurance/public-system-review-gpt-6-astra.md) — primary-source desk review of a real publicly documented model, with NIST mapping, evidence-level judgments, findings and closure criteria.
 - [Production-style annotation assessment](22-production-style-assessment/README.md)
 
 ## Selected evidence
