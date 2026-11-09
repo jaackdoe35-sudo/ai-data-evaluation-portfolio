@@ -1,27 +1,35 @@
 # Portfolio website
 
-This is the public presentation layer for Patrick Tobe's AI Data Annotation, Evaluation & Governance portfolio.
+Public portfolio for Patrick Tobe's AI data quality, annotation, evaluation, quality assurance and governance work.
+
+## Live deployment
+
+- **Primary address:** https://patricktobe-portfolio.vercel.app
+- **Vercel project:** `ai-data-evaluation-portfolio`
+- **Git source:** `jaackdoe35-sudo/ai-data-evaluation-portfolio`
+- **Production branch:** `main`
+- **Production commit at publication:** `62a117a6b5f2796cf56b197677f364b4a8c5340b`
+
+The primary address is a Vercel alias assigned to the production deployment. The default `vercel.app` project hostname remains available as a technical fallback.
 
 ## Design and behavior
+
 - Responsive, mobile-first, single-page recruiter portfolio.
-- White editorial visual system with restrained blue accents, serif display headings and evidence snapshot.
-- A six-stage interactive lifecycle map connects all 20 numbered projects, from task design and annotation through quality assurance, AI evaluation, security testing and governance/assurance.
-- The map links each stage to its underlying repository projects and explains the feedback loops between quality findings, evaluation, security and governance.
-- A complete [Portfolio System Map](PORTFOLIO-MAP.md) provides the stage-by-stage rationale and relationship index.
-- Includes a keyboard-operable response-evaluation exercise with immediate explanatory feedback.
+- White editorial visual system with restrained blue accents, serif display headings and compact evidence cards.
+- Recruiter-first navigation and curated featured work.
+- Connected lifecycle map linking the portfolio's existing work across annotation, quality assurance, evaluation, security and governance.
+- AI governance case study with direct links to its risk, control, test, evidence, decision and remediation artifacts.
+- Keyboard-operable response-evaluation exercise with immediate explanatory feedback.
+- Fixed, deterministic portfolio guide for directing visitors to relevant work; it is not a generative AI assistant.
 - No external JavaScript libraries, web fonts, analytics, tracking pixels, image dependencies or backend.
-- Semantic landmarks, skip link, visible keyboard focus and reduced-motion support.
+- Semantic landmarks, skip link, visible keyboard focus, reduced-motion support and responsive breakpoints.
 
 ## Evidence policy
-Practice examples are self-directed. Datasets are synthetic except the caption exercise, which is based on a published NASA SRT. The page does not claim paid client work, independent benchmark performance, independent annotator agreement, production throughput or audio/video verification of the caption sample.
 
-The AI governance case study is fictional and design-only. Proposed controls are not implemented or tested. The LLM security catalogue contains test specifications only; it has not been run against a live model. The repository is the source of truth for complete samples, evidence and limitations.
+Practice examples are self-directed. Most datasets are synthetic; the caption exercise uses a published NASA transcript. The governance case study is fictional and design-oriented. Project 20 includes test specifications and a repeated-trial protocol; the 120-row ledger is currently marked `not_run`. The separate Agent Security Lab report records preliminary free-model trials using synthetic tools. Project 22 is an honor-system practice assessment because its separate reference labels are publicly accessible. The page does not claim paid client work, independent benchmark performance, independent annotator agreement, production throughput or independently verified audio transcription.
 
-## Deployment
-The production site is hosted by Vercel project `ai-evaluation-lab` under the Tobe team. Public domains:
-- https://ai-evaluation-lab-three.vercel.app
-- https://ai-evaluation-lab-tobe6.vercel.app
+The GitHub repository is the source of truth for complete samples, methods, execution records and limitations.
 
-The active production deployment is created from the reviewed `index.html` in this repository using the connected Vercel deployment integration. The project is not assumed to have Git auto-deploy enabled; repository changes must be explicitly deployed and verified.
+## Deployment and access
 
-No custom domain or paid hosting is required.
+The production project is connected to the repository's `main` branch. Production deployment protection is configured to protect previews while leaving the production portfolio publicly accessible. No custom domain purchase is required.
