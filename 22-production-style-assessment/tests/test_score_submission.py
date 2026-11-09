@@ -1,9 +1,11 @@
 import csv
 import tempfile
 import unittest
+import sys
 from pathlib import Path
 
-from score_submission import ROOT, load, score
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from score_submission import ROOT, score
 
 
 class ScoreSubmissionTests(unittest.TestCase):
