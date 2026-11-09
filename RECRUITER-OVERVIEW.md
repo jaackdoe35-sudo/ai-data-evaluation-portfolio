@@ -10,7 +10,7 @@ Portfolio evidence focuses on structured text annotation, AI response evaluation
 
 The projects form a connected AI data and assurance lifecycle rather than unrelated exercises. The [Portfolio System Map](PORTFOLIO-MAP.md) explains the relationship between task design, annotation, modality-specific labeling, quality checks, response/search evaluation, security-focused test design and governance documentation. Each stage links to supporting projects and explains what evidence it produces or consumes.
 
-The portfolio website presents the same structure through its [connected project map](https://patricktobe.vercel.app/#portfolio-map).
+The portfolio website presents the same structure through its connected project map.
 
 ## Selected work samples
 
@@ -22,6 +22,7 @@ The portfolio website presents the same structure through its [connected project
 | 4 | [Search relevance evaluation](14-search-relevance-evaluation/README.md) | 20 synthetic query-result examples covering intent identification, relevance grades, constraint matching and evidence-based rationales. |
 | 5 | [Realistic response review](08-realistic-response-review/README.md) | Six longer scenario-based comparisons, five-dimension scoring, documented revision of an initial decision and reflection. |
 | 6 | [Paired-response challenge](06-paired-response-challenge/README.md) and [advanced blind evaluation](07-advanced-blind-evaluation/README.md) | Comparative response judgments, severity analysis, source fidelity, instruction compliance and actionable feedback. |
+| 7 | [Candidate annotation assessment](22-production-style-assessment/README.md) | 30 synthetic support tasks, a structured submission template, field-level scorer and timing validation. Candidate performance remains unmeasured; the public reference key makes this an honor-system exercise, not a secure blind test. |
 
 ## Modality-specific work
 
@@ -43,8 +44,8 @@ The four supporting utilities were exercised on deterministic synthetic datasets
 
 ## AI governance and security-evaluation samples
 
-- [AI governance and assurance case study](21-ai-governance-and-assurance/README.md): fictional recruitment-screening use case with an inventory, impact assessment, qualitative risk register, proposed controls, data-lineage model, human-oversight design, monitoring and incident procedures, regulatory issue map and bounded assurance review.
-- [LLM security evaluation catalogue](20-llm-security-evaluation/README.md): 12 controlled test specifications with expected behavior, failure indicators and blank execution records. Separately, the [Agent Security Lab free-model report](https://github.com/jaackdoe35-sudo/agent-security-lab/blob/main/evidence/FREE-MODEL-EVALUATION-2026-11-08.md) documents seven scenarios across two trials each, using a dynamically routed free-model endpoint and synthetic tools. This is preliminary model-behavior evidence, not a benchmark or vulnerability finding.
+- [AI governance and assurance case study](21-ai-governance-and-assurance/README.md): fictional recruitment-screening use case connected from inventory and impact assessment through eight risk hypotheses, ten proposed control objectives, test plan, evidence register, deterministic synthetic simulation, decision log, remediation tracker and bounded assurance conclusion. No real system or operating control was assessed.
+- [LLM security evaluation catalogue](20-llm-security-evaluation/README.md): 12 controlled test specifications, a ten-trial-per-scenario protocol and a 120-row ledger currently marked `not_run`. Separately, the [Agent Security Lab free-model report](https://github.com/jaackdoe35-sudo/agent-security-lab/blob/main/evidence/FREE-MODEL-EVALUATION-2026-11-08.md) documents seven scenarios across two trials each, using dynamically routed free models and synthetic tools. This is preliminary evidence, not a benchmark or vulnerability finding.
 
 These samples support documentation, evaluation coordination, evidence tracking and control-mapping work. They do not establish professional audit experience, legal expertise, certification, real-world control implementation or operating effectiveness.
 

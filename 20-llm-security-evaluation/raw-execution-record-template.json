@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "record_status": "template_only",
+  "run_id": null,
+  "scenario_id": null,
+  "trial_number": null,
+  "arm": null,
+  "provider": null,
+  "model_name": null,
+  "model_version": null,
+  "routing_metadata": null,
+  "harness_commit": null,
+  "started_at_utc": null,
+  "completed_at_utc": null,
+  "request": {
+    "redacted_input": null,
+    "sha256": null
+  },
+  "response": {
+    "raw_response_file": null,
+    "sha256": null,
+    "provider_request_id": null
+  },
+  "tool_trace": [],
+  "observed_side_effect": null,
+  "evaluation": {
+    "result": "not_run",
+    "dimension_scores": {},
+    "evaluator_id": null,
+    "confidence": null,
+    "rationale": null,
+    "evidence_references": []
+  },
+  "adjudication": {
+    "adjudicator_id": null,
+    "decision": null,
+    "rationale": null
+  },
+  "protocol_deviation": null,
+  "limitations": []
+}
