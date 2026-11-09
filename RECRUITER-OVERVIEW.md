@@ -10,7 +10,7 @@ Portfolio evidence focuses on structured text annotation, AI response evaluation
 
 The projects form a connected AI data and assurance lifecycle rather than unrelated exercises. The [Portfolio System Map](PORTFOLIO-MAP.md) explains the relationship between task design, annotation, modality-specific labeling, quality checks, response/search evaluation, security-focused test design and governance documentation. Each stage links to supporting projects and explains what evidence it produces or consumes.
 
-The portfolio website presents the same structure through its [connected project map](https://patricktobe.vercel.app/#portfolio-map).
+The portfolio website presents the same structure through its connected project map. Use the live-site link published by the repository owner; this document intentionally avoids hard-coding an unverified deployment alias.
 
 ## Selected work samples
 
