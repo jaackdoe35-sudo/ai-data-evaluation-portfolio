@@ -1,61 +1,71 @@
 # AI Governance & Assurance — Simulated Recruitment AI Case Study
 
-**Status: connected design case study with deterministic synthetic-evidence simulation.** TalentScreen is fictional. No real organization, model, applicant data, deployed workflow, owner or operating control was assessed.
+**Status:** connected design case study with deterministic synthetic-evidence simulation. TalentScreen is fictional. No real organization, model, applicant data, deployed workflow, owner or operating control was assessed.
 
-## Scenario
-TalentScreen is an illustrative AI-assisted recruitment screening system. It extracts application information, compares it with published role criteria and prioritizes a human review queue. The assumed recruiter decision authority is a design requirement, not evidence of actual oversight.
+## Scenario and objective
+
+TalentScreen is an illustrative AI-assisted recruitment-screening workflow. It extracts application information, compares it with published role criteria and prioritizes a human review queue. The exercise demonstrates a documented approach to AI governance, risk and assurance—not a real audit, compliance assessment or certification.
 
 ## Work products
-- [System inventory](system-inventory.csv) — purpose, inputs, outputs, owner/provider unknowns and system boundary.
-- [Impact assessment](impact-assessment.md) — stakeholders, impact pathways, unknowns and pre-deployment requirements.
-- [Risk register](risk-register.csv) — eight risk hypotheses; likelihood and residual risk are deliberately not rated without evidence.
-- [Risk methodology](risk-methodology.md) — likelihood/impact definitions, scoring discipline, control credit and acceptance rules.
-- [Control matrix](control-matrix.csv) — ten proposed control objectives, evidence expectations and test procedures.
-- [Control test plan](control-test-plan.csv) — design, implementation and operating-effectiveness test steps with acceptance criteria.
-- [Evidence register](evidence-register.csv) — expected evidence and actual availability status.
+
+- [System inventory](system-inventory.csv) — purpose, inputs, outputs, system boundary and explicit unknowns.
+- [Impact assessment](impact-assessment.md) — affected stakeholders, impact pathways and pre-deployment questions.
+- [Risk register](risk-register.csv) and [risk methodology](risk-methodology.md) — eight risk hypotheses; likelihood and residual risk remain unassessed without system evidence.
+- [Control matrix](control-matrix.csv) — ten proposed control objectives and evidence expectations.
+- [Control test plan](control-test-plan.csv) — design, implementation and operating-effectiveness procedures with acceptance criteria.
+- [Evidence register](evidence-register.csv) — expected evidence and availability status.
 - [Data governance and lineage](data-governance-and-lineage.md), [human oversight](human-oversight.md), [monitoring plan](monitoring-plan.md) and [incident response](incident-response.md).
-- [Regulatory mapping](regulatory-mapping.md) — preliminary issue map, not a legal determination.
-- [Assurance report](assurance-report.md) and [assurance workpaper](assurance-workpaper.md) — bounded findings, evidence quality and closure requirements.
-- [Recruiter evidence matrix](recruiter-evidence-matrix.md) — role-to-artifact mapping and explicit evidence gaps.
-- [Connected case study](connected-case-study.md) — lifecycle narrative linking inventory, impact, risks, controls, tests, evidence, remediation and assurance gates.
-- [Decision log](decision-log.csv) — proposed governance decisions, decision roles, evidence requirements and approval status.
-- [Remediation tracker](remediation-tracker.csv) — ten synthetic/design findings with owners by role, closure evidence and closure tests.
-- [Synthetic control evidence fixture](synthetic-control-evidence.json), [simulation runner](run_assurance_simulation.py) and [simulation report](simulation-report.md) — seeded evidence, deterministic control classifications and remediation findings; all fictional.
-- [Independent review template](independent-review-template.csv) — blank template for a genuinely separate reviewer.
+- [Framework crosswalk](framework-crosswalk.md) — NIST AI RMF 1.0 thematic mapping and limited public-source alignment to ISO/IEC 42001:2023, with evidence status and gaps.
+- [Regulatory issue map](regulatory-mapping.md) — conditional EU AI Act recruitment analysis and current consolidated application-date note; not a legal determination.
+- [Evidence judgment and findings](evidence-judgment-and-findings.md) — evidence hierarchy, synthetic simulation interpretation, prioritized findings and closure conditions.
+- [Assurance report](assurance-report.md) and [assurance workpaper](assurance-workpaper.md) — bounded conclusions; no assurance opinion.
+- [Recruiter evidence matrix](recruiter-evidence-matrix.md) — role-to-artifact mapping and evidence limitations.
+- [Connected case study](connected-case-study.md) — lifecycle traceability from inventory through assurance.
+- [Decision log](decision-log.csv), [remediation tracker](remediation-tracker.csv) and [independent review template](independent-review-template.csv).
+- [Synthetic evidence fixture](synthetic-control-evidence.json), [simulation runner](run_assurance_simulation.py) and [simulation report](simulation-report.md).
 - [Validator](validator.py) — structural CSV/reference checks only.
 
-## Connected governance lifecycle
+## Governance lifecycle
 
-The connected case study maps the nine stages from intake and inventory through impact analysis, risk treatment, control design, test planning, evidence collection, synthetic simulation, remediation and bounded assurance conclusion. The risk-to-control table traces R-001–R-008 to C-001–C-010, TP-001–TP-010 and evidence expectations. The decision log distinguishes proposed exercise positions from actual approvals; the remediation tracker distinguishes synthetic findings from real audit findings.
+The case connects intake and inventory, impact analysis, risk identification, control design, test planning, evidence collection, deterministic synthetic simulation, remediation and a bounded assurance conclusion. Risk-to-control traceability links R-001–R-008 to C-001–C-010, test procedures and evidence expectations.
 
-## Assurance approach
-The workpaper separates:
-1. documented design;
+## Framework literacy
+
+The crosswalk uses NIST AI RMF 1.0 as a version-stamped voluntary risk-management reference and maps selected governance themes to publicly described ISO/IEC 42001:2023 management-system themes. It does not claim NIST conformance, ISO conformity or certification. A full clause-level ISO assessment would require lawful access to the current standard and a defined organizational scope.
+
+The EU AI Act analysis treats recruitment classification as conditional on actual purpose, influence on selection, profiling, operator roles and territorial scope. It is not a legal opinion and does not decide applicability.
+
+## Assurance approach and evidence discipline
+
+The work separates:
+1. documentation;
 2. design adequacy;
 3. implementation evidence;
 4. operating-effectiveness evidence; and
 5. independent assurance.
 
-These are different evidence levels. A proposed control receives no risk-reduction credit. No control is described as implemented or effective without direct evidence. No residual risk is rated until controls and context are evidenced.
-
-## Framework references and boundaries
-NIST AI RMF 1.0, ISO/IEC 42001, EU AI Act Regulation (EU) 2024/1689 and the IAPP AI Governance Skills Framework are reference points, not certifications. Recruitment use raises an EU AI Act Annex III, point 4(a) classification question; applicability and any exception require fact-specific legal analysis. This project does not make a legal determination.
+A document demonstrates that a design was written. A test plan is not an executed test. A synthetic fixture tests the evaluator's behavior against seeded records; it is not evidence from a deployed system. No proposed control receives implementation or risk-reduction credit without direct evidence.
 
 ## Current conclusion
-**Connected documentation design exercise completed; system assurance not established.** The artifacts demonstrate a structured way to identify governance topics, formulate risk hypotheses, design controls, specify tests and track evidence gaps. They do not establish legal compliance, certification, real deployment, fairness, model performance, operating effectiveness, audit experience or acceptable residual risk. No assurance opinion is expressed.
+
+**Connected governance documentation design exercise completed; real-system assurance not established.** The artifacts demonstrate structured risk/control documentation, framework literacy, evidence evaluation and test planning. They do not establish legal compliance, certification, real deployment, fairness, model performance, operating effectiveness, independent audit experience or acceptable residual risk. No assurance opinion is expressed.
 
 ## Reproduction
+
 ```bash
 python validator.py
 python -m unittest discover -s tests -v
+python run_assurance_simulation.py
 ```
-The validator checks structure and cross-references, not legal interpretation or control effectiveness.
+
+These checks validate artifact structure and the deterministic simulation logic. They do not validate a real system or legal interpretation.
 
 ## Primary references
+
 - NIST AI RMF: https://www.nist.gov/itl/ai-risk-management-framework
-- EU AI Act consolidated text: https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng
-- EU AI Act implementation timeline: https://ai-act-service-desk.ec.europa.eu/en/ai-act/eu-ai-act-implementation-timeline
+- NIST AI RMF Core: https://airc.nist.gov/airmf-resources/airmf/5-sec-core/
 - ISO/IEC 42001: https://www.iso.org/standard/42001
-- IAPP AI Governance Skills Framework: https://iapp.org/resources/article/ai-governance-skills-framework/
+- EU AI Act consolidated text: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R1689-20260727
+- EU AI Act Service Desk: https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-113
 
 Educational portfolio material only; not legal advice, audit opinion or certification.
