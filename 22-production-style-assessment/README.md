@@ -1,12 +1,12 @@
 # Production-Style Annotation Assessment
 
-**Status: assessment pack prepared; candidate performance not yet measured.** All messages are synthetic. The answer key is separate from the task file. Do not publish candidate results until a completed submission has been scored.
+**Status: assessment pack prepared; candidate performance not yet measured.** All messages are synthetic. The reference labels are in a separate CSV in this public repository, but are not access-controlled. This is an honor-system practice assessment, not a secure blind test. Do not inspect the reference labels before freezing your submission.
 
 ## Objective
 Measure instruction-following, intent classification, priority assignment, action-needed judgment, rationale quality and throughput on a fixed 30-item customer-support queue.
 
 ## Rules
-1. Use only the task file; do not inspect the answer key before submitting.
+1. Use only `tasks.csv` and the blank submission template. Do not inspect `gold-standard.csv` before freezing your submission. Because the reference file is public, this relies on candidate integrity rather than technical access control.
 2. Work independently. Do not use an LLM to generate labels if the purpose is to measure your own annotation performance.
 3. Start a timer immediately before task T001. Put the same ISO-8601 UTC start timestamp in `started_at_utc` on all 30 rows. Put the same finish timestamp in `completed_at_utc` on all 30 rows after T030. The scorer validates one consistent timestamp per column and requires a timezone.
 4. For each task, enter exactly one allowed intent, priority and action_required value.
