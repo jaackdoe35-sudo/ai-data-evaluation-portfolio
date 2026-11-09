@@ -7,6 +7,7 @@
 This is a connected, self-directed portfolio across the AI data lifecycle: task design; annotation; quality assurance; AI response/search evaluation; safety-focused testing; and governance/risk/assurance documentation. Projects use separate synthetic or explicitly sourced practice materials; the lifecycle map describes conceptual relationships, not a shared production pipeline.
 
 ## Recruiter starting points
+- [Professional profile](PROFESSIONAL-PROFILE.md) — factual role positioning and evidence boundaries.
 - [Recruiter overview](RECRUITER-OVERVIEW.md)
 - [Portfolio system map](PORTFOLIO-MAP.md)
 - [AI Safety Evaluation — repeated-trial protocol](20-llm-security-evaluation/repeated-trial-protocol.md)
@@ -14,7 +15,7 @@ This is a connected, self-directed portfolio across the AI data lifecycle: task 
 - [Production-style annotation assessment](22-production-style-assessment/README.md)
 
 ## Selected evidence
-1. [End-to-end support annotation](09-end-to-end-annotation-case-study/README.md) — 40 synthetic messages, taxonomy, rationales, ambiguity log and QA.
+1. [End-to-end support annotation](09-end-to-end-annotation-case-study/README.md) — 40 synthetic messages, taxonomy, rationales, ambiguity log and QA; canonical project identifier: Project 09.
 2. [AI response evaluation](01-ai-response-evaluation/README.md) — rubric and 30 synthetic response reviews.
 3. [Text annotation](02-data-annotation/README.md) — 50 synthetic labeled messages.
 4. [Search relevance](14-search-relevance-evaluation/README.md) — 20 synthetic query-result cases.
