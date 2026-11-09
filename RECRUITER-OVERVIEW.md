@@ -42,6 +42,8 @@ Project 21 is the principal governance work sample. It connects:
 
 The [framework crosswalk](21-ai-governance-and-assurance/framework-crosswalk.md) states what each mapping does and does not establish. The [evidence judgment workpaper](21-ai-governance-and-assurance/evidence-judgment-and-findings.md) separates documentation, design adequacy, implementation, operating effectiveness and independent assurance.
 
+A separate [public-system assurance review](21-ai-governance-and-assurance/public-system-review-gpt-6-astra.md) applies the same evidence discipline to OpenAI's publicly documented GPT-6 Astra system card. It maps disclosed practices to selected NIST AI RMF outcomes, distinguishes provider statements from independent verification, records evidence-bounded findings and specifies further evidence and closure tests. It does not claim internal access, a live model test, legal compliance or independent assurance.
+
 ## Modality-specific work
 
 - [Image annotation and visual QA](18-image-annotation/README.md) — synthetic vector-scene labels and boxes; not a natural-image benchmark.

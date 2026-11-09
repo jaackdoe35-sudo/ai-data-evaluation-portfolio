@@ -21,6 +21,7 @@ TalentScreen is an illustrative AI-assisted recruitment-screening workflow. It e
 - [Assurance report](assurance-report.md) and [assurance workpaper](assurance-workpaper.md) — bounded conclusions; no assurance opinion.
 - [Recruiter evidence matrix](recruiter-evidence-matrix.md) — role-to-artifact mapping and evidence limitations.
 - [Connected case study](connected-case-study.md) — lifecycle traceability from inventory through assurance.
+- [Public-system assurance review](public-system-review-gpt-6-astra.md) — evidence-bounded desk review of OpenAI GPT-6 Astra's public system card; includes primary-source register, NIST AI RMF application, control traceability, findings, conditional regulatory screening, evidence requests and closure tests. This is separate from the fictional TalentScreen simulation and does not claim internal access or independent assurance.
 - [Decision log](decision-log.csv), [remediation tracker](remediation-tracker.csv) and [independent review template](independent-review-template.csv).
 - [Synthetic evidence fixture](synthetic-control-evidence.json), [simulation runner](run_assurance_simulation.py) and [simulation report](simulation-report.md).
 - [Validator](validator.py) — structural CSV/reference checks only.
