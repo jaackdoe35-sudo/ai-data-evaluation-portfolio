@@ -3,7 +3,7 @@
 **Case ID:** GOV-002  
 **Review date:** 9 November 2026  
 **Evidence cutoff:** 9 November 2026  
-**Assessment type:** independent desk-based review of publicly available provider documentation, authored as a portfolio exercise  
+**Assessment type:** self-authored desk-based review of publicly available provider documentation; not independent assurance  
 **Target:** OpenAI GPT-6 Astra, as described in OpenAI's public Deployment Safety Hub system card  
 **Status:** public-documentation review only; not an audit, certification, legal opinion, penetration test, model evaluation or assessment of private/internal controls.
 
