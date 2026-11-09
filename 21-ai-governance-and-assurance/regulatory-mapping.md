@@ -38,7 +38,7 @@ However, an Annex III system that performs profiling of natural persons remains 
 
 ### 2.3 Application dates — amended Article 113
 
-The European Commission AI Act Service Desk's consolidated text, based on the AI Act as amended by the Digital Omnibus on AI and current to 27 July 2026, states that:
+The European Commission AI Act Service Desk's consolidated text, based on Regulation (EU) 2024/1689 as amended by Regulation (EU) 2026/1744 (Digital Omnibus on AI), and current to 27 July 2026, states that:
 - the Regulation generally applies from 2 August 2026, subject to staged provisions;
 - Chapter III, Sections 1, 2 and 3 for Annex III high-risk systems apply from **2 December 2027**;
 - Chapter III, Sections 1, 2 and 3 for Annex I high-risk systems apply from **2 August 2028**.
@@ -105,8 +105,9 @@ A real assessment should record, at minimum:
 3. [EU AI Act Service Desk — Employment examples](https://ai-act-service-desk.ec.europa.eu/en/employment-0) — Commission examples on candidate ranking and selection.
 4. [EU AI Act Service Desk — Article 26](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-26) — deployer obligations.
 5. [EU AI Act Service Desk — Article 27](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-27) — specified deployer categories for fundamental-rights impact assessments.
-6. [EU AI Act Service Desk — Article 113](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-113) — consolidated application dates; page notes the 27 July 2026 consolidated text.
-7. [EUR-Lex consolidated AI Act text, 27 July 2026](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R1689-20260727) — consult the authentic Official Journal acts for legal reliance.
+6. [Regulation (EU) 2026/1744 — Digital Omnibus on AI](https://eur-lex.europa.eu/eli/reg/2026/1744/oj) — amending regulation published 24 July 2026 and in force from 27 July 2026.
+7. [EU AI Act Service Desk — Article 113](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-113) — consolidated application dates; page notes the 27 July 2026 consolidated text.
+8. [EUR-Lex consolidated AI Act text, 27 July 2026](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R1689-20260727) — consult the authentic Official Journal acts for legal reliance.
 
 ## 6. Conclusion and review trigger
 
