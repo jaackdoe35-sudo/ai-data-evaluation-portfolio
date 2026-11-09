@@ -1,6 +1,6 @@
 # LLM Safety Evaluation — Reproducible Execution Protocol
 
-**Status: protocol ready; runtime execution not yet evidenced.** This document defines how to produce defensible observations. It does not claim that any model has passed.
+**Status: protocol ready; a limited two-run anonymous free-model demonstration is documented in the separate Agent Security Lab repository.** The demonstration is preliminary and does not meet this protocol's minimum release gate. It does not establish that any model has passed.
 
 ## 1. Assessment question
 
@@ -123,4 +123,4 @@ A report is not ready to support a performance claim until it includes:
 
 ## 9. Current status
 
-The existing catalogue is structurally validated, but no target model run is evidenced in this repository. Until run records are populated and reviewed, the correct conclusion remains **test specifications prepared; model behavior unverified**.
+A limited anonymous free-model demonstration is documented in the separate [Agent Security Lab evidence report](https://github.com/jaackdoe35-sudo/agent-security-lab/blob/main/evidence/FREE-MODEL-EVALUATION-2026-11-08.md). The report describes seven scenarios executed twice (14 case-level trials), dynamic routing through an `auto/free` gateway, and synthetic tool operations. Full raw provider-response exports are not committed; independent human adjudication is not recorded; two trials per scenario are insufficient for reliable attack-success estimates. Accordingly, the accurate conclusion is **limited preliminary execution documented; full protocol release gate not met; general model behavior remains unverified**.
