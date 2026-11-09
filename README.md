@@ -1,5 +1,7 @@
 # AI Data Annotation, Evaluation & Governance Portfolio
 
+**Live portfolio:** [patricktobe-portfolio.vercel.app](https://patricktobe-portfolio.vercel.app)
+
 **Target roles:** AI Data Annotator · AI Response Evaluator · LLM Evaluator · Search Relevance Evaluator · Annotation Quality Reviewer · AI Quality Analyst · AI Safety Evaluation Assistant · Junior AI Governance / Risk & Assurance Analyst.
 
 This is a connected, self-directed portfolio across the AI data lifecycle: task design; annotation; quality assurance; AI response/search evaluation; safety-focused testing; and governance/risk/assurance documentation. Projects use separate synthetic or explicitly sourced practice materials; the lifecycle map describes conceptual relationships, not a shared production pipeline.
