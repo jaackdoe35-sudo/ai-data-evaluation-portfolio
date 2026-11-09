@@ -1,30 +1,118 @@
-# Regulatory and Standards Mapping — TalentScreen (fictional)
+# Regulatory Issue Map — TalentScreen (Fictional Recruitment AI)
 
-**Review date:** 8 November 2026 · **Status:** Preliminary issue map, not legal advice. No jurisdiction or legal entity is specified.
+**Review date:** 9 November 2026  
+**Status:** preliminary, conditional issue analysis; not legal advice or a legal applicability determination.  
+**Scenario:** TalentScreen is fictional. It is assumed to extract application information, compare it with role criteria and prioritize a recruiter review queue. No legal entity, provider, deployer, model, deployment geography, applicant location or actual decision impact is specified.
 
-## EU AI Act — Regulation (EU) 2024/1689
-Annex III, point 4(a) identifies AI systems intended for recruitment or selection, including systems that analyse/filter applications or evaluate candidates. Candidate prioritisation raises a serious high-risk classification question.
+## 1. Decision-first applicability analysis
 
-Article 6(3) provides a limited derogation for certain Annex III systems that do not pose significant risk and do not materially influence decision-making, subject to conditions; systems performing profiling of natural persons remain high-risk. Classification depends on actual intended purpose and effect, not labels such as "assistive". This case study does not assert an exception.
+Do not start by assuming that every recruitment tool is legally high-risk. Establish these facts first:
 
-Relevant provisions to investigate where applicable: Article 9 (risk management), 10 (data governance), 11/Annex IV (technical documentation), 12 (logging), 13 (transparency), 14 (human oversight), 15 (accuracy/robustness/cybersecurity), 26 (deployer duties), 27 (fundamental-rights impact assessment for specified deployers), 49 (registration), Annex III 4(a).
+1. Does the software meet the applicable legal definition of an AI system?
+2. What is the provider's documented intended purpose, and what does the system actually do?
+3. Where is it placed on the market, put into service or used, and whose data/decisions are affected?
+4. Who is the provider, deployer, importer, distributor or other relevant operator?
+5. Does the system filter, score, rank, recommend, reject or otherwise materially influence candidate selection?
+6. Does it profile natural persons, and can a human reviewer genuinely understand, challenge and override the output?
+7. Which employment, equality, privacy, data-protection and automated-decision rules apply in each relevant jurisdiction?
 
-The consolidated text and actor-specific transition dates must be checked before real use, including amendments. Applicability depends on EU territorial scope, provider/deployer roles, actual purpose and facts. National employment, equality and privacy rules may also apply. Obtain qualified legal advice.
+Until those facts are known, the legal status is **UNDETERMINED**. A label such as "decision support" or "human in the loop" is not enough to resolve classification.
 
-## NIST AI RMF
-Use Govern, Map, Measure and Manage to organize accountability, context/impact, measurement and treatment. NIST AI RMF 1.0 is being revised; version-stamp and refresh mapping. It is voluntary, not a legal certification.
+## 2. EU AI Act — conditional recruitment classification
 
-## ISO/IEC 42001
-Reference for AI management-system governance, documented processes, roles, risk treatment and continual improvement. Mapping does not establish implementation, conformity or certification.
+### 2.1 Relevant use case
 
-## IAPP AI Governance Skills Framework
-Capability vocabulary for governance, risk, policy, assurance and technical coordination; not a regulatory standard or certification.
+Annex III, point 4(a) lists AI systems intended for recruitment or selection of natural persons, including systems used to place targeted job advertisements, analyse/filter applications or evaluate candidates.
 
-## Primary references
-- NIST AI RMF: https://www.nist.gov/itl/ai-risk-management-framework
-- EU AI Act: https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng
-- EU AI Act timeline: https://ai-act-service-desk.ec.europa.eu/en/ai-act/eu-ai-act-implementation-timeline
-- ISO/IEC 42001: https://www.iso.org/standard/42001
-- IAPP framework: https://iapp.org/resources/article/ai-governance-skills-framework/
+The Commission's AI Act Service Desk employment examples describe automated job-matching and ranking systems used to filter and shortlist candidates as high-risk where their rankings serve as a primary decision input, even where recruiters retain discretion.
 
-**Conclusion:** preliminary issue map only; no legal applicability, compliance, conformity, classification or satisfaction of obligations is concluded.
+**TalentScreen issue:** the fictional system prioritizes a human review queue. That description creates a material Annex III, point 4(a) classification question. It does not, by itself, establish whether the ranking materially influences selection, whether the system profiles people, or whether the system falls within the Act's territorial scope.
+
+### 2.2 Article 6(3) filter
+
+For an Annex III system, Article 6(3) provides a limited route for not treating it as high-risk where it does not pose a significant risk of harm to health, safety or fundamental rights, including because it does not materially influence decision-making, and one of the listed conditions is met (for example, a narrow procedural or preparatory task).
+
+However, an Annex III system that performs profiling of natural persons remains high-risk under Article 6(3). A provider relying on the non-high-risk route must document its assessment before placing the system on the market or putting it into service and comply with the applicable registration provision.
+
+**Assessment for this fictional case:** no exception is claimed. A queue-prioritization tool could be merely preparatory in some designs, but if ranking materially determines which candidates are seen or advances/excludes them, the exception may not be available. The actual workflow and profiling question must be established.
+
+### 2.3 Application dates — amended Article 113
+
+The European Commission AI Act Service Desk's consolidated text, based on Regulation (EU) 2024/1689 as amended by Regulation (EU) 2026/1744 (Digital Omnibus on AI), and current to 27 July 2026, states that:
+- the Regulation generally applies from 2 August 2026, subject to staged provisions;
+- Chapter III, Sections 1, 2 and 3 for Annex III high-risk systems apply from **2 December 2027**;
+- Chapter III, Sections 1, 2 and 3 for Annex I high-risk systems apply from **2 August 2028**.
+
+For the assumed Annex III recruitment use case, 2 December 2027 is the relevant scheduled application date for those high-risk provisions under the consolidated Article 113 text. This is a date statement, not a conclusion that TalentScreen is in scope. Recheck the authentic Official Journal text and amendments before relying on it for a live legal decision.
+
+### 2.4 Potential obligations if the system is in scope and classified high-risk
+
+The following are issue areas to assess, not findings that the fictional system currently breaches or satisfies the Act:
+
+| Provision | Subject | Governance/control evidence to request | Related portfolio artifacts |
+|---|---|---|---|
+| Article 9 | Risk-management system | Lifecycle risk process, identified risks, testing, mitigation and review records | risk-register.csv; risk-methodology.md; remediation-tracker.csv |
+| Article 10 | Data and data governance | Training/validation/testing data governance, relevance, representativeness, bias detection and mitigation records | data-governance-and-lineage.md; C-003; TP-003/006 |
+| Article 11 and Annex IV | Technical documentation | Provider technical documentation appropriate to the system and required information | system-inventory.csv; C-007 |
+| Article 12 | Record-keeping | Logging capability and relevant event records | C-008; TP-008 |
+| Article 13 | Transparency and information to deployers | Instructions for use and information needed by deployers | C-007; human-oversight.md |
+| Article 14 | Human oversight | Design measures enabling oversight, understanding, intervention and safe use | human-oversight.md; C-005; TP-005 |
+| Article 15 | Accuracy, robustness and cybersecurity | Appropriate performance, robustness and cybersecurity evidence | C-006/C-009; TP-006/009 |
+| Article 26 | Deployer obligations | Use according to instructions, assigned competent oversight, monitoring, input-data relevance, logs and workplace information duties where applicable | human-oversight.md; monitoring-plan.md; incident-response.md |
+| Article 27 | Fundamental-rights impact assessment | Determine whether the deployer falls within the specified categories and whether the provision applies | impact-assessment.md; regulatory-mapping.md |
+
+### 2.5 Article 27 is not an automatic requirement for every private employer
+
+Article 27 applies to specified deployers of high-risk AI systems: bodies governed by public law, private entities providing public services, and deployers of certain Annex III systems identified in points 5(b) and 5(c), subject to the provision's terms and exceptions. A private employer using an Annex III, point 4(a) recruitment system is not automatically within Article 27 solely because it is a recruitment system.
+
+Other fundamental-rights, data-protection, employment and equality assessments may still be required under other applicable law or governance policy. The actual deployer status and legal context must be checked.
+
+## 3. Other legal regimes — jurisdiction-specific screening, not assumed applicability
+
+| Legal area | Trigger questions | Evidence needed |
+|---|---|---|
+| Data protection/privacy | Where are controller/processor and affected applicants located? What personal data, purposes, lawful basis, retention, transfers and rights are involved? | Data map, privacy notices, records of processing, processor contracts, retention/deletion evidence, DPIA where required |
+| Employment and equality | Which employment market and protected-class rules apply? Are criteria job-related and validated? Could proxies or disparate impact arise? | Job criteria, feature inventory, validation, subgroup analysis, accommodations, adverse-impact review and appeal process |
+| Automated decision-making | Does the system make or materially support decisions with legal or similarly significant effects? What human intervention is meaningful? | Decision flow, authority matrix, override records, explanation and challenge route |
+| Consumer/AI-specific laws | Is the tool within a jurisdiction's AI-specific law, and which actor obligations apply? | Jurisdiction, system purpose, actor role, classification and effective-date analysis |
+| Contract and procurement | Is a third-party model/vendor involved? What audit, transparency, incident and change rights exist? | Contracts, SLAs, vendor due diligence, model documentation and change notifications |
+
+No jurisdiction-specific conclusion is made for Nigeria, the United States, the United Kingdom, the EU or any other country because the fictional system has no specified geography or legal entity. The candidate's physical location does not establish the fictional system's legal location.
+
+## 4. Required regulatory decision record
+
+A real assessment should record, at minimum:
+
+| Field | Current fictional-case status |
+|---|---|
+| System provider and deployer | Unknown |
+| Legal entities and establishment locations | Unknown |
+| Market placement/use locations | Unknown |
+| Intended purpose and actual workflow | High-level fictional description only |
+| AI-system definition analysis | Not assessed |
+| EU AI Act territorial-scope analysis | Not assessed |
+| Annex III 4(a) analysis | Potentially relevant; not determined |
+| Article 6(3) exception analysis | Not determined; profiling status unknown |
+| Provider/deployer role allocation | Not determined |
+| Article 27 deployer category | Not determined |
+| Other employment/privacy/equality laws | Not assessed |
+| Legal reviewer and approval | None |
+
+## 5. Sources — primary/official
+
+1. [EU AI Act Service Desk — Article 6](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-6) — classification rules and Article 6(3).
+2. [EU AI Act Service Desk — Annex III](https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3) — point 4(a), recruitment and selection.
+3. [EU AI Act Service Desk — Employment examples](https://ai-act-service-desk.ec.europa.eu/en/employment-0) — Commission examples on candidate ranking and selection.
+4. [EU AI Act Service Desk — Article 26](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-26) — deployer obligations.
+5. [EU AI Act Service Desk — Article 27](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-27) — specified deployer categories for fundamental-rights impact assessments.
+6. [Regulation (EU) 2026/1744 — Digital Omnibus on AI](https://eur-lex.europa.eu/eli/reg/2026/1744/oj) — amending regulation published 24 July 2026 and in force from 27 July 2026.
+7. [EU AI Act Service Desk — Article 113](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-113) — consolidated application dates; page notes the 27 July 2026 consolidated text.
+8. [EUR-Lex consolidated AI Act text, 27 July 2026](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02024R1689-20260727) — consult the authentic Official Journal acts for legal reliance.
+
+## 6. Conclusion and review trigger
+
+**Conclusion:** recruitment AI raises a significant conditional regulatory issue under EU AI Act Annex III, point 4(a), but the fictional facts do not support a final classification or applicability decision. The amended timeline for Annex III high-risk provisions is 2 December 2027 under the consolidated Article 113 text. Article 27's deployer scope must be tested separately; it is not automatically triggered for every private recruitment deployer.
+
+Refresh this map whenever the system's intended purpose, ranking influence, profiling, provider/deployer role, geography, applicable law or legislative text changes. Obtain qualified legal review before treating this educational analysis as an organization's compliance position.
+
+This document is an educational portfolio work sample, not legal advice.

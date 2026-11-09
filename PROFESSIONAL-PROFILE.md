@@ -2,39 +2,57 @@
 
 ## Professional focus
 
-AI data annotation, AI response evaluation and data-quality review, with adjacent practice in search relevance, LLM safety-evaluation design and AI governance documentation.
+AI data quality, evaluation and governance documentation, with practical portfolio work across structured annotation, AI response review, search relevance, quality assurance, LLM safety evaluation and AI risk/control documentation.
 
 ## Professional summary
 
-I focus on turning task instructions, source material and evaluation criteria into structured, evidence-based decisions. My portfolio demonstrates taxonomy-based text annotation, rubric-led response review, query/result relevance judgments, ambiguity handling, structured-data validation and transparent reporting. Supporting work extends these methods into security scenario design and fictional AI governance documentation.
+I work with structured evaluation criteria, source material and evidence records to produce consistent, traceable judgments. My self-directed portfolio demonstrates taxonomy-based annotation, rubric-led AI response evaluation, search relevance assessment, data-quality checks and evidence-based reporting. It also includes an AI governance and assurance case study that connects system context, impact pathways, risk hypotheses, proposed controls, test procedures, evidence evaluation and remediation.
 
-I prioritize instruction fidelity, source traceability, consistent label application, explicit uncertainty and clear separation between observed results and assumptions.
+My approach emphasizes instruction fidelity, source traceability, explicit uncertainty, proportionate conclusions and a clear distinction between documented design, implementation evidence and operating effectiveness.
 
-## Demonstrated portfolio evidence
+## Capability areas and portfolio evidence
 
-- **Annotation:** 40-record end-to-end synthetic support-message case study, including taxonomy, rationales, clarification flags and a documented self-audit.
-- **Response evaluation:** 30 synthetic prompt/response pairs reviewed using a five-dimension rubric with severity labels and evidence-linked rationales.
-- **Search relevance:** 20 synthetic query-result cases assessed for intent satisfaction using a four-level relevance scale.
+### AI data quality and evaluation
+- **Data annotation:** 40-record synthetic support-message case study with taxonomy, labels, rationales, clarification flags and a documented self-audit.
+- **AI response evaluation:** 30 synthetic prompt/response pairs reviewed using a five-dimension rubric with severity labels and evidence-linked rationales.
+- **Search relevance:** 20 synthetic query-result cases assessed using a four-level relevance scale.
 - **Quality assurance:** rule-based validation utilities and a documented synthetic scale test up to 100,000 rows, with environment and measurement limitations.
-- **AI governance:** fictional recruitment-screening case study connecting impact analysis, eight risk hypotheses, ten proposed control objectives, test planning, synthetic evidence simulation and bounded assurance conclusions.
-- **LLM security evaluation:** 12 scenario specifications and a separate preliminary free-model demonstration; dynamic routing, synthetic tools, incomplete raw-response preservation and no independent adjudication constrain the conclusions.
+
+### AI governance, risk and assurance documentation
+- Fictional AI-assisted recruitment-screening case study.
+- System inventory and impact assessment.
+- Eight risk hypotheses and ten proposed control objectives.
+- Risk-to-control-to-test traceability and a structured evidence register.
+- NIST AI RMF 1.0 thematic crosswalk and a limited, public-source thematic alignment to ISO/IEC 42001:2023.
+- Conditional EU AI Act issue analysis, including Annex III recruitment classification questions and the amended application timeline.
+- Evidence-quality assessment, findings, remediation/closure criteria and a bounded assurance conclusion.
+- Deterministic synthetic-evidence simulation, explicitly separated from real system testing.
+
+### LLM safety evaluation
+- Twelve scenario specifications, execution protocol and evaluator rubric.
+- Separate preliminary anonymous free-model demonstration using synthetic tools; dynamic routing, incomplete raw-response preservation and no independent adjudication constrain conclusions.
 
 ## Working principles
 
-- Follow the task-specific rubric and schema.
-- Ground judgments in the supplied source or observable evidence.
+- Apply task-specific rubrics and schemas consistently.
+- Ground judgments in supplied sources or observable evidence.
 - Separate factual support, instruction-following, completeness and safety.
 - Flag ambiguity instead of inventing missing information.
-- Preserve decision rationales and make quality checks inspectable.
-- Treat missing evidence as unknown; do not convert a proposed control into an implemented control or a test plan into a test result.
+- Preserve decision rationales, provenance and quality checks.
+- Treat missing evidence as unknown.
+- Do not describe proposed controls as implemented, test plans as test results, or synthetic simulations as real-world assurance.
 
 ## Experience and credentials
 
-This profile intentionally does not claim employment, paid client engagements, professional certifications, academic qualifications, independent benchmark performance or production operating experience. The linked work samples are self-directed practice unless a source is explicitly identified. No personal accuracy or throughput result is claimed for the candidate assessment because no candidate submission has been recorded.
+This profile does not claim paid AI employment, client engagements, professional certifications, academic qualifications, independent benchmark performance, professional audit experience or production operating experience. The linked work samples are self-directed practice unless a source is explicitly identified. No personal accuracy or throughput result is claimed for the candidate assessment because no candidate submission has been recorded.
 
 ## Role alignment
 
-The strongest evidence currently aligns with AI data annotator, text data labeler, AI response evaluator, LLM evaluator, search relevance evaluator, AI data reviewer and annotation quality reviewer roles. Data-quality, AI quality and junior governance support roles are adjacent targets where the role requirements match the demonstrated work.
+**Primary role families:** AI Data Annotator, AI Response Evaluator, LLM Evaluator, Search Relevance Evaluator, Annotation Quality Reviewer, Data Quality Reviewer and AI Quality Analyst.
+
+**Governance track:** Junior AI Governance Analyst, AI Risk Analyst, AI Governance Research Assistant, AI Controls/Assurance Analyst and governance documentation support roles, where entry-level requirements align with the evidence shown.
+
+The governance work demonstrates documentation, framework literacy and evidence-scoped analysis—not senior governance consulting, legal advice, certification or independent audit capability.
 
 ## Contact
 
