@@ -4,103 +4,77 @@
 
 ## Candidate positioning
 
-See the [professional profile](PROFESSIONAL-PROFILE.md) for a concise role summary, evidence-led working principles and explicit experience boundaries.
+See the [professional profile](PROFESSIONAL-PROFILE.md) for role alignment, demonstrated evidence and explicit experience boundaries.
 
-**AI Data Annotation & Evaluation Specialist**
+**AI Data Quality & Evaluation | AI Governance and Risk Documentation**
 
-Portfolio evidence focuses on structured text annotation, AI response evaluation, search relevance assessment, annotation QA, ambiguity handling and concise reporting. Small Python utilities are included only as supporting tools for data validation and quality review.
+The portfolio has two complementary tracks:
 
-## How the portfolio fits together
+1. **Primary track — AI data quality and evaluation:** structured annotation, AI response evaluation, search relevance, quality checks, ambiguity handling and evidence-based reporting.
+2. **Governance track — AI governance, risk and assurance documentation:** system inventory, impact analysis, risk/control mapping, test planning, evidence evaluation, regulatory issue analysis and remediation documentation.
 
-The projects form a connected AI data and assurance lifecycle rather than unrelated exercises. The [Portfolio System Map](PORTFOLIO-MAP.md) explains the relationship between task design, annotation, modality-specific labeling, quality checks, response/search evaluation, security-focused test design and governance documentation. Each stage links to supporting projects and explains what evidence it produces or consumes.
-
-The portfolio website presents the same structure through its connected project map.
+Small Python utilities support data validation and quality review; they are not positioned as a separate software-development service.
 
 ## Selected work samples
 
 | Priority | Work sample | Evidence and relevance |
 |---|---|---|
-| 1 | [End-to-end support annotation case study](09-end-to-end-annotation-case-study/README.md) | 40 synthetic support messages; documented task methodology, detailed intent taxonomy, sentiment and urgency labels, synthetic PII tags, clarification flags, ambiguity log, QA report and findings. |
-| 2 | [AI response evaluation](01-ai-response-evaluation/README.md) | Five-dimension evaluation rubric, 30 synthetic prompt/response examples, evidence rationales, severity tags and descriptive findings. |
-| 3 | [Text annotation](02-data-annotation/README.md) | Annotation guidelines and 50 synthetic messages labeled for primary intent and sentiment, with a separate QA report. |
-| 4 | [Search relevance evaluation](14-search-relevance-evaluation/README.md) | 20 synthetic query-result examples covering intent identification, relevance grades, constraint matching and evidence-based rationales. |
-| 5 | [Realistic response review](08-realistic-response-review/README.md) | Six longer scenario-based comparisons, five-dimension scoring, documented revision of an initial decision and reflection. |
-| 6 | [Paired-response challenge](06-paired-response-challenge/README.md) and [advanced blind evaluation](07-advanced-blind-evaluation/README.md) | Comparative response judgments, severity analysis, source fidelity, instruction compliance and actionable feedback. |
-| 7 | [Candidate annotation assessment](22-production-style-assessment/README.md) | 30 synthetic support tasks, a structured submission template, field-level scorer and timing validation. Candidate performance remains unmeasured; the public reference key makes this an honor-system exercise, not a secure blind test. |
+| 1 | [End-to-end support annotation case study](09-end-to-end-annotation-case-study/README.md) | 40 synthetic support messages; taxonomy, rationales, clarification flags, ambiguity log and QA report. |
+| 2 | [AI response evaluation](01-ai-response-evaluation/README.md) | Five-dimension rubric, 30 synthetic prompt/response examples, evidence rationales and severity tags. |
+| 3 | [Search relevance evaluation](14-search-relevance-evaluation/README.md) | 20 synthetic query-result examples, intent identification, relevance grades and evidence-based rationales. |
+| 4 | [Annotation quality tools](10-annotation-csv-validator/README.md) | Rule-based validation, consistency checks and supporting QA utilities. |
+| 5 | [AI governance and assurance case study](21-ai-governance-and-assurance/README.md) | Fictional recruitment AI use case with inventory, impact assessment, eight risk hypotheses, ten proposed controls, test plan, evidence register, synthetic simulation and bounded assurance workpaper. |
+| 6 | [LLM security evaluation catalogue](20-llm-security-evaluation/README.md) | Twelve controlled scenario specifications, evaluator rubric and a separate preliminary free-model demonstration with explicit limits. |
+| 7 | [Candidate annotation assessment](22-production-style-assessment/README.md) | Thirty synthetic support tasks, submission template and scorer. Candidate performance remains unmeasured; the public reference key makes this an honor-system exercise, not a secure blind test. |
+
+## Governance evidence — what can be inspected
+
+Project 21 is the principal governance work sample. It connects:
+- system inventory, intended-use boundary and impact pathways;
+- risk statements and risk-assessment methodology;
+- proposed control objectives and test procedures;
+- evidence register and evidence-quality criteria;
+- NIST AI RMF 1.0 thematic crosswalk;
+- public-source thematic alignment to ISO/IEC 42001:2023;
+- conditional EU AI Act issue analysis;
+- findings, remediation and closure evidence; and
+- a deterministic simulation using deliberately seeded synthetic records.
+
+The [framework crosswalk](21-ai-governance-and-assurance/framework-crosswalk.md) states what each mapping does and does not establish. The [evidence judgment workpaper](21-ai-governance-and-assurance/evidence-judgment-and-findings.md) separates documentation, design adequacy, implementation, operating effectiveness and independent assurance.
 
 ## Modality-specific work
 
-- [Image annotation and visual QA](18-image-annotation/README.md) — completed self-directed practice sample using an original synthetic vector scene, four object categories, pixel bounding boxes, structured JSON and documented quality checks. It is not a natural-image benchmark or independently adjudicated dataset.
-- [Video transcript and caption QA](19-video-annotation/README.md) — completed 22-cue sample checked against NASA's published SRT for cue IDs, timestamps and caption text. It is not independent transcription, audio verification, visual verification or frame-level object annotation.
+- [Image annotation and visual QA](18-image-annotation/README.md) — synthetic vector-scene labels and boxes; not a natural-image benchmark.
+- [Video transcript and caption QA](19-video-annotation/README.md) — 22 transcript cues checked against NASA's published SRT; no audio/video verification claimed.
 
-## Supporting quality tools
+## Evidence boundaries
 
-These modest Python demonstrations support annotation and evaluation workflows; they are not a separate software-development offering.
+All annotation, response-evaluation and search-relevance examples are self-directed. Datasets are synthetic unless a source is explicitly identified. They are not paid client work, proprietary production data or independently validated benchmark results. Independent annotator agreement and candidate production throughput remain unmeasured.
 
-- [Annotation CSV Validator](10-annotation-csv-validator/README.md)
-- [Annotation Consistency Checker](11-annotation-consistency-checker/README.md)
-- [AI Response Score Calculator](12-ai-response-score-calculator/README.md)
-- [Annotation QA Dashboard](13-annotation-qa-dashboard/README.md)
+The governance case is fictional. Framework mappings are thematic and evidence-scoped, not certifications or conformance assessments. No real organization, deployed system, control owner, implementation, operating effectiveness or independent audit was assessed. The EU AI Act analysis is conditional and does not establish applicability or legal compliance. No legal advice is offered.
 
-## Supporting QA scale-test evidence
-
-The four supporting utilities were exercised on deterministic synthetic datasets of up to 100,000 rows in a successful GitHub Actions run. The [scale-test report](16-annotation-qa-stress-test/scale-test-report.md) publishes measured runtimes, Python-tracked memory allocations, runner details and limitations. This is a bounded synthetic test, not evidence of client-data performance or production readiness.
-
-## AI governance and security-evaluation samples
-
-- [AI governance and assurance case study](21-ai-governance-and-assurance/README.md): fictional recruitment-screening use case connected from inventory and impact assessment through eight risk hypotheses, ten proposed control objectives, test plan, evidence register, deterministic synthetic simulation, decision log, remediation tracker and bounded assurance conclusion. No real system or operating control was assessed.
-- [LLM security evaluation catalogue](20-llm-security-evaluation/README.md): 12 controlled test specifications, a ten-trial-per-scenario protocol and a 120-row ledger currently marked `not_run`. Separately, the [Agent Security Lab free-model report](https://github.com/jaackdoe35-sudo/agent-security-lab/blob/main/evidence/FREE-MODEL-EVALUATION-2026-11-08.md) documents seven scenarios across two trials each, using dynamically routed free models and synthetic tools. This is preliminary evidence, not a benchmark or vulnerability finding.
-
-These samples support documentation, evaluation coordination, evidence tracking and control-mapping work. They do not establish professional audit experience, legal expertise, certification, real-world control implementation or operating effectiveness.
-
-## Working approach
-
-- Translate task instructions into explicit criteria and schemas.
-- Separate source-supported facts from unsupported claims.
-- Record evidence for annotation and evaluation decisions.
-- Treat missing information as unknown rather than filling gaps.
-- Validate structured data for completeness, consistency and allowed values.
-- Document ambiguity, limitations and corrective actions.
-- Escalate unclear or conflicting cases for review rather than silently guessing.
-
-## Supporting technical skills
-
-Basic scripting, CSV handling and spreadsheet workflows can support data cleaning, duplicate detection, label validation and evaluation summaries. The included Python tools demonstrate selected rule-based checks. They are supporting capabilities for annotation and quality work, not a claim of complex software-engineering expertise.
-
-## Experience and evidence boundary
-
-All annotation, response-evaluation and search-relevance examples are synthetic and self-directed. They are not paid work, employment, client engagements, proprietary production data or independent benchmark results.
-
-Preference scores represent agreement with author-created reference material only. The end-to-end annotation case study was completed in a single pass and self-audited; it does not establish independent annotator agreement, production QA, throughput or professional client experience.
-
-The image sample is synthetic and has not been independently adjudicated. The video transcript/caption sample is source-matched to NASA's SRT but has not been checked against the audio or video. No completed independent audio-transcription or frame-level visual-annotation capability is claimed.
+The security demonstration is preliminary, dynamically routed and based on synthetic tools; it is not a benchmark or production security assessment.
 
 ## Suitable role families
 
-### Strongest current evidence
-
+### Primary: AI data quality and evaluation
 - AI Data Annotator / Annotation Specialist
-- Text Data Labeler
 - AI Response Evaluator / LLM Evaluator
-- AI Trainer / AI Data Reviewer
 - Search Relevance Evaluator
-- Content Relevance Analyst
 - Annotation Quality Reviewer
-- Data Labeling Quality Reviewer
-
-### Adjacent roles to target selectively
-
-- Data Quality Assurance Analyst
+- Data Quality Reviewer
 - AI Quality Analyst
-- Content Quality Reviewer
-- Trust & Safety / Content Reviewer
-- Ad Quality Rater
-- Data Validation Assistant
-- Research Data Assistant
-- Taxonomy / Ontology Assistant
+- AI Data Reviewer
 
-These are adjacent role families, not claims of prior employment or specialist credentials. Apply where the task requirements match the demonstrated skills and any additional assessment requirements can be met.
+### Governance and risk track
+- Junior AI Governance Analyst
+- Junior AI Risk Analyst
+- AI Governance Research Assistant
+- Junior AI Controls / Assurance Analyst
+- AI Governance Documentation Assistant
+
+Governance roles should be targeted where the employer accepts project-based evidence and does not require prior regulated-industry experience, legal qualifications, formal audit credentials or senior ownership.
 
 ## Contact
 
-Contact: **tobepatrickjnr@gmail.com**
+**tobepatrickjnr@gmail.com**
