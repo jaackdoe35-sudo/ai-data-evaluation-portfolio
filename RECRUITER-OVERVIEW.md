@@ -4,6 +4,8 @@
 
 ## Candidate positioning
 
+See the [professional profile](PROFESSIONAL-PROFILE.md) for a concise role summary, evidence-led working principles and explicit experience boundaries.
+
 **AI Data Annotation & Evaluation Specialist**
 
 Portfolio evidence focuses on structured text annotation, AI response evaluation, search relevance assessment, annotation QA, ambiguity handling and concise reporting. Small Python utilities are included only as supporting tools for data validation and quality review.
