@@ -190,4 +190,60 @@ html{scroll-behavior:smooth;scroll-padding-top:70px}body{background:#fff;color:v
 const journeyButtons=[...document.querySelectorAll('.journeyTab')];
 journeyButtons.forEach(btn=>btn.addEventListener('click',()=>{journeyButtons.forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-selected',String(b===btn))});document.querySelectorAll('.journeyPanel').forEach(p=>{p.hidden=p.id!=='journey-'+btn.dataset.journey})}));
 const rotatingWords=['IMPACT','EVIDENCE','SECURITY','TRUST'];let rw=0;const wordNode=document.getElementById('rotatingWord');if(wordNode){setInterval(()=>{wordNode.classList.add('wordOut');setTimeout(()=>{rw=(rw+1)%rotatingWords.length;wordNode.textContent=rotatingWords[rw];wordNode.classList.remove('wordOut')},280)},2300)}
+</script><style id="motion-effects-v3">
+html{scroll-behavior:smooth}
+body{--pointer-x:50vw;--pointer-y:30vh}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(500px circle at var(--pointer-x) var(--pointer-y),rgba(92,111,220,.055),transparent 70%);transition:background .12s}
+#scrollProgress{position:fixed;z-index:9999;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,#6879e8,#a7b3ff,#6879e8);box-shadow:0 0 12px #6879e899}
+.reveal{opacity:0;transform:translate3d(0,32px,0) scale(.985);filter:blur(3px);transition:opacity .85s cubic-bezier(.2,.7,.2,1),transform .85s cubic-bezier(.2,.7,.2,1),filter .85s ease;will-change:transform,opacity}
+.reveal.visible{opacity:1;transform:translate3d(0,0,0) scale(1);filter:blur(0)}
+.reveal[data-reveal="left"]{transform:translate3d(-38px,0,0);}.reveal[data-reveal="right"]{transform:translate3d(38px,0,0)}.reveal[data-reveal="zoom"]{transform:scale(.91)}.reveal.visible[data-reveal]{transform:none}
+.stagger-in>*{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1)}.stagger-in.visible>*{opacity:1;transform:none}.stagger-in.visible>*:nth-child(2){transition-delay:.08s}.stagger-in.visible>*:nth-child(3){transition-delay:.16s}.stagger-in.visible>*:nth-child(4){transition-delay:.24s}.stagger-in.visible>*:nth-child(5){transition-delay:.32s}
+.project,.jobCard,.cert,.arenaMetric,.arenaChallenge,.learningCard,.skillPanel{transform-style:preserve-3d;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease,border-color .35s ease}
+.project:hover,.jobCard:hover,.cert:hover,.arenaMetric:hover,.arenaChallenge:hover,.learningCard:hover{box-shadow:0 20px 42px rgba(39,55,110,.13);border-color:#bdc7f5}
+.projectArt{overflow:hidden}.projectArt:before,.projectArt:after{transition:transform .7s cubic-bezier(.2,.7,.2,1),opacity .5s ease}.project:hover .projectArt:before{transform:translate(12px,-10px) scale(1.14)}.project:hover .projectArt:after{transform:translate(-10px,8px) scale(1.13)}.project:hover .projectArt span{transform:scale(1.12) rotate(-7deg)}.projectArt span{transition:transform .6s ease}
+.btn,.filter,.skillTab,.journeyTab,.socials a,.textLink{transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease,border-color .25s ease}.btn:hover,.filter:hover,.skillTab:hover,.journeyTab:hover{transform:translateY(-3px);box-shadow:0 8px 20px #4e63d925}.btn.primary:hover{box-shadow:0 12px 25px #4e63d94a;transform:translateY(-3px) scale(1.025)}
+.socials a:hover,.textLink:hover{color:#4e63d9;transform:translateX(4px)}
+.introCopy h1 em{background:linear-gradient(100deg,#5268db 10%,#8b9af1 48%,#5268db 85%);background-size:220% auto;background-clip:text;-webkit-background-clip:text;color:transparent;animation:gradientFlow 5s linear infinite}@keyframes gradientFlow{to{background-position:220% center}}
+.introVisual{isolation:isolate}.landscapePanel{will-change:transform;transition:box-shadow .4s ease}.landscapePanel:hover{box-shadow:0 28px 48px #1b2b5a35}.introWord{animation:wordBreath 5s ease-in-out infinite}@keyframes wordBreath{50%{transform:translateY(-5px)}}#rotatingWord{display:inline-block;transition:opacity .28s ease,transform .28s ease}#rotatingWord.wordOut{opacity:0;transform:translateY(14px) scale(.95)}
+.orbitLine{animation:orbitSpin 24s linear infinite,orbitGlow 4s ease-in-out infinite}@keyframes orbitGlow{50%{border-color:#7183d55e;box-shadow:0 0 25px #7183d51b}}
+.phoneMock{will-change:transform}.phoneStage:after{content:"";position:absolute;inset:10% 8%;background:radial-gradient(ellipse,#667ce51a,transparent 65%);animation:stagePulse 5s ease-in-out infinite;pointer-events:none}@keyframes stagePulse{50%{transform:scale(1.13);opacity:.5}}
+.phoneGlyph{animation:glyphTurn 12s linear infinite;display:inline-block}@keyframes glyphTurn{to{transform:rotate(360deg)}}
+.qstat strong{transition:color .3s ease,transform .3s ease}.qstat:hover strong{color:#293eae;transform:translateY(-3px)}
+.sectionHead h2{position:relative}.sectionHead h2:after{content:"";display:block;width:42px;height:3px;margin-top:9px;border-radius:4px;background:linear-gradient(90deg,#5268db,#b4bef8);transform-origin:left;transition:width .5s ease}.sectionHead:hover h2:after{width:86px}
+.nav.scrolled{box-shadow:0 8px 28px #1720330d}
+[data-tilt]{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--lift,0px));}
+@media(hover:none){body:before{display:none}.project:hover,.jobCard:hover,.cert:hover,.arenaMetric:hover,.arenaChallenge:hover,.learningCard:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.reveal,.stagger-in>*,.landscapePanel,.orbitLine,.introWord,.phoneMock,.phoneGlyph,.introCopy h1 em,.phoneStage:after{animation:none!important;transition:none!important;transform:none!important;filter:none!important;opacity:1!important}.reveal{opacity:1!important}}
+</style><script id="motion-engine-v3">
+(()=>{
+ const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const progress=document.createElement('div');progress.id='scrollProgress';document.body.prepend(progress);
+ const nav=document.querySelector('.nav');
+ let ticking=false;
+ const updateScroll=()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';if(nav)nav.classList.toggle('scrolled',scrollY>12);ticking=false};
+ addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(updateScroll);ticking=true}},{passive:true});updateScroll();
+ if(!reduce){
+  addEventListener('pointermove',e=>{document.body.style.setProperty('--pointer-x',e.clientX+'px');document.body.style.setProperty('--pointer-y',e.clientY+'px')},{passive:true});
+ }
+ const revealEls=[...document.querySelectorAll('.reveal')];
+ if('IntersectionObserver'in window&&!reduce){
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12,rootMargin:'0px 0px -45px 0px'});
+  revealEls.forEach((el,i)=>{if(!el.dataset.reveal&&i%7===2)el.dataset.reveal='zoom';observer.observe(el)});
+ }else revealEls.forEach(el=>el.classList.add('visible'));
+ document.querySelectorAll('.projectGrid,.certGrid,.learningGrid,.arenaMetricGrid,.arenaChallenges').forEach(el=>el.classList.add('stagger-in'));
+ if(!reduce&&matchMedia('(hover:hover) and (pointer:fine)').matches){
+  document.querySelectorAll('.project,.jobCard,.cert,.arenaMetric,.arenaChallenge,.learningCard').forEach(card=>{
+   card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;card.style.transform='perspective(850px) rotateX('+((.5-y)*5)+'deg) rotateY('+((x-.5)*6)+'deg) translateY(-3px)';});
+   card.addEventListener('pointerleave',()=>{card.style.transform=''});
+  });
+  document.querySelectorAll('.landscapePanel').forEach((panel,i)=>panel.addEventListener('pointermove',e=>{const r=panel.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;panel.style.marginLeft=(x*10)+'px';panel.style.marginTop=(y*10)+'px'}));
+  document.querySelectorAll('.btn.primary').forEach(btn=>{btn.addEventListener('pointermove',e=>{const r=btn.getBoundingClientRect();btn.style.transform='translate('+((e.clientX-r.left-r.width/2)*.08)+'px,'+((e.clientY-r.top-r.height/2)*.12-2)+'px)'});btn.addEventListener('pointerleave',()=>btn.style.transform='')});
+ }
+ const sections=[...document.querySelectorAll('main section[id],section.section[id]')],links=[...document.querySelectorAll('.links a[href^="#"]')];
+ if('IntersectionObserver'in window){const activeObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-35% 0px -55% 0px'});sections.forEach(s=>activeObserver.observe(s))}
+ const counters=[...document.querySelectorAll('.qstat strong,.arenaMetric strong')];
+ const countObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,raw=el.textContent.trim(),match=raw.match(/^([\d,]+)(.*)$/);if(match&&!el.dataset.counted){el.dataset.counted='1';const end=Number(match[1].replace(/,/g,''));if(end>0&&end<10000){const suffix=match[2],start=performance.now(),duration=1300;const frame=now=>{const p=Math.min(1,(now-start)/duration),ease=1-Math.pow(1-p,4);el.textContent=Math.round(end*ease).toLocaleString()+suffix;if(p<1)requestAnimationFrame(frame)};requestAnimationFrame(frame)}}countObserver.unobserve(el)}),{threshold:.7});counters.forEach(el=>countObserver.observe(el));
+ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{const target=document.querySelector(a.getAttribute('href'));if(target&&target.classList.contains('reveal'))target.classList.add('visible')}));
+})();
 </script></body></html>
