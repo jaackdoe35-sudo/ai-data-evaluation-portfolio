@@ -312,3 +312,37 @@ a.btn:focus-visible,.btn:focus-visible,.backtop:focus-visible{outline:3px solid 
  .card:hover,.feature:hover,.case-panel:hover,.case-jumps a:hover,.related-grid a:hover,a.btn:hover,.btn:hover{transform:none!important;box-shadow:none!important}
 }
 @media(max-width:650px){a.btn,.btn{min-height:48px;padding:13px 17px}}
+
+/* Final CTA contrast hardening: set the text on the link and every nested node. */
+a.btn:not(.light),a.btn:not(.light):link,a.btn:not(.light):visited,
+a.btn:not(.light):hover,a.btn:not(.light):focus,a.btn:not(.light):active,
+a.btn:not(.light) *,a.btn:not(.light) *:before,a.btn:not(.light) *:after{
+ color:#fff!important;-webkit-text-fill-color:#fff!important;opacity:1!important;visibility:visible!important;
+}
+a.btn.light,a.btn.light:link,a.btn.light:visited,a.btn.light *,
+a.btn.light:hover,a.btn.light:focus,a.btn.light:active{
+ color:#2466c8!important;-webkit-text-fill-color:#2466c8!important;opacity:1!important;visibility:visible!important;
+}
+a.btn,a.btn.light{font-size:13px!important;font-weight:800!important;line-height:1.35!important;letter-spacing:.025em!important}
+a.btn:not(.light){background:#3478e5!important}
+a.btn.light{background:#fff!important}
+a.btn:not(.light):hover{background:#245fbd!important}
+
+/* Scroll animation: content remains visible even if JavaScript is unavailable. */
+.reveal{opacity:1!important;transform:none!important;filter:none!important;transition:none!important;will-change:auto}
+.reveal.in{animation:portfolio-rise-in .68s cubic-bezier(.2,.75,.25,1) both!important}
+@keyframes portfolio-rise-in{
+ from{opacity:0;transform:translateY(16px)}
+ to{opacity:1;transform:translateY(0)}
+}
+.card,.feature,.case-panel,.case-jumps a,.related-grid a{
+ transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease!important
+}
+.card:hover,.feature:hover,.case-panel:hover,.case-jumps a:hover,.related-grid a:hover{
+ transform:translateY(-3px)!important;box-shadow:0 12px 26px #142b4512!important
+}
+a.btn{transition:background .2s ease,transform .2s ease,box-shadow .2s ease!important}
+@media(prefers-reduced-motion:reduce){
+ .reveal.in{animation:none!important}
+ .card,.feature,.case-panel,.case-jumps a,.related-grid a,a.btn{transition:none!important}
+}
