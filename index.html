@@ -51,6 +51,95 @@
 .home-marquee{display:none!important}.home-stats{margin:36px auto 64px}
 .home-cta{background:#17212b!important}.home-cta:before{display:none!important}
 @media(max-width:700px){.hero-proof{max-width:none;padding:20px}.home-hero{gap:24px}.home-hero .hero-copy h1{font-size:clamp(44px,12vw,64px)!important}}
+
+/* Structural rebuild to match the supplied editorial portfolio reference */
+.home-hero{
+ width:min(1160px,calc(100% - 64px))!important;max-width:1160px!important;
+ min-height:480px!important;padding:86px 0 74px!important;margin:0 auto!important;
+ display:grid!important;grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr)!important;
+ align-items:center!important;gap:40px!important;position:relative!important;
+ background:transparent!important;border-radius:0!important;overflow:visible!important;
+}
+.home-hero:before{content:""!important;position:absolute!important;z-index:-2!important;
+ inset:0 -100vw!important;display:block!important;opacity:1!important;
+ background:radial-gradient(ellipse at 80% 48%,#ecebf5 0,transparent 36%),
+ radial-gradient(ellipse at 12% 10%,#f1f0f7 0,transparent 34%),#f8f8fb!important}
+.home-hero:after{display:none!important}
+.hero-copy{max-width:650px!important}
+.hero-copy .eyebrow{display:block!important;width:max-content!important;padding:0!important;
+ border:0!important;background:transparent!important;color:#8b86c7!important;
+ font-size:10px!important;letter-spacing:.14em!important}
+.hero-copy h1{font-size:clamp(48px,6vw,76px)!important;line-height:1.04!important;
+ letter-spacing:-.065em!important;margin:24px 0 20px!important;color:#252631!important}
+.hero-copy h1 span{display:block!important}
+.hero-copy h1 .gradient-text{font-size:clamp(27px,3.3vw,43px)!important;
+ line-height:1.2!important;letter-spacing:-.045em!important;margin-top:9px!important;
+ background:linear-gradient(100deg,#7772c8,#aaa5dc)!important;
+ background-clip:text!important;-webkit-background-clip:text!important;
+ color:transparent!important;-webkit-text-fill-color:transparent!important}
+.hero-copy .lead{max-width:510px!important;color:#777783!important;font-size:14px!important;line-height:1.9!important}
+.hero-actions{margin:28px 0 25px!important}
+.hero-actions .btn{padding:13px 21px!important}
+.hero-actions .btn.primary{background:#292936!important;color:#fff!important;border:1px solid #292936!important}
+.hero-actions .btn.light{background:#ffffffc9!important;color:#343440!important;border:1px solid #e7e6ed!important}
+.home-hero .socials{display:flex!important;gap:20px!important;flex-wrap:wrap!important}
+.home-hero .socials a{font-size:9px!important;letter-spacing:.09em!important;color:#858591!important}
+.hero-space{min-height:340px!important;width:100%!important;background:transparent!important;
+ border:0!important;box-shadow:none!important;pointer-events:none!important}
+.home-stats{margin:0 auto 55px!important}
+.arena-profile-link{max-width:1160px!important;margin:0 auto 60px!important;padding:22px 26px!important}
+.arena-profile-link p{font-size:12px!important;line-height:1.8!important}
+.home-about{display:grid!important;grid-template-columns:1fr 1fr!important;gap:40px!important;
+ align-items:center!important;padding:42px!important;background:#ffffffc9!important;
+ border:1px solid #e9e8ef!important;border-radius:22px!important;
+ box-shadow:0 12px 40px #34334b09!important;margin:0 auto 64px!important}
+.home-about h2{font-size:clamp(26px,3vw,38px)!important;line-height:1.15!important}
+.home-about p{font-size:12px!important;line-height:1.9!important;color:#777783!important}
+.home-about-metrics{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:10px!important}
+.home-about-metrics div{padding:16px 12px!important;background:#f7f7fa!important;border:1px solid #ecebf1!important;border-radius:13px!important}
+.home-about-metrics strong{display:block!important;color:#5f5aa8!important;font-size:24px!important}
+.home-about-metrics span{display:block!important;color:#858591!important;font-size:9px!important;margin-top:5px!important}
+.service-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:14px!important}
+.service-card{padding:22px 18px!important;min-height:165px!important;border-radius:16px!important;
+ background:#ffffffc9!important;border:1px solid #e8e7ee!important;
+ box-shadow:0 8px 24px #35334b08!important}
+.service-card .service-icon{width:34px!important;height:34px!important;border-radius:10px!important;
+ display:grid!important;place-items:center!important;background:#f0eff8!important;color:#7772b8!important;
+ font-size:15px!important;margin-bottom:20px!important}
+.service-card h3{font-size:15px!important;margin:0 0 8px!important}
+.service-card p{font-size:11px!important;line-height:1.75!important;margin:0!important;color:#777783!important}
+.tools-strip{display:flex!important;gap:10px!important;flex-wrap:wrap!important}
+.tools-strip span{padding:12px 17px!important;border:1px solid #e8e7ef!important;
+ border-radius:12px!important;background:#ffffffc9!important;color:#676777!important;
+ font:600 10px Manrope,system-ui,sans-serif!important}
+.process-row{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:10px!important}
+.process-step{padding:19px 15px!important;background:#ffffffc9!important;
+ border:1px solid #e8e7ef!important;border-radius:14px!important;min-height:130px!important}
+.process-step b{display:block!important;color:#8a85c5!important;font-size:11px!important;margin-bottom:16px!important}
+.process-step strong{display:block!important;font-size:13px!important;color:#343440!important}
+.process-step p{font-size:10px!important;line-height:1.65!important;color:#858591!important;margin:6px 0 0!important}
+.evidence-highlights{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}
+.evidence-highlight{padding:21px!important;border:1px solid #e8e7ef!important;border-radius:15px!important;background:#ffffffc9!important}
+.evidence-highlight strong{display:block!important;color:#5f5aa8!important;font-size:22px!important}
+.evidence-highlight span{display:block!important;color:#777783!important;font-size:11px!important;line-height:1.65!important;margin-top:7px!important}
+@media(max-width:850px){
+ .home-hero{grid-template-columns:1fr minmax(120px,.55fr)!important;min-height:390px!important}
+ .service-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .process-row{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
+@media(max-width:650px){
+ .home-hero{width:calc(100% - 36px)!important;min-height:unset!important;
+ padding:60px 0 34px!important;grid-template-columns:1fr!important;gap:0!important}
+ .hero-copy h1{font-size:clamp(42px,11vw,60px)!important}
+ .hero-copy h1 .gradient-text{font-size:clamp(24px,6vw,32px)!important}
+ .hero-space{display:none!important}
+ .home-about{grid-template-columns:1fr!important;padding:23px!important;gap:20px!important}
+ .home-about-metrics{grid-template-columns:repeat(3,1fr)!important}
+ .service-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .process-row{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .evidence-highlights{grid-template-columns:1fr!important}
+}
+
 </style>
 </head>
 <body class="page-transition">
@@ -62,20 +151,14 @@
 </div></header>
 <main id="top">
 <section class="wrap home-hero">
-<div class="hero-copy reveal">
+<div class="hero-copy">
 <div class="eyebrow">AI SECURITY · EVALUATION · GOVERNANCE</div>
-<h1><span>SECURITY.</span><span class="outline">EVALUATION.</span><span class="gradient-text">RESEARCH.</span></h1>
-<p class="lead">I investigate how AI systems behave, test whether they follow their security rules, and document what the evidence shows. I also work on model evaluation, data quality and AI governance.</p>
-<div class="hero-actions"><a class="btn primary" href="/research.html">EXPLORE THE RESEARCH ↗</a><a class="btn light" href="/about.html">MEET THE RESEARCHER</a></div>
+<h1><span>Patrick Tobe</span><span class="gradient-text">AI Security &amp; Evaluation</span></h1>
+<p class="lead">I test how AI systems behave under pressure, investigate security boundaries and document model evaluation results. My work connects adversarial research, data quality and responsible AI governance.</p>
+<div class="hero-actions"><a class="btn primary" href="/research.html">Explore my work ↗</a><a class="btn light" href="/contact.html">Get in touch</a></div>
 <div class="socials"><a href="https://github.com/jaackdoe35-sudo" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="https://app.grayswan.ai/arena/user/6ab13514f16781060d70ab84" target="_blank" rel="noreferrer">GRAY SWAN ARENA ↗</a><a href="mailto:tobepatrickjnr@gmail.com">EMAIL ↗</a></div>
 </div>
-<aside class="hero-proof reveal" aria-label="How the research is conducted">
-<div class="proof-top"><span>HOW THE RESEARCH WORKS</span><span>01—03</span></div>
-<div class="proof-step"><b>01</b><div><strong>Define the question</strong><p>What should this AI system do, and what should it never do?</p></div></div>
-<div class="proof-step"><b>02</b><div><strong>Test its behaviour</strong><p>Use structured experiments to see how it responds under pressure.</p></div></div>
-<div class="proof-step"><b>03</b><div><strong>Record the evidence</strong><p>Preserve prompts, model responses, tool calls and evaluator results.</p></div></div>
-<a class="proof-link" href="/methodology.html">EXPLORE THE METHODOLOGY →</a>
-</aside>
+<div class="hero-space" aria-hidden="true"></div>
 </section>
 <div class="marquee home-marquee"><div class="marquee-track"><span>✳</span> AI SECURITY <span>✳</span> RED TEAMING <span>✳</span> MODEL EVALUATION <span>✳</span> DATA QUALITY <span>✳</span> AI GOVERNANCE <span>✳</span> EVIDENCE-LED RESEARCH <span>✳</span> AI SECURITY <span>✳</span> RED TEAMING <span>✳</span> MODEL EVALUATION <span>✳</span> DATA QUALITY <span>✳</span> AI GOVERNANCE <span>✳</span> EVIDENCE-LED RESEARCH</div></div>
 <section class="wrap stats home-stats" aria-label="Selected Gray Swan Arena research evidence">
