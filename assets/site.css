@@ -346,3 +346,44 @@ a.btn{transition:background .2s ease,transform .2s ease,box-shadow .2s ease!impo
  .reveal.in{animation:none!important}
  .card,.feature,.case-panel,.case-jumps a,.related-grid a,a.btn{transition:none!important}
 }
+
+
+/* === Editorial motion layer: subtle depth, light and responsive feedback === */
+:root{--motion-ease:cubic-bezier(.22,.72,.18,1);--navy-glow:#1746a21c}
+body{position:relative}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.32;background-image:linear-gradient(#102f7008 1px,transparent 1px),linear-gradient(90deg,#102f7008 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 78%)}
+body:after{content:"";position:fixed;z-index:-1;pointer-events:none;width:38rem;height:38rem;right:-20rem;top:16vh;border-radius:50%;background:radial-gradient(circle,#1746a212 0,transparent 68%);animation:ambient-drift 22s ease-in-out infinite alternate}
+@keyframes ambient-drift{from{transform:translate3d(0,-2rem,0) scale(.92)}to{transform:translate3d(-5rem,5rem,0) scale(1.12)}}
+.nav{box-shadow:0 4px 24px #071b4908}
+.nav:after{content:"";position:absolute;bottom:-1px;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,#1746a255,transparent);pointer-events:none}
+.navcta,.btn{position:relative;overflow:hidden;isolation:isolate;transition:transform .28s var(--motion-ease),box-shadow .28s var(--motion-ease),background .28s ease!important}
+.navcta:before,.btn:before{content:"";position:absolute;inset:0;z-index:-1;transform:translateX(-115%);background:linear-gradient(105deg,transparent 25%,#ffffff30 48%,transparent 70%);transition:transform .65s var(--motion-ease)}
+.navcta:hover:before,.btn:hover:before{transform:translateX(115%)}
+.navcta:hover,.btn:hover{transform:translateY(-3px) scale(1.015)!important;box-shadow:0 14px 32px #102f7030!important}
+.card,.feature,.case-panel,.project-card,.stat,.arena-number,.case-kpi,.evidence-card{position:relative;isolation:isolate;transition:transform .38s var(--motion-ease),box-shadow .38s var(--motion-ease),border-color .3s ease!important}
+.card:before,.feature:before,.case-panel:before,.project-card:before,.evidence-card:before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;opacity:0;background:linear-gradient(135deg,#1746a20d,transparent 55%);transition:opacity .35s ease}
+.card:hover:before,.feature:hover:before,.case-panel:hover:before,.project-card:hover:before,.evidence-card:hover:before{opacity:1}
+.card:hover,.feature:hover,.case-panel:hover,.project-card:hover,.evidence-card:hover{transform:translateY(-7px)!important;box-shadow:0 22px 48px #071b4917,0 0 0 1px #1746a21c!important;border-color:#1746a255!important}
+a:not(.btn):not(.navcta){text-decoration-thickness:1px;text-underline-offset:4px}
+a:not(.btn):not(.navcta):hover{transition:color .2s ease}
+img{transition:transform .65s var(--motion-ease),filter .45s ease}
+a:hover img{transform:scale(1.025);filter:saturate(1.06)}
+section{scroll-margin-top:100px}
+section .eyebrow,.section-head .eyebrow{letter-spacing:.16em}
+h1,h2{ text-wrap:balance}
+h1{animation:headline-enter .85s var(--motion-ease) both}
+@keyframes headline-enter{from{opacity:0;transform:translateY(18px);filter:blur(5px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+.scroll-progress{height:3px!important;background:linear-gradient(90deg,#071b49,#102f70,#2563eb)!important;box-shadow:0 0 12px #1746a255;transform-origin:left;z-index:200}
+::selection{background:#1746a2;color:#fff}
+@media(hover:hover) and (pointer:fine){
+ .card,.feature,.case-panel,.project-card,.evidence-card{will-change:transform}
+ .links a{position:relative}
+ .links a:after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:2px;background:#1746a2;transition:right .25s ease}
+ .links a:hover:after,.links a[aria-current=page]:after{right:0}
+}
+@media(prefers-reduced-motion:reduce){
+ body:after{animation:none!important}
+ h1{animation:none!important}
+ .navcta:before,.btn:before{display:none}
+ .card:hover,.feature:hover,.case-panel:hover,.project-card:hover,.evidence-card:hover{transform:none!important}
+}
