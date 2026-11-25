@@ -9,138 +9,7 @@
 <title>Patrick Tobe — Security. Evaluation. Research.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
-<style>
-/* Homepage-specific art direction: high-energy color, full-bleed composition */
-.home-hero{min-height:calc(100svh - 82px);padding:64px 0 72px;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:2vw;position:relative;isolation:isolate;overflow:hidden}
-.home-hero:before{content:"";position:absolute;inset:0 -100vw;z-index:-2;background:radial-gradient(ellipse at 78% 45%,#a8b6ff9c 0,transparent 33%),radial-gradient(ellipse at 22% 12%,#ffc1e2 0,transparent 29%),radial-gradient(ellipse at 60% 95%,#a8f1ff88 0,transparent 34%),#fff}
-.home-hero:after{content:"";position:absolute;z-index:-1;width:660px;height:660px;right:-8%;top:7%;border:1px solid #4b58ff6b;border-radius:50%;box-shadow:0 0 0 38px #685bff12,0 0 0 88px #ff3d9a0b,0 0 0 145px #00c8e80a;animation:spin 34s linear infinite}
-.hero-copy{position:relative;z-index:3}.hero-copy .eyebrow{display:inline-flex;align-items:center;padding:10px 14px;border:1px solid #d8ddff;border-radius:99px;background:#ffffffb8;backdrop-filter:blur(12px)}
-.hero-copy h1{font-size:clamp(58px,7.8vw,112px);line-height:.86;letter-spacing:-.085em;margin:28px 0 26px}
-.hero-copy h1 span{display:block}.hero-copy h1 .outline{color:transparent;-webkit-text-stroke:1.6px #4856ed}.hero-copy h1 .gradient-text{background-image:linear-gradient(100deg,#344cff,#7652ff 42%,#ff3d9a 78%,#00bfe5);background-size:240% auto}
-.hero-copy .lead{max-width:580px;font-size:15px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0}
-.hero-art{height:min(590px,68vw);min-height:420px;position:relative;perspective:1100px}
-.hero-art .orbital{inset:9% 2%;border:1px solid #555fff8c;box-shadow:inset 0 0 60px #7652ff0b}
-.hero-art .orbital.two{inset:19% -2%;border-color:#ff3d9a88}
-.hero-art .core{width:300px;height:345px;border-radius:42px;background:linear-gradient(145deg,#314bff,#7652ff 52%,#ff3d9a);box-shadow:0 45px 100px #5b4dff70, inset 0 1px 0 #ffffffa6;transform:translate(-50%,-50%) rotate(-9deg)}
-.hero-art .core:before{width:440px;height:440px;border-radius:46%;border:1px solid #ffffffa6}
-.hero-art .core:after{inset:14px;border:1px solid #ffffff70;border-radius:32px}
-.hero-art .core .symbol{font-size:120px}.hero-art .core small{bottom:34px}
-.hero-art .float{padding:17px 20px;border:1px solid #ffffffef;background:#ffffffd9;box-shadow:0 22px 55px #343c9c2a;color:#4d5576}
-.hero-art .float strong{font-size:28px;background:linear-gradient(90deg,#344cff,#ff3d9a);background-clip:text;color:transparent}
-.hero-art .float.a{top:9%;left:-2%}.hero-art .float.b{right:-1%;top:31%}.hero-art .float.c{bottom:8%;left:2%}
-.hero-sticker{position:absolute;z-index:6;right:8%;bottom:8%;width:105px;height:105px;border-radius:50%;display:grid;place-items:center;text-align:center;background:#c9ff4a;color:#11152e;font:10px 'DM Mono';letter-spacing:.1em;transform:rotate(12deg);box-shadow:0 15px 35px #b1d94c66;animation:levitate 4s ease-in-out infinite}
-.home-marquee{margin:0 -2vw}.home-stats{margin:55px auto 80px}.home-stats .stat{border-radius:8px;border-color:#dfe3ff;background:linear-gradient(145deg,#fff,#f1f3ff);box-shadow:0 14px 38px #3d4fff12}.home-stats .stat:nth-child(2){background:linear-gradient(145deg,#fff,#fff0f7)}.home-stats .stat:nth-child(3){background:linear-gradient(145deg,#fff,#edfbff)}.home-stats .stat:nth-child(4){background:linear-gradient(145deg,#fff,#f5f0ff)}
-.home-feature{margin:0 0 30px}.home-feature .feature{min-height:350px}.home-feature .feature h3{font-size:clamp(28px,3vw,42px)}.home-feature .feature .huge{font-size:260px}
-.home-cta{padding:70px 0;background:linear-gradient(110deg,#344cff,#7652ff 55%,#ff3d9a);color:white;text-align:center;position:relative;overflow:hidden}
-.home-cta:before{content:"";position:absolute;inset:-60%;background:repeating-radial-gradient(circle at center,transparent 0 45px,#ffffff18 46px 47px);animation:spin 55s linear infinite}
-.home-cta .wrap{position:relative}.home-cta h2{font-size:clamp(38px,6vw,72px);max-width:850px;margin:12px auto 22px}.home-cta p{color:#ffffffd9}.home-cta .btn{background:#c9ff4a;color:#11152e}
-.section-head .eyebrow{margin-bottom:10px}
-@media(max-width:900px){.home-hero{min-height:unset;padding:65px 0 45px;grid-template-columns:1fr 1fr}.hero-copy h1{font-size:clamp(55px,8vw,82px)}.hero-art{min-height:390px}.hero-art .core{width:230px;height:270px}.hero-art .core .symbol{font-size:90px}}
-@media(max-width:650px){.home-hero{display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:52px 0 38px;min-height:unset}.hero-copy h1{font-size:clamp(55px,15vw,82px);margin:24px 0}.hero-copy .lead{font-size:14px}.hero-art{height:340px;min-height:340px;margin-top:10px}.hero-art .core{width:190px;height:225px;border-radius:30px}.hero-art .core .symbol{font-size:78px}.hero-art .float{padding:12px 14px}.hero-art .float strong{font-size:21px}.hero-art .float.a{left:0;top:4%}.hero-art .float.b{right:0;top:28%}.hero-art .float.c{left:0;bottom:4%}.hero-sticker{width:78px;height:78px;font-size:8px;right:2%;bottom:3%}.home-stats{margin:30px auto 50px}.home-stats .stat,.home-stats .stat:nth-child(2),.home-stats .stat:nth-child(3),.home-stats .stat:nth-child(4){background:#fff!important;border:1px solid #dfe5e1!important;box-shadow:none!important}.home-stats .stat strong{color:#087e83!important}.home-cta{padding:55px 0}}
-.home-hero:before{background:#fbfaf7!important}.home-hero:after{display:none!important}
-.hero-copy h1{font-size:clamp(48px,6.5vw,86px)!important;line-height:.98!important;letter-spacing:-.065em!important}
-.hero-copy h1 .outline{-webkit-text-stroke:1px #087e83!important}.hero-copy h1 .gradient-text{background:none!important;color:#087e83!important}
-.hero-copy .eyebrow{background:#f1f3f0!important;border:1px solid #dfe5e1!important;backdrop-filter:none!important}
-.hero-proof{position:relative;z-index:2;background:#fff;border:1px solid #dfe5e1;border-radius:10px;padding:28px;box-shadow:0 18px 42px #17212b0b;max-width:500px;justify-self:end;width:100%}
-.proof-top{display:flex;justify-content:space-between;padding-bottom:17px;border-bottom:1px solid #e7ece8;color:#087e83;font:10px 'DM Mono';letter-spacing:.12em}
-.proof-step{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:19px 0;border-bottom:1px solid #edf0ed}
-.proof-step>b{width:34px;height:34px;display:grid;place-items:center;background:#edf3ef;color:#087e83;border-radius:50%;font:11px 'DM Mono'}
-.proof-step strong{font:600 16px 'Space Grotesk';color:#17212b}
-.proof-step p{font-size:12px;color:#586675;line-height:1.7;margin:5px 0 0}
-.proof-link{display:inline-flex;margin-top:18px;color:#087e83;font:10px 'DM Mono';border-bottom:1px solid #9abbb2;padding-bottom:4px}
-.home-marquee{display:none!important}.home-stats{margin:36px auto 64px}
-.home-cta{background:#17212b!important}.home-cta:before{display:none!important}
-@media(max-width:700px){.hero-proof{max-width:none;padding:20px}.home-hero{gap:24px}.home-hero .hero-copy h1{font-size:clamp(44px,12vw,64px)!important}}
 
-/* Structural rebuild to match the supplied editorial portfolio reference */
-.home-hero{
- width:min(1160px,calc(100% - 64px))!important;max-width:1160px!important;
- min-height:480px!important;padding:86px 0 74px!important;margin:0 auto!important;
- display:grid!important;grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr)!important;
- align-items:center!important;gap:40px!important;position:relative!important;
- background:transparent!important;border-radius:0!important;overflow:visible!important;
-}
-.home-hero:before{content:""!important;position:absolute!important;z-index:-2!important;
- inset:0 -100vw!important;display:block!important;opacity:1!important;
- background:radial-gradient(ellipse at 80% 48%,#ecebf5 0,transparent 36%),
- radial-gradient(ellipse at 12% 10%,#f1f0f7 0,transparent 34%),#f8f8fb!important}
-.home-hero:after{display:none!important}
-.hero-copy{max-width:650px!important}
-.hero-copy .eyebrow{display:block!important;width:max-content!important;padding:0!important;
- border:0!important;background:transparent!important;color:#8b86c7!important;
- font-size:10px!important;letter-spacing:.14em!important}
-.hero-copy h1{font-size:clamp(48px,6vw,76px)!important;line-height:1.04!important;
- letter-spacing:-.065em!important;margin:24px 0 20px!important;color:#252631!important}
-.hero-copy h1 span{display:block!important}
-.hero-copy h1 .gradient-text{font-size:clamp(27px,3.3vw,43px)!important;
- line-height:1.2!important;letter-spacing:-.045em!important;margin-top:9px!important;
- background:linear-gradient(100deg,#7772c8,#aaa5dc)!important;
- background-clip:text!important;-webkit-background-clip:text!important;
- color:transparent!important;-webkit-text-fill-color:transparent!important}
-.hero-copy .lead{max-width:510px!important;color:#777783!important;font-size:14px!important;line-height:1.9!important}
-.hero-actions{margin:28px 0 25px!important}
-.hero-actions .btn{padding:13px 21px!important}
-.hero-actions .btn.primary{background:#292936!important;color:#fff!important;border:1px solid #292936!important}
-.hero-actions .btn.light{background:#ffffffc9!important;color:#343440!important;border:1px solid #e7e6ed!important}
-.home-hero .socials{display:flex!important;gap:20px!important;flex-wrap:wrap!important}
-.home-hero .socials a{font-size:9px!important;letter-spacing:.09em!important;color:#858591!important}
-.hero-space{min-height:340px!important;width:100%!important;background:transparent!important;
- border:0!important;box-shadow:none!important;pointer-events:none!important}
-.home-stats{margin:0 auto 55px!important}
-.arena-profile-link{max-width:1160px!important;margin:0 auto 60px!important;padding:22px 26px!important}
-.arena-profile-link p{font-size:12px!important;line-height:1.8!important}
-.home-about{display:grid!important;grid-template-columns:1fr 1fr!important;gap:40px!important;
- align-items:center!important;padding:42px!important;background:#ffffffc9!important;
- border:1px solid #e9e8ef!important;border-radius:22px!important;
- box-shadow:0 12px 40px #34334b09!important;margin:0 auto 64px!important}
-.home-about h2{font-size:clamp(26px,3vw,38px)!important;line-height:1.15!important}
-.home-about p{font-size:12px!important;line-height:1.9!important;color:#777783!important}
-.home-about-metrics{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:10px!important}
-.home-about-metrics div{padding:16px 12px!important;background:#f7f7fa!important;border:1px solid #ecebf1!important;border-radius:13px!important}
-.home-about-metrics strong{display:block!important;color:#5f5aa8!important;font-size:24px!important}
-.home-about-metrics span{display:block!important;color:#858591!important;font-size:9px!important;margin-top:5px!important}
-.service-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:14px!important}
-.service-card{padding:22px 18px!important;min-height:165px!important;border-radius:16px!important;
- background:#ffffffc9!important;border:1px solid #e8e7ee!important;
- box-shadow:0 8px 24px #35334b08!important}
-.service-card .service-icon{width:34px!important;height:34px!important;border-radius:10px!important;
- display:grid!important;place-items:center!important;background:#f0eff8!important;color:#7772b8!important;
- font-size:15px!important;margin-bottom:20px!important}
-.service-card h3{font-size:15px!important;margin:0 0 8px!important}
-.service-card p{font-size:11px!important;line-height:1.75!important;margin:0!important;color:#777783!important}
-.tools-strip{display:flex!important;gap:10px!important;flex-wrap:wrap!important}
-.tools-strip span{padding:12px 17px!important;border:1px solid #e8e7ef!important;
- border-radius:12px!important;background:#ffffffc9!important;color:#676777!important;
- font:600 10px Manrope,system-ui,sans-serif!important}
-.process-row{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:10px!important}
-.process-step{padding:19px 15px!important;background:#ffffffc9!important;
- border:1px solid #e8e7ef!important;border-radius:14px!important;min-height:130px!important}
-.process-step b{display:block!important;color:#8a85c5!important;font-size:11px!important;margin-bottom:16px!important}
-.process-step strong{display:block!important;font-size:13px!important;color:#343440!important}
-.process-step p{font-size:10px!important;line-height:1.65!important;color:#858591!important;margin:6px 0 0!important}
-.evidence-highlights{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}
-.evidence-highlight{padding:21px!important;border:1px solid #e8e7ef!important;border-radius:15px!important;background:#ffffffc9!important}
-.evidence-highlight strong{display:block!important;color:#5f5aa8!important;font-size:22px!important}
-.evidence-highlight span{display:block!important;color:#777783!important;font-size:11px!important;line-height:1.65!important;margin-top:7px!important}
-@media(max-width:850px){
- .home-hero{grid-template-columns:1fr minmax(120px,.55fr)!important;min-height:390px!important}
- .service-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
- .process-row{grid-template-columns:repeat(3,minmax(0,1fr))!important}
-}
-@media(max-width:650px){
- .home-hero{width:calc(100% - 36px)!important;min-height:unset!important;
- padding:60px 0 34px!important;grid-template-columns:1fr!important;gap:0!important}
- .hero-copy h1{font-size:clamp(42px,11vw,60px)!important}
- .hero-copy h1 .gradient-text{font-size:clamp(24px,6vw,32px)!important}
- .hero-space{display:none!important}
- .home-about{grid-template-columns:1fr!important;padding:23px!important;gap:20px!important}
- .home-about-metrics{grid-template-columns:repeat(3,1fr)!important}
- .service-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
- .process-row{grid-template-columns:repeat(2,minmax(0,1fr))!important}
- .evidence-highlights{grid-template-columns:1fr!important}
-}
-
-</style>
 </head>
 <body class="page-transition">
 <div class="cursor-glow"></div>
@@ -173,6 +42,29 @@
 <div class="feature-grid home-feature">
 <article class="feature pink reveal" data-tilt><div class="tag">01 / ADVERSARIAL AI RESEARCH</div><h3>Find the boundary.<br>Test the behavior.</h3><p>Authorized AI model testing across Gray Swan Arena challenges, prompt injection scenarios, instruction boundaries and agent tool-use behavior.</p><a class="btn lime" href="/achievements.html">ARENA RESULTS ↗</a><div class="huge">⌬</div></article>
 <article class="feature blue reveal" data-tilt><div class="tag">02 / EVALUATION & ASSURANCE</div><h3>Make every result traceable.</h3><p>Rubrics, annotation QA, evidence registers and structured AI governance work samples.</p><a class="btn light" href="/about.html">MY APPROACH ↗</a><div class="huge">◎</div></article>
+</div></div></section>
+<section class="section"><div class="wrap">
+<div class="section-head"><div><div class="eyebrow">ABOUT / RESEARCH PRACTICE</div><h2>Curiosity, tested.<br><span class="gradient-text">Evidence, preserved.</span></h2><p>I work across AI security testing, model evaluation, data quality and governance. The emphasis is on clear questions, reproducible tests and honest reporting of what the evidence does—and does not—show.</p></div><a class="btn light" href="/about.html">MORE ABOUT MY APPROACH ↗</a></div>
+<div class="feature-grid">
+<article class="feature"><div class="tag">RESEARCH PRINCIPLE</div><h3>Make claims that the evidence can support.</h3><p>Separate observed behavior from interpretation. Preserve prompts, outputs, evaluator decisions and limitations so another person can inspect the result.</p><div class="huge">◎</div></article>
+<article class="feature"><div class="tag">WORKING STYLE</div><h3>Test. Record. Re-check.</h3><p>Structured experiments, clear acceptance criteria, traceable artifacts and regression-minded follow-up.</p><div class="huge">↗</div></article>
+</div></div></section>
+<section class="section tint"><div class="wrap">
+<div class="section-head"><div><div class="eyebrow">CAPABILITIES / AREAS OF FOCUS</div><h2>Where I do the work.</h2><p>Four connected areas represented in the projects and work samples on this site.</p></div></div>
+<div class="cards">
+<article class="card"><div class="card-body"><div class="meta">01 / SECURITY</div><h3>AI security research</h3><p>Adversarial testing, prompt injection, instruction boundaries and tool-use behavior in authorized environments.</p><a class="card-link" href="/case-studies/gray-swan-arena.html">EXPLORE ARENA WORK ↗</a></div></article>
+<article class="card"><div class="card-body"><div class="meta">02 / EVALUATION</div><h3>Model evaluation</h3><p>Scenario design, test protocols, rubrics, observed outcomes and regression-oriented evaluation.</p><a class="card-link" href="/case-studies/llm-security-evaluation.html">VIEW EVALUATION WORK ↗</a></div></article>
+<article class="card"><div class="card-body"><div class="meta">03 / DATA QUALITY</div><h3>Annotation &amp; quality</h3><p>Structured labeling, rationale capture, ambiguity tracking and quality review using synthetic work samples.</p><a class="card-link" href="/research.html">VIEW PROJECTS ↗</a></div></article>
+<article class="card"><div class="card-body"><div class="meta">04 / GOVERNANCE</div><h3>AI governance &amp; assurance</h3><p>Risk hypotheses, control objectives, evidence registers and bounded assurance analysis.</p><a class="card-link" href="/governance.html">EXPLORE GOVERNANCE ↗</a></div></article>
+</div></div></section>
+<section class="section"><div class="wrap">
+<div class="section-head"><div><div class="eyebrow">METHOD / EVIDENCE WORKFLOW</div><h2>A repeatable way to test.</h2><p>A practical sequence that keeps each result understandable and reviewable.</p></div><a class="btn light" href="/methodology.html">READ THE METHOD ↗</a></div>
+<div class="process-row">
+<div class="process-step"><b>01</b><strong>Define</strong><p>Set the question, scope and success criteria</p></div>
+<div class="process-step"><b>02</b><strong>Design</strong><p>Choose test cases and expected observations</p></div>
+<div class="process-step"><b>03</b><strong>Execute</strong><p>Run controlled tests and preserve raw outputs</p></div>
+<div class="process-step"><b>04</b><strong>Evaluate</strong><p>Compare results against explicit criteria</p></div>
+<div class="process-step"><b>05</b><strong>Report</strong><p>Document evidence, limits and next steps</p></div>
 </div></div></section>
 <section class="section"><div class="wrap">
 <div class="section-head"><div><div class="eyebrow">PROJECT SPOTLIGHT / PLAIN-LANGUAGE CASE STUDIES</div><h2>Selected <span class="gradient-text">case studies.</span></h2><p>Each entry links to project records and supporting evidence. Counts describe the scope of the work, not external benchmarks.</p></div></div>
