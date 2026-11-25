@@ -282,3 +282,33 @@ a,.gradient-text,.eyebrow,.brand b,.proof-top,.proof-step>b,.proof-link,.stats .
 .arena-profile-link a{flex:none;color:#2466c8!important;font-weight:800;font-size:12px;letter-spacing:.035em;text-decoration:none;border-bottom:1px solid #9abcf0;padding-bottom:3px}
 .arena-profile-link a:hover{color:#174b9b!important;border-color:#174b9b}
 @media(max-width:650px){.arena-profile-link{margin:-20px auto 36px;display:block;padding:17px}.arena-profile-link a{display:inline-block;margin-top:12px}}
+
+
+/* === Accessible button contrast and restrained motion === */
+:root{--blue:#3478e5;--blue-deep:#245fbd;--motion-ease:cubic-bezier(.2,.75,.25,1)}
+/* Anchor-wide accent rules must never erase text inside CTA buttons. */
+a.btn,a.btn:visited,a.btn:hover,a.btn:focus-visible,
+.navcta,.backtop{color:#fff!important;-webkit-text-fill-color:#fff!important}
+a.btn,.btn{background:#3478e5!important;border:1px solid #3478e5!important;color:#fff!important;-webkit-text-fill-color:#fff!important;text-decoration:none!important}
+a.btn.light,a.btn.light:visited,a.btn.light:hover,a.btn.light:focus-visible{background:#fff!important;border-color:#3478e5!important;color:#2466c8!important;-webkit-text-fill-color:#2466c8!important}
+a.btn:hover,.btn:hover{background:#245fbd!important;border-color:#245fbd!important;transform:translateY(-2px)!important;box-shadow:0 7px 18px #245fbd24!important}
+a.btn.light:hover{background:#eff6ff!important;color:#174b9b!important;-webkit-text-fill-color:#174b9b!important}
+a.btn:active,.btn:active{transform:translateY(0)!important;box-shadow:none!important}
+a.btn:focus-visible,.btn:focus-visible,.backtop:focus-visible{outline:3px solid #9fc5ff!important;outline-offset:3px!important}
+/* Scroll reveals are enabled by the existing IntersectionObserver in site.js. */
+.reveal{opacity:0!important;transform:translateY(18px)!important;filter:none!important;transition:opacity .65s var(--motion-ease),transform .65s var(--motion-ease)!important;animation:none!important;will-change:opacity,transform}
+.reveal.in{opacity:1!important;transform:translateY(0)!important;animation:none!important}
+/* Gentle card and navigation feedback; no large motion or colour cycling. */
+.card,.feature,.case-panel,.case-jumps a,.related-grid a{transition:transform .28s var(--motion-ease),box-shadow .28s var(--motion-ease),border-color .28s var(--motion-ease)!important}
+.card:hover,.feature:hover,.case-panel:hover,.case-jumps a:hover,.related-grid a:hover{transform:translateY(-3px)!important;box-shadow:0 10px 24px #142b4510!important}
+.nav{transition:box-shadow .25s ease,background .25s ease!important}
+.scroll-progress{background:#3478e5!important;transition:transform .08s linear}
+.backtop{transition:opacity .25s ease,transform .25s ease,background .2s ease!important}
+.backtop.show{transform:translateY(0)!important}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto!important}
+ *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .reveal,.reveal.in{opacity:1!important;transform:none!important;filter:none!important}
+ .card:hover,.feature:hover,.case-panel:hover,.case-jumps a:hover,.related-grid a:hover,a.btn:hover,.btn:hover{transform:none!important;box-shadow:none!important}
+}
+@media(max-width:650px){a.btn,.btn{min-height:48px;padding:13px 17px}}
