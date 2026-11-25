@@ -266,6 +266,6 @@ a{color:#245fbd}
 .footer{background:#142b45!important;color:#fff!important}.footer p,.footer a{color:#d3e0ef!important}
 .backtop{background:#245fbd!important;color:#fff!important;border-radius:6px!important;box-shadow:none!important}
 .scroll-progress{background:#245fbd!important}
-.cursor-glow,.page-transition{display:none!important}
+.cursor-glow{display:none!important}.page-transition{animation:none!important}
 .reveal{opacity:1!important;transform:none!important;filter:none!important;animation:none!important;will-change:auto!important}
 @media(max-width:760px){.hero-copy h1{font-size:clamp(40px,11vw,62px)!important}.home-hero{gap:26px!important}.hero-proof{max-width:none!important}.home-stats{margin:22px auto 44px!important}}
