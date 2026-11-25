@@ -37,7 +37,22 @@
 .section-head .eyebrow{margin-bottom:10px}
 @media(max-width:900px){.home-hero{min-height:unset;padding:65px 0 45px;grid-template-columns:1fr 1fr}.hero-copy h1{font-size:clamp(55px,8vw,82px)}.hero-art{min-height:390px}.hero-art .core{width:230px;height:270px}.hero-art .core .symbol{font-size:90px}}
 @media(max-width:650px){.home-hero{display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:52px 0 38px;min-height:unset}.hero-copy h1{font-size:clamp(55px,15vw,82px);margin:24px 0}.hero-copy .lead{font-size:14px}.hero-art{height:340px;min-height:340px;margin-top:10px}.hero-art .core{width:190px;height:225px;border-radius:30px}.hero-art .core .symbol{font-size:78px}.hero-art .float{padding:12px 14px}.hero-art .float strong{font-size:21px}.hero-art .float.a{left:0;top:4%}.hero-art .float.b{right:0;top:28%}.hero-art .float.c{left:0;bottom:4%}.hero-sticker{width:78px;height:78px;font-size:8px;right:2%;bottom:3%}.home-stats{margin:30px auto 50px}.home-cta{padding:55px 0}}
-</style>
+<style>
+.home-hero:before{background:#fbfaf7!important}.home-hero:after{display:none!important}
+.hero-copy h1{font-size:clamp(48px,6.5vw,86px)!important;line-height:.98!important;letter-spacing:-.065em!important}
+.hero-copy h1 .outline{-webkit-text-stroke:1px #087e83!important}.hero-copy h1 .gradient-text{background:none!important;color:#087e83!important}
+.hero-copy .eyebrow{background:#f1f3f0!important;border:1px solid #dfe5e1!important;backdrop-filter:none!important}
+.hero-proof{position:relative;z-index:2;background:#fff;border:1px solid #dfe5e1;border-radius:10px;padding:28px;box-shadow:0 18px 42px #17212b0b;max-width:500px;justify-self:end;width:100%}
+.proof-top{display:flex;justify-content:space-between;padding-bottom:17px;border-bottom:1px solid #e7ece8;color:#087e83;font:10px 'DM Mono';letter-spacing:.12em}
+.proof-step{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:19px 0;border-bottom:1px solid #edf0ed}
+.proof-step>b{width:34px;height:34px;display:grid;place-items:center;background:#edf3ef;color:#087e83;border-radius:50%;font:11px 'DM Mono'}
+.proof-step strong{font:600 16px 'Space Grotesk';color:#17212b}
+.proof-step p{font-size:12px;color:#586675;line-height:1.7;margin:5px 0 0}
+.proof-link{display:inline-flex;margin-top:18px;color:#087e83;font:10px 'DM Mono';border-bottom:1px solid #9abbb2;padding-bottom:4px}
+.home-marquee{display:none!important}.home-stats{margin:36px auto 64px}
+.home-cta{background:#17212b!important}.home-cta:before{display:none!important}
+@media(max-width:700px){.hero-proof{max-width:none;padding:20px}.home-hero{gap:24px}.home-hero .hero-copy h1{font-size:clamp(44px,12vw,64px)!important}}
+</style></style>
 </head>
 <body class="page-transition">
 <div class="cursor-glow"></div>
@@ -51,7 +66,7 @@
 <div class="hero-copy reveal">
 <div class="eyebrow">AI SECURITY · EVALUATION · GOVERNANCE</div>
 <h1><span>SECURITY.</span><span class="outline">EVALUATION.</span><span class="gradient-text">RESEARCH.</span></h1>
-<p class="lead">I test how AI systems behave under pressure, evaluate model responses and turn observed outcomes into traceable evidence. My work spans adversarial AI research, data quality, annotation and AI governance.</p>
+<p class="lead">I investigate how AI systems behave, test whether they follow their security rules, and document what the evidence shows. I also work on model evaluation, data quality and AI governance.</p>
 <div class="hero-actions"><a class="btn primary" href="/research.html">EXPLORE THE RESEARCH ↗</a><a class="btn light" href="/about.html">MEET THE RESEARCHER</a></div>
 <div class="socials"><a href="https://github.com/jaackdoe35-sudo" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="https://app.grayswan.ai/arena/user/6ab13514f16781060d70ab84" target="_blank" rel="noreferrer">GRAY SWAN ARENA ↗</a><a href="mailto:tobepatrickjnr@gmail.com">EMAIL ↗</a></div>
 </div>
@@ -69,13 +84,13 @@
 <div class="stat reveal"><strong data-count="22">22</strong><span>GLOBAL UNIQUE BREAKS</span></div><div class="stat reveal"><strong data-count="990">990</strong><span>GLOBAL POINTS</span></div><div class="stat reveal"><strong data-count="421">421</strong><span>SUBMISSIONS · LAST 365 DAYS</span></div><div class="stat reveal"><strong>5 WKS</strong><span>MAXIMUM ACTIVITY STREAK</span></div>
 </section>
 <section class="section tint"><div class="wrap">
-<div class="section-head"><div><div class="eyebrow">SELECTED WORK / START HERE</div><h2>Research that tests AI systems.<br><span class="gradient-text">Evidence that explains why.</span></h2><p>Explore documented competition research, structured model evaluation, data-quality work and governance assurance.</p></div><a class="btn light" href="/research.html">VIEW ALL RESEARCH ↗</a></div>
+<div class="section-head"><div><div class="eyebrow">SELECTED WORK / START HERE</div><h2>Understand the question.<br><span class="gradient-text">See the test. Inspect the evidence.</span></h2><p>You do not need an AI background to follow the work. Each project explains the problem, what was tested, what happened and where to inspect the supporting records.</p></div><a class="btn light" href="/research.html">VIEW ALL RESEARCH ↗</a></div>
 <div class="feature-grid home-feature">
 <article class="feature pink reveal" data-tilt><div class="tag">01 / ADVERSARIAL AI RESEARCH</div><h3>Find the boundary.<br>Test the behavior.</h3><p>Authorized AI model testing across Gray Swan Arena challenges, prompt injection scenarios, instruction boundaries and agent tool-use behavior.</p><a class="btn lime" href="/achievements.html">ARENA RESULTS ↗</a><div class="huge">⌬</div></article>
 <article class="feature blue reveal" data-tilt><div class="tag">02 / EVALUATION & ASSURANCE</div><h3>Make every result traceable.</h3><p>Rubrics, annotation QA, evidence registers and structured AI governance work samples.</p><a class="btn light" href="/about.html">MY APPROACH ↗</a><div class="huge">◎</div></article>
 </div></div></section>
 <section class="section"><div class="wrap">
-<div class="section-head"><div><div class="eyebrow">PROJECT SPOTLIGHT</div><h2>Selected <span class="gradient-text">case studies.</span></h2><p>Each entry links to project records and supporting evidence. Counts describe the scope of the work, not external benchmarks.</p></div></div>
+<div class="section-head"><div><div class="eyebrow">PROJECT SPOTLIGHT / PLAIN-LANGUAGE CASE STUDIES</div><h2>Selected <span class="gradient-text">case studies.</span></h2><p>Each entry links to project records and supporting evidence. Counts describe the scope of the work, not external benchmarks.</p></div></div>
 <div class="cards">
 <article class="card reveal" data-tilt><div class="card-art art-agent"><b>⌘</b></div><div class="card-body"><div class="meta">AGENT SECURITY · ARENA</div><h3>Lucky Break: Payday</h3><p>Tested whether purchase agents enforce a positive-quantity rule at tool execution. Recorded a refusal, a later negative-quantity tool call, and the Arena evaluator's 100% result for the required arguments.</p><div class="tags"><span class="tag-pill">Tool-use testing</span><span class="tag-pill">Cross-model</span></div><a class="card-link" href="/case-studies/gray-swan-arena.html">VIEW CASE STUDY ↗</a></div></article>
 <article class="card reveal" data-tilt><div class="card-art art-framework"><b>⌬</b></div><div class="card-body"><div class="meta">AI SECURITY · EVALUATION DESIGN</div><h3>LLM Security Evaluation Framework</h3><p>Scenario specifications, execution protocol, evaluator rubric and deterministic mock regression tests.</p><div class="tags"><span class="tag-pill">12 scenarios</span><span class="tag-pill">Promptfoo</span></div><a class="card-link" href="/case-studies/llm-security-evaluation.html">VIEW CASE STUDY ↗</a></div></article>
