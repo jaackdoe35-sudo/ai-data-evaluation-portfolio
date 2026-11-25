@@ -269,3 +269,16 @@ a{color:#245fbd}
 .cursor-glow{display:none!important}.page-transition{animation:none!important}
 .reveal{opacity:1!important;transform:none!important;filter:none!important;animation:none!important;will-change:auto!important}
 @media(max-width:760px){.hero-copy h1{font-size:clamp(40px,11vw,62px)!important}.home-hero{gap:26px!important}.hero-proof{max-width:none!important}.home-stats{margin:22px auto 44px!important}}
+
+/* Brighter, consistent blue accent + Arena profile attribution */
+:root{--blue:#3478e5}
+a,.gradient-text,.eyebrow,.brand b,.proof-top,.proof-step>b,.proof-link,.stats .stat strong,.home-stats .stat strong,.card-link,.case-panel summary,.case-kpi strong,.guide-steps span,.case-jumps span,.related-grid span{color:#3478e5!important;-webkit-text-fill-color:#3478e5!important}
+.btn,.btn.primary,.btn.lime,.btn.light,.backtop{background:#3478e5!important;border-color:#3478e5!important;color:#fff!important}
+.btn.light{background:#fff!important;color:#3478e5!important}
+.btn:hover,.btn.primary:hover,.btn.lime:hover,.backtop:hover{background:#245fbd!important;border-color:#245fbd!important}
+.hero-copy .eyebrow,.tag,.tag-pill,.proof-step>b,.arena-number,.case-kpi{border-color:#c9dcf8!important}
+.arena-profile-link{width:min(1200px,calc(100% - 56px));margin:-42px auto 52px;padding:18px 22px;background:#f3f8ff;border:1px solid #c9dcf8;border-left:4px solid #3478e5;border-radius:8px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.arena-profile-link p{margin:0;color:#405a78;font-size:14px;line-height:1.7}
+.arena-profile-link a{flex:none;color:#2466c8!important;font-weight:800;font-size:12px;letter-spacing:.035em;text-decoration:none;border-bottom:1px solid #9abcf0;padding-bottom:3px}
+.arena-profile-link a:hover{color:#174b9b!important;border-color:#174b9b}
+@media(max-width:650px){.arena-profile-link{margin:-20px auto 36px;display:block;padding:17px}.arena-profile-link a{display:inline-block;margin-top:12px}}
