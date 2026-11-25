@@ -72,3 +72,44 @@ h3{font-size:21px;line-height:1.2}
 }
 @media(max-width:380px){.home-hero{grid-template-columns:1fr}.hero-space{min-height:60px}.hero-actions .btn{padding:11px 14px}.stat span{font-size:8px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+/* SITE-WIDE VISUAL CONSISTENCY + FLUID DESKTOP WIDTH */
+:root{--ink:#272833!important;--muted:#777984!important;--accent:#8883bd!important;--accent-soft:#b8b4d9!important;--paper:#fbfbfc!important;--surface:#fff!important;--soft:#f5f5f8!important;--line:#e9e8ee!important;--dark:#292a33!important;--shadow:0 12px 34px #28283a0c!important;--grad:linear-gradient(105deg,#8580b8,#b6b2d5)!important}
+html,body{width:100%!important;min-width:320px!important;max-width:none!important;margin:0!important;padding:0!important;overflow-x:hidden!important}
+body{background:#fbfbfc!important;color:#30313b!important}
+main,header,footer,section{max-width:none}
+.wrap,.home-hero,.arena-profile-link{width:calc(100% - 72px)!important;max-width:1320px!important;margin-left:auto!important;margin-right:auto!important}
+a:not(.btn):not(.navcta):not(.card-link){color:inherit}
+a:hover{color:#7772ad}
+.nav{width:100%!important;max-width:none!important;background:#ffffffeb!important;border-color:#fff!important;box-shadow:0 7px 28px #2525360a!important}
+.nav .wrap{width:calc(100% - 72px)!important;max-width:1320px!important}
+h1,h2,h3,h4{color:#292a33!important}
+.gradient-text{background:linear-gradient(105deg,#817caf,#aaa6ca)!important;background-clip:text!important;-webkit-background-clip:text!important;color:transparent!important;-webkit-text-fill-color:transparent!important}
+.eyebrow,.meta,.tag,.mono{color:#8985b8!important}
+.btn.primary,.navcta{background:#292a33!important;color:#fff!important;border-color:#292a33!important}
+.btn.light{background:#fff!important;color:#393944!important;border:1px solid #e8e7ed!important}
+.btn.lime{background:#f0eff5!important;color:#65618d!important}
+.stat,.card,.timeline-item,.service-card,.process-step,.evidence-highlight{background:#fff!important;border-color:#e9e8ee!important;box-shadow:0 8px 28px #28283a08!important}
+.stat strong,.arena-number strong{color:#7772ad!important}
+.arena-profile-link{background:#f5f4f8!important;border-color:#e9e8ee!important;border-left-color:#aaa5c9!important;color:#6f707a!important}
+.arena-profile-link a,.card-link{color:#7772ad!important}
+.section.tint,.page-hero{background:linear-gradient(135deg,#f8f8fa,#fdfdfe 60%,#f6f6f9)!important}
+.feature,.feature.pink,.feature.blue,.arena-banner,.contact-panel{background:linear-gradient(135deg,#f0eff5,#e9e8f0)!important;color:#30313b!important;border:1px solid #e8e7ee!important;box-shadow:0 10px 30px #28283a08!important}
+.feature h3,.arena-banner h2{color:#292a33!important}
+.feature p,.arena-banner p{color:#73747f!important}
+.feature .tag{color:#8985b8!important}
+.feature .huge{color:#7772ad0d!important}
+.card-art,.card:nth-child(3n+2) .card-art,.card:nth-child(3n) .card-art{background:linear-gradient(135deg,#f5f4f8,#ecebf2)!important}
+.card-art:before,.card-art:after{border-color:#aaa5c933!important}
+.card-art b{color:#8984b8!important}
+.tag-pill{background:#f5f4f8!important;border-color:#e9e8ef!important;color:#7772ad!important}
+.contact-panel{color:#30313b!important}
+.contact-panel p,.contact-links a{color:#70717c!important}
+.contact-links a{border-color:#dedde6!important}
+.marquee{background:#f0eff5!important;color:#555663!important}
+.marquee-track span{color:#8985b8!important}
+.backtop{background:#7772ad!important}
+a[style*="color:#c9ff4a"],[style*="color:#c9ff4a"]{color:#8985b8!important}
+@media(min-width:1400px){.wrap,.home-hero,.arena-profile-link,.nav .wrap{width:calc(100% - 112px)!important;max-width:1440px!important}}
+@media(max-width:700px){.wrap,.home-hero,.arena-profile-link,.nav .wrap{width:calc(100% - 36px)!important}}
+@media(max-width:380px){.wrap,.home-hero,.arena-profile-link,.nav .wrap{width:calc(100% - 28px)!important}}
