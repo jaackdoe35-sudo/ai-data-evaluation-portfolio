@@ -96,3 +96,9 @@ body{isolation:isolate}
  .project-list .card:first-child .card-body{padding:24px}
  .card-art b{font-size:60px}
 }
+
+/* Reliable interaction layer: visible links and controls remain above decorative effects. */
+a,button{pointer-events:auto;cursor:pointer;position:relative;z-index:2}
+a:focus-visible,button:focus-visible{outline:3px solid #00a9d6;outline-offset:4px;border-radius:6px}
+.card-link,.case-actions a,.hero-actions a,.links a,.socials a{pointer-events:auto;position:relative;z-index:5}
+#fx-canvas,.cursor-glow{pointer-events:none!important}
