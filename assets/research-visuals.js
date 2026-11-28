@@ -84,25 +84,49 @@ function methodologyDiagram(root){
  nodes.forEach((n,i)=>{n.addEventListener('click',()=>choose(i));n.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();choose(i);}});});panel.append(svgbox,detail);s.append(panel);root.append(s);choose(0);
 }
 function riskTestControlNetwork(root){
- const s=section('ANIMATED RISK → TEST → CONTROL NETWORK','See how governance connects to evaluation','Select a risk, test or control node. The network highlights its relationships so visitors can follow a traceable assurance path. Relationships are illustrative mappings, not a claim of control effectiveness.');
- const graph=svg('svg',{viewBox:'0 0 900 430',role:'img','aria-label':'Interactive network linking AI risks, security tests and controls'});
- const mobile=matchMedia('(max-width: 700px)').matches;
- const cols=mobile?[180,180,180]:[150,450,750];
- const mobileYs=[120,280,440,650,810,970,1180,1340,1500];
- const desktopYs=[90,210,330];
- const nodeY=i=>mobile?mobileYs[i]:desktopYs[nodes[i][3]];
- if(mobile)graph.setAttribute('viewBox','0 0 360 1600');
- const nodes=[
- ['RISK','Prompt injection',0,0],['RISK','Data exposure',0,1],['RISK','Unsafe action',0,2],
- ['TEST','Indirect injection',1,0],['TEST','Data-boundary probe',1,1],['TEST','Action confirmation',1,2],
- ['CONTROL','Instruction hierarchy',2,0],['CONTROL','Access restrictions',2,1],['CONTROL','Human approval',2,2]
+ const s=section('INTERACTIVE RISK → TEST → CONTROL MAP','Explore the assurance process by phase','Switch between risks, evaluation tests and controls. Select any item to see what it means, how it connects to the other phases and what evidence would help assess it.');
+ const phases=[
+  {key:'RISK',title:'01 · Identify risks',intro:'Start with the failure mode: what could go wrong, and what boundary might be crossed?',items:[
+   ['Prompt injection','Untrusted content may influence the model’s governing instructions.','Indirect prompt-injection scenario','Instruction hierarchy and untrusted-input isolation','Adversarial input set · model response · instruction-following assessment'],
+   ['Data exposure','The model may disclose information outside the permitted context.','Data-boundary probe','Scoped access and data minimization','Synthetic canary test · response capture · access-control logs'],
+   ['Unsafe action','The model may take a consequential action without appropriate approval.','Action-confirmation scenario','Human approval and constrained tool permissions','Tool-call trace · approval record · resulting action state']
+  ]},
+  {key:'TEST',title:'02 · Evaluate behavior',intro:'Turn each risk hypothesis into a bounded test with observable pass/fail criteria.',items:[
+   ['Indirect injection','Place untrusted instructions in content the model is asked to process.','Targets: Prompt injection','Expected: untrusted content is treated as data, not authority','Test input · model output · tool trace where applicable'],
+   ['Data-boundary probe','Ask for synthetic information outside the permitted session or scope.','Targets: Data exposure','Expected: protected information is not disclosed','Synthetic canary · response capture · access decision'],
+   ['Action confirmation','Request a consequential tool action and observe whether approval is required.','Targets: Unsafe action','Expected: action is held until required confirmation','Tool arguments · confirmation event · action state']
+  ]},
+  {key:'CONTROL',title:'03 · Assess controls',intro:'A control objective is a claim to test, not proof that a safeguard is effective.',items:[
+   ['Instruction hierarchy','Keep higher-priority instructions authoritative and isolate untrusted content.','Addresses: Prompt injection','Test: Indirect injection','Versioned test cases · response samples · evaluator rationale'],
+   ['Access restrictions','Constrain data and tool access to the user, session and task authorization.','Addresses: Data exposure','Test: Data-boundary probe','Permission configuration · access logs · synthetic data test'],
+   ['Human approval','Require explicit review before consequential or sensitive actions.','Addresses: Unsafe action','Test: Action confirmation','Approval trail · tool-call record · action-state verification']
+  ]}
  ];
- const links=[[0,3],[0,6],[1,4],[1,7],[2,5],[2,8],[3,6],[4,7],[5,8],[3,7],[4,6]];
- const edges=[];links.forEach(([a,b])=>{const A=nodes[a],B=nodes[b],ya=nodeY(a),yb=nodeY(b);const curve=mobile?82:100;const p=svg('path',{d:'M'+cols[A[2]]+' '+ya+' C'+(cols[A[2]]+curve)+' '+(ya+(yb-ya)*.35)+' '+(cols[B[2]]-curve)+' '+(yb-(yb-ya)*.35)+' '+cols[B[2]]+' '+yb,class:'network-edge','data-a':a,'data-b':b});graph.append(p);edges.push(p);});
- const groups=[];nodes.forEach((n,i)=>{const g=svg('g',{class:'network-node',tabindex:'0',role:'button','aria-label':n[1]});g.append(svg('rect',{x:cols[n[2]]-(mobile?112:90),y:nodeY(i)-29,width:mobile?224:180,height:58,rx:14}));const t=svg('text',{x:cols[n[2]],y:nodeY(i)+5,'text-anchor':'middle'});t.textContent=n[1];g.append(t);const small=svg('text',{x:cols[n[2]],y:nodeY(i)-38,'text-anchor':'middle',class:'network-kind'});small.textContent=n[0];g.append(small);g.addEventListener('click',()=>select(i));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(i);}});graph.append(g);groups.push(g);});
- const legend=el('div','network-legend');['RISK','TEST','CONTROL'].forEach(x=>legend.append(el('span','',x)));const detail=el('article','visual-detail network-detail');detail.append(el('div','eyebrow','NETWORK SELECTION'),el('h3'),el('p'));
- function select(i){const connected=new Set([i]);links.forEach(([a,b])=>{if(a===i)connected.add(b);if(b===i)connected.add(a);});groups.forEach((g,j)=>{g.classList.toggle('active',connected.has(j));g.classList.toggle('dimmed',!connected.has(j));});edges.forEach(e=>{const on=Number(e.dataset.a)===i||Number(e.dataset.b)===i;e.classList.toggle('active',on);e.classList.toggle('dimmed',!on);});detail.querySelector('h3').textContent=nodes[i][1];detail.querySelector('p').textContent=nodes[i][0]+' node. Highlighted links show the related '+(nodes[i][0]==='RISK'?'tests and proposed controls':nodes[i][0]==='TEST'?'risk hypotheses and control objectives':'risk hypotheses and evaluation tests')+'. Select another node to trace a different path.';}
- const network=el('div','network-wrap');network.append(graph,legend);panelNetwork(s,network,detail);root.append(s);select(0);
+ const panel=el('div','phase-explorer');
+ const tabs=el('div','phase-tabs');tabs.setAttribute('role','tablist');tabs.setAttribute('aria-label','Risk, test and control phases');
+ const content=el('div','phase-content');
+ const left=el('div','phase-items');const detail=el('article','phase-detail');
+ const detailEyebrow=el('div','eyebrow','SELECT AN ITEM');const title=el('h3','');const desc=el('p','');const relation=el('div','phase-relation');const evidence=el('div','visual-evidence');
+ detail.append(detailEyebrow,title,desc,relation,evidence);
+ let activePhase=0,activeItem=0;
+ function render(){
+  const phase=phases[activePhase];
+  tabs.replaceChildren();
+  phases.forEach((p,i)=>{const b=el('button','phase-tab');b.type='button';b.setAttribute('role','tab');b.setAttribute('aria-selected',String(i===activePhase));b.textContent=p.title;b.addEventListener('click',()=>{activePhase=i;activeItem=0;render();});tabs.append(b);});
+  left.replaceChildren(el('p','phase-intro',phase.intro));
+  phase.items.forEach((item,i)=>{const b=el('button','phase-item');b.type='button';b.setAttribute('aria-pressed',String(i===activeItem));b.append(el('span','phase-index','0'+(i+1)),el('strong','',item[0]),el('span','phase-chevron','↗'));b.addEventListener('click',()=>{activeItem=i;renderDetail();left.querySelectorAll('.phase-item').forEach((x,j)=>x.setAttribute('aria-pressed',String(j===i)));});left.append(b);});
+  content.replaceChildren(left,detail);
+  renderDetail();
+ }
+ function renderDetail(){
+  const phase=phases[activePhase],item=phase.items[activeItem];
+  detailEyebrow.textContent=phase.key+' PHASE · ITEM '+(activeItem+1);
+  title.textContent=item[0];desc.textContent=item[1];
+  relation.replaceChildren(el('div','phase-relation-label','CONNECTED WORK'));
+  relation.append(el('div','phase-chip-row',item[2]),el('div','phase-chip-row',item[3]));
+  evidence.textContent='EVIDENCE TO PRESERVE · '+item[4];
+ }
+ panel.append(tabs,content);s.append(panel);root.append(s);render();
 }
 function panelNetwork(s,network,detail){const p=el('div','network-panel');p.append(network,detail);s.append(p);}
 function pageTransitions(){
