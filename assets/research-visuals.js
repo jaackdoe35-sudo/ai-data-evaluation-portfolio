@@ -87,16 +87,19 @@ function riskTestControlNetwork(root){
  const s=section('ANIMATED RISK → TEST → CONTROL NETWORK','See how governance connects to evaluation','Select a risk, test or control node. The network highlights its relationships so visitors can follow a traceable assurance path. Relationships are illustrative mappings, not a claim of control effectiveness.');
  const graph=svg('svg',{viewBox:'0 0 900 430',role:'img','aria-label':'Interactive network linking AI risks, security tests and controls'});
  const mobile=matchMedia('(max-width: 700px)').matches;
- const cols=mobile?[180,180,180]:[150,450,750], ys=mobile?[100,400,700]:[90,210,330];
- if(mobile)graph.setAttribute('viewBox','0 0 360 980');
+ const cols=mobile?[180,180,180]:[150,450,750];
+ const mobileYs=[120,280,440,650,810,970,1180,1340,1500];
+ const desktopYs=[90,210,330];
+ const nodeY=i=>mobile?mobileYs[i]:desktopYs[nodes[i][3]];
+ if(mobile)graph.setAttribute('viewBox','0 0 360 1600');
  const nodes=[
  ['RISK','Prompt injection',0,0],['RISK','Data exposure',0,1],['RISK','Unsafe action',0,2],
  ['TEST','Indirect injection',1,0],['TEST','Data-boundary probe',1,1],['TEST','Action confirmation',1,2],
  ['CONTROL','Instruction hierarchy',2,0],['CONTROL','Access restrictions',2,1],['CONTROL','Human approval',2,2]
  ];
  const links=[[0,3],[0,6],[1,4],[1,7],[2,5],[2,8],[3,6],[4,7],[5,8],[3,7],[4,6]];
- const edges=[];links.forEach(([a,b])=>{const A=nodes[a],B=nodes[b];const p=svg('path',{d:'M'+cols[A[2]]+' '+ys[A[3]]+' C'+(cols[A[2]]+100)+' '+ys[A[3]]+' '+(cols[B[2]]-100)+' '+ys[B[3]]+' '+cols[B[2]]+' '+ys[B[3]],class:'network-edge','data-a':a,'data-b':b});graph.append(p);edges.push(p);});
- const groups=[];nodes.forEach((n,i)=>{const g=svg('g',{class:'network-node',tabindex:'0',role:'button','aria-label':n[1]});g.append(svg('rect',{x:cols[n[2]]-(mobile?112:90),y:ys[n[3]]-29,width:mobile?224:180,height:58,rx:14}));const t=svg('text',{x:cols[n[2]],y:ys[n[3]]+5,'text-anchor':'middle'});t.textContent=n[1];g.append(t);const small=svg('text',{x:cols[n[2]],y:ys[n[3]]-38,'text-anchor':'middle',class:'network-kind'});small.textContent=n[0];g.append(small);g.addEventListener('click',()=>select(i));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(i);}});graph.append(g);groups.push(g);});
+ const edges=[];links.forEach(([a,b])=>{const A=nodes[a],B=nodes[b],ya=nodeY(a),yb=nodeY(b);const curve=mobile?82:100;const p=svg('path',{d:'M'+cols[A[2]]+' '+ya+' C'+(cols[A[2]]+curve)+' '+(ya+(yb-ya)*.35)+' '+(cols[B[2]]-curve)+' '+(yb-(yb-ya)*.35)+' '+cols[B[2]]+' '+yb,class:'network-edge','data-a':a,'data-b':b});graph.append(p);edges.push(p);});
+ const groups=[];nodes.forEach((n,i)=>{const g=svg('g',{class:'network-node',tabindex:'0',role:'button','aria-label':n[1]});g.append(svg('rect',{x:cols[n[2]]-(mobile?112:90),y:nodeY(i)-29,width:mobile?224:180,height:58,rx:14}));const t=svg('text',{x:cols[n[2]],y:nodeY(i)+5,'text-anchor':'middle'});t.textContent=n[1];g.append(t);const small=svg('text',{x:cols[n[2]],y:nodeY(i)-38,'text-anchor':'middle',class:'network-kind'});small.textContent=n[0];g.append(small);g.addEventListener('click',()=>select(i));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(i);}});graph.append(g);groups.push(g);});
  const legend=el('div','network-legend');['RISK','TEST','CONTROL'].forEach(x=>legend.append(el('span','',x)));const detail=el('article','visual-detail network-detail');detail.append(el('div','eyebrow','NETWORK SELECTION'),el('h3'),el('p'));
  function select(i){const connected=new Set([i]);links.forEach(([a,b])=>{if(a===i)connected.add(b);if(b===i)connected.add(a);});groups.forEach((g,j)=>{g.classList.toggle('active',connected.has(j));g.classList.toggle('dimmed',!connected.has(j));});edges.forEach(e=>{const on=Number(e.dataset.a)===i||Number(e.dataset.b)===i;e.classList.toggle('active',on);e.classList.toggle('dimmed',!on);});detail.querySelector('h3').textContent=nodes[i][1];detail.querySelector('p').textContent=nodes[i][0]+' node. Highlighted links show the related '+(nodes[i][0]==='RISK'?'tests and proposed controls':nodes[i][0]==='TEST'?'risk hypotheses and control objectives':'risk hypotheses and evaluation tests')+'. Select another node to trace a different path.';}
  const network=el('div','network-wrap');network.append(graph,legend);panelNetwork(s,network,detail);root.append(s);select(0);
