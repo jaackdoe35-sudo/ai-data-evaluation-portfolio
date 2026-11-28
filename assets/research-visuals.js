@@ -1,0 +1,39 @@
+(()=>{'use strict';
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $=(s,r=document)=>r.querySelector(s);
+const make=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
+const svgNS='http://www.w3.org/2000/svg';
+function svgEl(tag,attrs={}){const n=document.createElementNS(svgNS,tag);Object.entries(attrs).forEach(([k,v])=>n.setAttribute(k,v));return n;}
+function addFlow(root){
+ const wrap=make('section','visual-lab wrap');wrap.setAttribute('aria-labelledby','flow-title');
+ const head=make('div','visual-heading');head.append(make('div','eyebrow','INTERACTIVE RESEARCH MAP'),make('h2','', 'How a security test becomes a finding'),make('p','', 'Explore the stages of a controlled evaluation. Select a stage to see the evidence it should produce.'));
+ const panel=make('div','flow-panel');
+ const stages=[['01','Scope','Authorized system, objective and success criteria'],['02','Design','Versioned scenarios, expected behavior and rubric'],['03','Execute','Inputs, outputs, timestamps and tool traces'],['04','Adjudicate','Evidence classification and evaluator decision'],['05','Report','Finding, limitations, remediation and retest']];
+ const rail=make('div','flow-rail');const detail=make('article','flow-detail');
+ const title=make('h3');const desc=make('p');const evidence=make('div','flow-evidence');
+ stages.forEach((s,i)=>{const b=make('button','flow-node');b.type='button';b.innerHTML='<span>'+s[0]+'</span><strong>'+s[1]+'</strong>';b.setAttribute('aria-pressed',i===0?'true':'false');b.addEventListener('click',()=>{rail.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');title.textContent=s[1];desc.textContent=s[2]+'.';evidence.textContent=['Scope record · authorization boundary · acceptance criteria','Test-case version · rubric · expected outcome','Raw input/output · tool trace where available · timestamp','Pass/fail/inconclusive label · rationale · reviewer notes','Evidence-linked finding · uncertainty · remediation · retest plan'][i];});rail.append(b);});
+ detail.append(make('div','eyebrow','SELECTED STAGE'),title,desc,evidence);panel.append(rail,detail);wrap.append(head,panel);root.append(wrap);rail.firstChild.click();
+}
+function addEvaluation(root){
+ const wrap=make('section','visual-lab wrap');wrap.setAttribute('aria-labelledby','eval-title');
+ const head=make('div','visual-heading');head.append(make('div','eyebrow','EVALUATION COVERAGE'),make('h2','','12 scenario specifications'),make('p','','The project defines twelve security test scenarios. Select a category to inspect its evaluation question; this visualization does not imply all scenarios were executed against a production model.'));
+ const names=[['Instruction hierarchy','Does the model preserve higher-priority instructions when requests conflict?'],['Prompt injection','Does untrusted content alter the model’s governing instructions?'],['Tool authorization','Are privileged tool actions limited to authorized requests?'],['Tool-output injection','Is tool-returned content treated as data rather than authority?'],['Data exfiltration','Does the model avoid disclosing protected information?'],['Secret handling','Are credentials and secrets kept out of responses and tool arguments?'],['Policy evasion','Does the model maintain constraints under reframing?'],['Refusal calibration','Does it refuse disallowed requests without over-refusing benign ones?'],['Data boundaries','Does it respect user, tenant and session separation?'],['Consequential actions','Does it require confirmation before consequential actions?']];
+ const panel=make('div','eval-panel');const list=make('div','eval-list');const detail=make('article','eval-detail');const count=make('div','eval-count','12');detail.append(make('div','eyebrow','SCENARIO SPECIFICATIONS'),count,make('p','','Select a topic to inspect the question it is designed to test.'),make('small','','Coverage labels are drawn from the project description; this is a topic index, not a score chart.'));
+ names.forEach((item,i)=>{const b=make('button','eval-topic');b.type='button';b.innerHTML='<span>'+String(i+1).padStart(2,'0')+'</span><strong>'+item[0]+'</strong><i>↗</i>';b.addEventListener('click',()=>{list.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');detail.querySelector('.eyebrow').textContent='SCENARIO '+String(i+1).padStart(2,'0');count.textContent=item[0];detail.querySelector('p').textContent=item[1];detail.querySelector('small').textContent='Evaluation status must be checked against the underlying run ledger; scenario specification alone is not execution evidence.';});list.append(b);});
+ panel.append(list,detail);wrap.append(head,panel);root.append(wrap);
+}
+function addRiskMap(root){
+ const wrap=make('section','visual-lab wrap');wrap.setAttribute('aria-labelledby','risk-title');
+ const head=make('div','visual-heading');head.append(make('div','eyebrow','GOVERNANCE TRACEABILITY'),make('h2','','From risk hypothesis to control evidence'),make('p','','A proposed control is not proof of operation. Select a risk area to see the control objective and the evidence an assurance review would seek.'));
+ const rows=[['Data leakage','Limit access to sensitive data and prevent unauthorized disclosure.','Access-control configuration · authorization tests · access logs · incident records'],['Unclear accountability','Assign accountable owners for system decisions and exceptions.','Named owner · RACI or responsibility record · approval trail'],['Inadequate human oversight','Define meaningful review and escalation for high-impact decisions.','Review procedure · sampled decisions · override and escalation records'],['Model performance drift','Monitor performance and define thresholds for investigation.','Monitoring specification · dated metrics · alert and remediation records'],['Third-party dependency','Assess supplier and component risks throughout the lifecycle.','Supplier inventory · due diligence · change and incident notices'],['Insufficient transparency','Provide appropriate information about system use and limitations.','User-facing disclosures · documentation · comprehension or feedback tests']];
+ const panel=make('div','risk-panel');const list=make('div','risk-list');const detail=make('article','risk-detail');detail.append(make('div','eyebrow','TRACEABILITY VIEW'),make('h3','','Select a risk hypothesis'),make('p','','The map distinguishes proposed control intent from evidence that would demonstrate implementation and operation.'));
+ rows.forEach((r,i)=>{const b=make('button','risk-row');b.type='button';b.innerHTML='<span>R'+String(i+1).padStart(2,'0')+'</span><strong>'+r[0]+'</strong><i>+</i>';b.addEventListener('click',()=>{list.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');detail.replaceChildren(make('div','eyebrow','RISK → CONTROL → EVIDENCE'),make('h3','',r[0]),make('p','risk-control',r[1]),make('div','evidence-label','EVIDENCE TO SEEK'),make('p','risk-proof',r[2]),make('small','','Illustrative traceability prompts. They are not claims that these controls have been implemented or tested.'));});list.append(b);});
+ panel.append(list,detail);wrap.append(head,panel);root.append(wrap);
+}
+const page=$('main');if(!page)return;
+if(location.pathname.endsWith('/research.html')){
+ const hero=$('.page-hero',page);if(hero){addFlow(hero);addEvaluation(hero);}
+}else if(location.pathname.endsWith('/governance.html')){
+ const hero=$('.page-hero',page);if(hero)addRiskMap(hero);
+}
+})();
