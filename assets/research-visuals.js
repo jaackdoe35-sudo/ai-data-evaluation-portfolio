@@ -84,7 +84,7 @@ function methodologyDiagram(root){
  nodes.forEach((n,i)=>{n.addEventListener('click',()=>choose(i));n.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();choose(i);}});});panel.append(svgbox,detail);s.append(panel);root.append(s);choose(0);
 }
 function riskTestControlNetwork(root){
- const s=section('INTERACTIVE RISK → TEST → CONTROL MAP','Explore the assurance process by phase','Switch between risks, evaluation tests and controls. Select any item to see what it means, how it connects to the other phases and what evidence would help assess it.');
+ const s=el('section','deep-visual wrap');s.append(el('div','eyebrow','INTERACTIVE GOVERNANCE MAP'),el('h2','','Explore the assurance process'));
  const phases=[
   {key:'RISK',title:'01 · Identify risks',intro:'Start with the failure mode: what could go wrong, and what boundary might be crossed?',items:[
    ['Prompt injection','Untrusted content may influence the model’s governing instructions.','Indirect prompt-injection scenario','Instruction hierarchy and untrusted-input isolation','Adversarial input set · model response · instruction-following assessment'],
