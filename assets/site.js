@@ -119,7 +119,14 @@ const pageMotionTargets=all([
   '.arena-banner', '.arena-grid > .arena-number', '.contact-grid > .contact-panel',
   '.case-grid > .case-panel', '.case-kpis > .case-kpi', '.case-index',
   '.guide-steps > *', '.service-grid > .service-card', '.evidence-grid > .evidence-card',
-  '.tools-panel', '.process-grid > *', '.project-grid > .project-card'
+  '.tools-panel', '.process-grid > *', '.project-grid > .project-card',
+  /* Risk Lab: use the same scroll-reveal system as the homepage and research pages. */
+  '.hub-stats > .hub-stat', '.disc-grid > .discipline',
+  '.case-grid > .case-card', '.panel-grid > .control-card',
+  '.tabs > .tab', '.panel[role="tabpanel"]',
+  '.method-flow > .flow-node', '.flow-detail',
+  '.evidence-note', '.risklab > .wrap > .eyebrow',
+  '.risklab > .wrap > h2'
 ].join(','));
 if('IntersectionObserver' in window&&!reduced){
   document.documentElement.classList.add('site-motion-ready');
