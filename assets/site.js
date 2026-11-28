@@ -104,3 +104,39 @@ if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
     heroCopy.style.setProperty('--pointer-y', (event.clientY - rect.top) + 'px');
   }, {passive:true});
 }
+
+
+// Consistent site-wide motion: target the real components used by every page.
+const pageMotionTargets=all([
+  'main > .page-hero .wrap',
+  'main > .section > .wrap',
+  '.section-head', '.section-heading', '.feature-grid > *', '.feature',
+  '.timeline-item', '.cards > .card', '.project-list > .card',
+  '.arena-banner', '.arena-grid > .arena-number', '.contact-grid > .contact-panel',
+  '.case-grid > .case-panel', '.case-kpis > .case-kpi', '.case-index',
+  '.guide-steps > *', '.service-grid > .service-card', '.evidence-grid > .evidence-card',
+  '.tools-panel', '.process-grid > *', '.project-grid > .project-card'
+].join(','));
+if('IntersectionObserver' in window&&!reduced){
+  document.documentElement.classList.add('site-motion-ready');
+  pageMotionTargets.forEach((node,index)=>{
+    node.classList.add('site-reveal');
+    node.style.setProperty('--site-motion-delay',Math.min(index%4,3)*70+'ms');
+  });
+  const pageObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('site-revealed');pageObserver.unobserve(entry.target);}
+  }),{threshold:.07,rootMargin:'0px 0px -24px 0px'});
+  pageMotionTargets.forEach(node=>pageObserver.observe(node));
+}else pageMotionTargets.forEach(node=>node.classList.add('site-revealed'));
+
+// Cross-page transitions are enabled globally, not only on pages with research diagrams.
+if(!reduced&&document.startViewTransition){
+  document.addEventListener('click',event=>{
+    const link=event.target.closest('a[href]');
+    if(!link||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey||link.target||link.hasAttribute('download'))return;
+    const destination=new URL(link.href,location.href);
+    if(destination.origin!==location.origin||destination.pathname===location.pathname)return;
+    event.preventDefault();
+    document.startViewTransition(()=>{location.href=destination.href;});
+  });
+}
