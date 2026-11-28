@@ -106,6 +106,10 @@ if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
 }
 
 
+(function(){
+'use strict';
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const all=selector=>Array.from(document.querySelectorAll(selector));
 // Consistent site-wide motion: target the real components used by every page.
 const pageMotionTargets=all([
   'main > .page-hero .wrap',
@@ -140,3 +144,5 @@ if(!reduced&&document.startViewTransition){
     document.startViewTransition(()=>{location.href=destination.href;});
   });
 }
+
+})();
