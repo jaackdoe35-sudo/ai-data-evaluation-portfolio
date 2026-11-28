@@ -69,7 +69,7 @@ function evaluationViz(root){
  const panel=el('div','eval-visual');const chart=svg('svg',{viewBox:'0 0 760 300',role:'img','aria-label':'Conceptual animated evaluation dimensions, not performance scores'});
  dims.forEach((d,i)=>{const y=40+i*50;const label=svg('text',{x:8,y:y+5,class:'eval-axis'});label.textContent=d[0];chart.append(label,svg('rect',{x:205,y:y-13,width:510,height:18,rx:9,class:'eval-track'}),svg('rect',{x:205,y:y-13,width:0,height:18,rx:9,class:'eval-bar','data-width':d[1]*5.1}));});
  const note=el('p','eval-disclaimer','Illustrative visual encoding only · no model scores or pass rates represented.');
- const replay=el('button','visual-control','Replay animation');replay.addEventListener('click',()=>animate(true));
+ const replay=el('button','visual-control','Replay');replay.addEventListener('click',()=>animate(true));
  panel.append(chart,note,replay);s.append(panel);root.append(s);
  let observer;if('IntersectionObserver'in window&&!reduce){observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){animate(false);observer.disconnect();}},{threshold:.25});observer.observe(panel);}else animate(false);
  function animate(force){chart.querySelectorAll('.eval-bar').forEach((b,i)=>{b.style.transition='none';b.setAttribute('width','0');void b.getBoundingClientRect();if(!reduce)b.style.transition='width '+(650+i*100)+'ms cubic-bezier(.2,.7,.2,1) '+(i*80)+'ms';b.setAttribute('width',b.dataset.width);});}
