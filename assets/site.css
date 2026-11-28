@@ -71,3 +71,9 @@ a{color:inherit}a:hover,a:focus-visible{color:#6f6a9f}
 .project-art:before,.project-art:after{border-color:rgba(145,139,189,.20)}
 .btn.primary{background:#292a32;color:#fff}
 button:not(.pg-launch):not(.pg-close):not(.pg-tab):not(.pg-chip):not(.pg-send){accent-color:#918bbd}
+
+/* Palette guard: no lemon, neon, cyan or saturated blue accents */
+.arena-banner .eyebrow,.arena-banner .meta,.arena-banner .tag{color:#918bbd!important}
+.arena-banner .btn.lime,.btn.lime{background:#fff!important;color:#292a32!important;border:1px solid #e8e7ed!important}
+a,.text-link,.card-link,.arena-profile-link a,.links a:hover,.links a[aria-current=page]{color:#7772a7}
+.gradient-text{background:linear-gradient(105deg,#918bbd,#aaa5ca)!important;background-clip:text!important;-webkit-background-clip:text!important;color:transparent!important;-webkit-text-fill-color:transparent!important}
