@@ -139,3 +139,41 @@ a,.text-link,.card-link,.arena-profile-link a,.links a:hover,.links a[aria-curre
  .research-project-card .text-link{font-size:9px}
 }
 @media(max-width:360px){.project-list-horizontal{gap:8px}.research-project-card .project-info{padding:10px}.research-project-card .project-info h3{font-size:13px}}
+
+
+/* 2026 motion layer: restrained, accessible and progressive-enhancement friendly */
+.hero{isolation:isolate;overflow:visible}
+.hero:before{content:"";position:absolute;z-index:-1;inset:2% -4% 0 38%;pointer-events:none;background:radial-gradient(ellipse at 55% 45%,rgba(145,139,189,.13),transparent 58%),linear-gradient(rgba(145,139,189,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(145,139,189,.035) 1px,transparent 1px);background-size:auto,34px 34px,34px 34px;mask-image:radial-gradient(ellipse at center,#000 12%,transparent 72%)}
+.hero-empty{position:relative;display:grid;place-items:center;perspective:900px}
+.hero-empty:before,.hero-empty:after{content:"";position:absolute;display:block;border:1px solid rgba(145,139,189,.25);border-radius:50%;width:min(28vw,330px);aspect-ratio:1;box-shadow:0 0 55px rgba(145,139,189,.08),inset 0 0 40px rgba(145,139,189,.06);animation:orbitFloat 12s ease-in-out infinite}
+.hero-empty:after{width:min(20vw,235px);border-color:rgba(145,139,189,.35);transform:rotateX(65deg) rotateZ(-25deg);animation:orbitTilt 18s linear infinite}
+.hero-empty{background:radial-gradient(circle at 50% 50%,rgba(145,139,189,.09),transparent 58%)}
+.hero-copy{animation:heroEnter .8s cubic-bezier(.2,.7,.2,1) both}
+.hero-copy .eyebrow{animation:heroEnter .65s .04s both}
+.hero-copy h1{animation:heroEnter .75s .1s both}
+.hero-copy .hero-role{animation:heroEnter .75s .18s both}
+.hero-copy .lead{animation:heroEnter .75s .25s both}
+.hero-copy .hero-actions,.hero-copy .socials{animation:heroEnter .75s .32s both}
+@keyframes heroEnter{from{opacity:0;transform:translateY(17px)}to{opacity:1;transform:translateY(0)}}
+@keyframes orbitFloat{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(0,-9px,0) rotate(5deg)}}
+@keyframes orbitTilt{from{transform:rotateX(65deg) rotateZ(-25deg)}to{transform:rotateX(65deg) rotateZ(335deg)}}
+/* Scroll reveals are activated by JS only after it has loaded successfully. */
+.js-motion .motion-reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1)}
+.js-motion .motion-reveal.is-visible{opacity:1;transform:translateY(0)}
+.js-motion .motion-reveal[data-motion-delay="1"]{transition-delay:.08s}
+.js-motion .motion-reveal[data-motion-delay="2"]{transition-delay:.16s}
+.js-motion .motion-reveal[data-motion-delay="3"]{transition-delay:.24s}
+.project-card,.service-card,.evidence-card,.research-project-card{transform-style:preserve-3d;transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
+.project-card:hover,.service-card:hover,.evidence-card:hover,.research-project-card:hover{transform:translateY(-5px);border-color:rgba(145,139,189,.42);box-shadow:0 18px 42px rgba(41,42,50,.09)}
+.project-art{transition:background-position .5s ease}
+.project-card:hover .project-art:before{animation:artOrbit 7s linear infinite}
+@keyframes artOrbit{to{transform:rotate(360deg)}}
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn:after{content:"";position:absolute;z-index:-1;inset:0;transform:translateX(-130%);background:linear-gradient(105deg,transparent,rgba(255,255,255,.22),transparent);transition:transform .65s ease}
+.btn:hover:after{transform:translateX(130%)}
+.links a{position:relative;transition:color .2s ease}
+.links a:after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .22s ease}
+.links a:hover:after,.links a[aria-current=page]:after{transform:scaleX(1)}
+@media(hover:hover) and (pointer:fine){.hero-copy{--pointer-x:50%;--pointer-y:50%}.hero-copy:after{content:"";position:absolute;z-index:-1;inset:-25px -35px;pointer-events:none;background:radial-gradient(260px circle at var(--pointer-x) var(--pointer-y),rgba(145,139,189,.10),transparent 70%)}}
+@media(max-width:700px){.hero:before{inset:0 -8% 0 18%;opacity:.7}.hero-empty:before{width:190px}.hero-empty:after{width:135px}.hero-empty{min-height:170px}}
+@media(prefers-reduced-motion:reduce){.hero-copy,.hero-copy>*{animation:none!important}.hero-empty:before,.hero-empty:after{animation:none!important}.js-motion .motion-reveal{opacity:1!important;transform:none!important;transition:none!important}.project-card,.service-card,.evidence-card,.research-project-card,.btn:after,.links a:after{transition:none!important}}
