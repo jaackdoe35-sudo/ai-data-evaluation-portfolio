@@ -114,3 +114,28 @@ a,.text-link,.card-link,.arena-profile-link a,.links a:hover,.links a[aria-curre
  .project-list-horizontal>.card .card-body h3{font-size:13px}
  .project-list-horizontal>.card .card-body p{font-size:9px;line-height:1.5}
 }
+
+/* Research cards now share the exact visual language of homepage featured projects */
+.project-list-horizontal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:stretch}
+.project-list-horizontal>.research-project-card{display:block;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:17px;background:#fff;box-shadow:0 8px 26px rgba(40,40,55,.04)}
+.research-project-card .project-art{height:145px;position:relative;display:flex;align-items:flex-end;justify-content:space-between;padding:20px;background:linear-gradient(135deg,#f1eff7,#e9eaf1);overflow:hidden}
+.research-project-card .project-art span,.research-project-card .project-art b{position:relative;z-index:1}
+.research-project-card .project-info{padding:18px}
+.research-project-card .project-info .eyebrow{font-size:8px}
+.research-project-card .project-info h3{font-size:17px;margin:8px 0}
+.research-project-card .project-info p{font-size:10px;line-height:1.75;min-height:0;margin:0 0 12px;color:var(--muted)}
+.research-project-card .tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.research-project-card .tag-pill{padding:5px 8px;border-radius:20px;background:#f2f1f6;color:#7772a7;font-size:8px}
+.research-project-card .text-link{font-size:10px}
+@media(max-width:700px){
+ .project-list-horizontal{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+ .research-project-card .project-art{height:105px;padding:12px}
+ .research-project-card .project-art span{font-size:7px}
+ .research-project-card .project-art b{font-size:30px}
+ .research-project-card .project-info{padding:13px}
+ .research-project-card .project-info h3{font-size:14px;margin:6px 0}
+ .research-project-card .project-info p{font-size:9px;line-height:1.6}
+ .research-project-card .tag-pill{font-size:7px;padding:4px 6px}
+ .research-project-card .text-link{font-size:9px}
+}
+@media(max-width:360px){.project-list-horizontal{gap:8px}.research-project-card .project-info{padding:10px}.research-project-card .project-info h3{font-size:13px}}
