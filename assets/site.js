@@ -133,16 +133,6 @@ if('IntersectionObserver' in window&&!reduced){
   pageMotionTargets.forEach(node=>pageObserver.observe(node));
 }else pageMotionTargets.forEach(node=>node.classList.add('site-revealed'));
 
-// Cross-page transitions are enabled globally, not only on pages with research diagrams.
-if(!reduced&&document.startViewTransition){
-  document.addEventListener('click',event=>{
-    const link=event.target.closest('a[href]');
-    if(!link||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey||link.target||link.hasAttribute('download'))return;
-    const destination=new URL(link.href,location.href);
-    if(destination.origin!==location.origin||destination.pathname===location.pathname)return;
-    event.preventDefault();
-    document.startViewTransition(()=>{location.href=destination.href;});
-  });
-}
+// Cross-document transitions use the shared CSS @view-transition navigation rule.
 
 })();
