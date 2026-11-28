@@ -288,3 +288,30 @@ a,.text-link,.card-link,.arena-profile-link a,.links a:hover,.links a[aria-curre
  .network-panel{grid-template-columns:minmax(0,1fr);gap:12px}
  .network-detail{width:100%;overflow-wrap:anywhere}
 }
+
+/* Phase-based governance explorer */
+.phase-explorer{border:1px solid var(--line);border-radius:20px;background:#fff;overflow:hidden;box-shadow:0 12px 34px rgba(41,42,50,.05)}
+.phase-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-bottom:1px solid var(--line);background:#f8f7fa}
+.phase-tab{padding:17px 12px;border:0;border-bottom:3px solid transparent;background:transparent;color:#777984;font-size:11px;font-weight:800;cursor:pointer}
+.phase-tab[aria-selected=true]{color:#625c91;border-bottom-color:#918bbd;background:#fff}
+.phase-content{display:grid;grid-template-columns:minmax(210px,.8fr) minmax(0,1.2fr);gap:18px;padding:18px}
+.phase-items{display:grid;align-content:start;gap:9px;min-width:0}
+.phase-intro{font-size:11px;line-height:1.7;margin:0 0 5px}
+.phase-item{display:grid;grid-template-columns:28px minmax(0,1fr) 15px;align-items:center;gap:9px;text-align:left;padding:14px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);cursor:pointer;min-width:0}
+.phase-item[aria-pressed=true]{background:#f3f1f8;border-color:#918bbd;box-shadow:inset 3px 0 #918bbd}
+.phase-index{font:800 10px Manrope;color:#918bbd}
+.phase-item strong{font-size:11px;line-height:1.4;overflow-wrap:anywhere}
+.phase-chevron{color:#918bbd}
+.phase-detail{padding:24px;border-radius:15px;background:linear-gradient(145deg,#f5f4f9,#fff);border:1px solid #eceaf2;min-width:0;align-self:stretch}
+.phase-detail h3{font-size:clamp(20px,2.5vw,28px);margin:10px 0}
+.phase-detail p{font-size:12px;line-height:1.8}
+.phase-relation{display:grid;gap:8px;margin:16px 0}
+.phase-relation-label{font-size:9px;letter-spacing:.12em;font-weight:800;color:#918bbd}
+.phase-chip-row{padding:11px 13px;border:1px solid #e4e1ed;border-radius:10px;background:#fff;font-size:10px;line-height:1.6;overflow-wrap:anywhere}
+@media(max-width:700px){
+ .phase-tabs{position:sticky;top:66px;z-index:4}
+ .phase-tab{padding:14px 5px;font-size:9px}
+ .phase-content{grid-template-columns:minmax(0,1fr);gap:12px;padding:12px}
+ .phase-detail{padding:17px}
+ .phase-item{padding:12px}
+}
