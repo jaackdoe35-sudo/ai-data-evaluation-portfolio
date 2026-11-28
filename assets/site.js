@@ -72,3 +72,35 @@ if(counters.length&&!reduced&&'IntersectionObserver'in window){
   counters.forEach(node=>countObserver.observe(node));
 }
 })();
+
+// Portfolio motion layer: progressive enhancement, accessible by default.
+// If JavaScript or IntersectionObserver is unavailable, content remains visible.
+const motionTargets = document.querySelectorAll(
+  '.hero-copy, .about-band, .section-heading, .service-card, .tools-panel, .project-card, .process-grid > div, .evidence-card, .contact-inner, .page-hero .wrap, .arena-research-group, .other-research, .research-project-card'
+);
+if (!reduced && 'IntersectionObserver' in window) {
+  document.documentElement.classList.add('js-motion');
+  motionTargets.forEach((node, index) => {
+    node.classList.add('motion-reveal');
+    if (node.matches('.service-card,.project-card,.process-grid > div,.evidence-card,.research-project-card')) {
+      node.dataset.motionDelay = String((index % 4));
+    }
+  });
+  const motionObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      motionObserver.unobserve(entry.target);
+    }
+  }), {threshold: 0.08, rootMargin: '0px 0px -28px 0px'});
+  motionTargets.forEach(node => motionObserver.observe(node));
+}
+
+// Desktop-only pointer light, deliberately disabled for touch and coarse pointers.
+if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+  const heroCopy = document.querySelector('.hero-copy');
+  if (heroCopy) heroCopy.addEventListener('pointermove', event => {
+    const rect = heroCopy.getBoundingClientRect();
+    heroCopy.style.setProperty('--pointer-x', (event.clientX - rect.left) + 'px');
+    heroCopy.style.setProperty('--pointer-y', (event.clientY - rect.top) + 'px');
+  }, {passive:true});
+}
