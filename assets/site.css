@@ -261,3 +261,30 @@ a,.text-link,.card-link,.arena-profile-link a,.links a:hover,.links a[aria-curre
  .network-wrap svg{min-height:220px}
 }
 @media(prefers-reduced-motion:reduce){.attack-progress,.attack-node circle,.vuln-edge,.vuln-point circle,.timeline-fill,.timeline-stop span,.eval-bar,.method-node circle,.network-edge,.network-node rect{transition:none!important;animation:none!important}::view-transition-old(root),::view-transition-new(root){animation:none!important}}
+
+/* Mobile overflow repair: contact links and nested governance visual */
+.deep-visual.wrap{width:100%;max-width:100%;margin-inline:0;min-width:0}
+.network-panel,.network-wrap,.network-detail,.vuln-layout,.visual-detail{min-width:0;max-width:100%}
+.network-wrap{overflow:hidden}
+.network-wrap svg{width:100%;height:auto;min-width:0}
+.network-node text{font-size:11px}
+.network-node rect{vector-effect:non-scaling-stroke}
+.contact-grid{align-items:stretch;min-width:0}
+.contact-grid>*{min-width:0;max-width:100%}
+.contact-links{display:grid;grid-template-columns:1fr;gap:10px;min-width:0;width:100%}
+.contact-links a{display:block;min-width:0;max-width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:11px;line-height:1.65;white-space:normal;overflow-wrap:anywhere;word-break:normal}
+.contact-panel{min-width:0;padding:clamp(20px,3vw,34px)}
+.contact-panel h2,.contact-panel p{max-width:100%;overflow-wrap:break-word}
+.footer{align-items:flex-start;flex-wrap:wrap;row-gap:10px}
+.footer>*{min-width:0;max-width:100%;overflow-wrap:anywhere}
+@media(max-width:700px){
+ .contact-grid{grid-template-columns:minmax(0,1fr);gap:14px}
+ .contact-panel{padding:20px}
+ .contact-panel h2{font-size:clamp(26px,7vw,36px);line-height:1.14}
+ .contact-panel p{font-size:12px;line-height:1.8}
+ .contact-links{gap:8px}
+ .contact-links a{font-size:10px;padding:12px}
+ .footer{padding-bottom:28px}
+ .network-panel{grid-template-columns:minmax(0,1fr);gap:12px}
+ .network-detail{width:100%;overflow-wrap:anywhere}
+}
