@@ -78,7 +78,7 @@ if(counters.length&&!reduced&&'IntersectionObserver'in window){
 const motionTargets = document.querySelectorAll(
   '.hero-copy, .about-band, .section-heading, .service-card, .tools-panel, .project-card, .process-grid > div, .evidence-card, .contact-inner, .page-hero .wrap, .arena-research-group, .other-research, .research-project-card'
 );
-if (!reduced && 'IntersectionObserver' in window) {
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
   document.documentElement.classList.add('js-motion');
   motionTargets.forEach((node, index) => {
     node.classList.add('motion-reveal');
