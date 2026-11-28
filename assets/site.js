@@ -1,145 +1,17 @@
 (()=>{'use strict';
-const one=(selector,root=document)=>root.querySelector(selector);
-const all=(selector,root=document)=>[...root.querySelectorAll(selector)];
-const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-// Accessible mobile navigation: open, close on selection, and expose state to assistive tech.
-const menu=one('.menu');
-const navLinks=one('.nav .links');
-if(menu&&navLinks){
-  menu.addEventListener('click',()=>{
-    const open=navLinks.classList.toggle('open');
-    menu.setAttribute('aria-expanded',String(open));
-    menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');
-  });
-  all('a',navLinks).forEach(link=>link.addEventListener('click',()=>{
-    navLinks.classList.remove('open');
-    menu.setAttribute('aria-expanded','false');
-    menu.setAttribute('aria-label','Open navigation');
-  }));
-  document.addEventListener('keydown',event=>{
-    if(event.key==='Escape'&&navLinks.classList.contains('open')){
-      navLinks.classList.remove('open');
-      menu.setAttribute('aria-expanded','false');
-      menu.focus();
-    }
-  });
-}
-
-// Reading progress and back-to-top affordance.
-const progress=document.createElement('div');
-progress.className='scroll-progress';
-progress.setAttribute('aria-hidden','true');
-document.body.append(progress);
-const back=one('.backtop');
-let ticking=false;
-const update=()=>{
-  const max=document.documentElement.scrollHeight-window.innerHeight;
-  progress.style.transform='scaleX('+(max>0?window.scrollY/max:0)+')';
-  if(back)back.classList.toggle('show',window.scrollY>500);
-  ticking=false;
-};
-window.addEventListener('scroll',()=>{
-  if(!ticking){window.requestAnimationFrame(update);ticking=true;}
-},{passive:true});
-update();
-if(back)back.addEventListener('click',()=>window.scrollTo({top:0,behavior:reduced?'auto':'smooth'}));
-
-// Subtle reveal only; no cursor-following glow, particles, tilt or magnetic motion.
-const revealItems=all('.reveal');
-if('IntersectionObserver'in window&&!reduced){
-  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
-    if(entry.isIntersecting){entry.target.classList.add('in');observer.unobserve(entry.target);}
-  }),{threshold:.08,rootMargin:'0px 0px -24px 0px'});
-  revealItems.forEach(item=>observer.observe(item));
-}else revealItems.forEach(item=>item.classList.add('in'));
-
-// Count up figures once when visible; static values remain available without JavaScript.
-const counters=all('[data-count]');
-if(counters.length&&!reduced&&'IntersectionObserver'in window){
-  const countObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
-    if(!entry.isIntersecting)return;
-    const node=entry.target,target=Number(node.dataset.count);
-    if(!Number.isFinite(target)){countObserver.unobserve(node);return;}
-    const start=performance.now(),duration=850;
-    const tick=now=>{
-      const t=Math.min(1,(now-start)/duration);
-      node.textContent=Math.round(target*(1-Math.pow(1-t,3))).toLocaleString();
-      if(t<1)requestAnimationFrame(tick);else node.textContent=target.toLocaleString();
-    };
-    requestAnimationFrame(tick);countObserver.unobserve(node);
-  }),{threshold:.6});
-  counters.forEach(node=>countObserver.observe(node));
-}
-})();
-
-// Portfolio motion layer: progressive enhancement, accessible by default.
-// If JavaScript or IntersectionObserver is unavailable, content remains visible.
-const motionTargets = document.querySelectorAll(
-  '.hero-copy, .about-band, .section-heading, .service-card, .tools-panel, .project-card, .process-grid > div, .evidence-card, .contact-inner, .page-hero .wrap, .arena-research-group, .other-research, .research-project-card'
-);
-if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
-  document.documentElement.classList.add('js-motion');
-  motionTargets.forEach((node, index) => {
-    node.classList.add('motion-reveal');
-    if (node.matches('.service-card,.project-card,.process-grid > div,.evidence-card,.research-project-card')) {
-      node.dataset.motionDelay = String((index % 4));
-    }
-  });
-  const motionObserver = new IntersectionObserver(entries => entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      motionObserver.unobserve(entry.target);
-    }
-  }), {threshold: 0.08, rootMargin: '0px 0px -28px 0px'});
-  motionTargets.forEach(node => motionObserver.observe(node));
-}
-
-// Desktop-only pointer light, deliberately disabled for touch and coarse pointers.
-if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
-  const heroCopy = document.querySelector('.hero-copy');
-  if (heroCopy) heroCopy.addEventListener('pointermove', event => {
-    const rect = heroCopy.getBoundingClientRect();
-    heroCopy.style.setProperty('--pointer-x', (event.clientX - rect.left) + 'px');
-    heroCopy.style.setProperty('--pointer-y', (event.clientY - rect.top) + 'px');
-  }, {passive:true});
-}
-
-
-(function(){
-'use strict';
-const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const all=selector=>Array.from(document.querySelectorAll(selector));
-// Consistent site-wide motion: target the real components used by every page.
-const pageMotionTargets=all([
-  'main > .page-hero .wrap',
-  'main > .section > .wrap',
-  '.section-head', '.section-heading', '.feature-grid > *', '.feature',
-  '.timeline-item', '.cards > .card', '.project-list > .card',
-  '.arena-banner', '.arena-grid > .arena-number', '.contact-grid > .contact-panel',
-  '.case-grid > .case-panel', '.case-kpis > .case-kpi', '.case-index',
-  '.guide-steps > *', '.service-grid > .service-card', '.evidence-grid > .evidence-card',
-  '.tools-panel', '.process-grid > *', '.project-grid > .project-card',
-  /* Risk Lab: use the same scroll-reveal system as the homepage and research pages. */
-  '.hub-stats > .hub-stat', '.disc-grid > .discipline',
-  '.case-grid > .case-card', '.panel-grid > .control-card',
-  '.tabs > .tab', '.panel[role="tabpanel"]',
-  '.method-flow > .flow-node', '.flow-detail',
-  '.evidence-note', '.risklab > .wrap > .eyebrow',
-  '.risklab > .wrap > h2'
-].join(','));
-if('IntersectionObserver' in window&&!reduced){
-  document.documentElement.classList.add('site-motion-ready');
-  pageMotionTargets.forEach((node,index)=>{
-    node.classList.add('site-reveal');
-    node.style.setProperty('--site-motion-delay',Math.min(index%4,3)*70+'ms');
-  });
-  const pageObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
-    if(entry.isIntersecting){entry.target.classList.add('site-revealed');pageObserver.unobserve(entry.target);}
-  }),{threshold:.07,rootMargin:'0px 0px -24px 0px'});
-  pageMotionTargets.forEach(node=>pageObserver.observe(node));
-}else pageMotionTargets.forEach(node=>node.classList.add('site-revealed'));
-
-// Cross-document transitions use the shared CSS @view-transition navigation rule.
-
+const one=s=>document.querySelector(s),all=s=>Array.from(document.querySelectorAll(s));
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+document.body.classList.add('page-transition');
+const menu=one('.menu'),links=one('.nav .links');
+if(menu&&links){menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation')});all('.nav .links a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation')}));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&links.classList.contains('open')){links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.focus()}})}
+const progress=document.createElement('div');progress.className='scroll-progress';progress.setAttribute('aria-hidden','true');document.body.append(progress);
+const back=one('.backtop');let ticking=false;const update=()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.transform='scaleX('+(max>0?scrollY/max:0)+')';if(back)back.classList.toggle('show',scrollY>500);ticking=false};
+addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(update);ticking=true}},{passive:true});addEventListener('resize',update,{passive:true});update();if(back)back.addEventListener('click',()=>scrollTo({top:0,behavior:reduced?'auto':'smooth'}));
+const selector=['.hero-copy','.hero-empty','.about-band','.section-heading','.section-head','.service-card','.project-card','.project-list > .card','.cards > .card','.feature-grid > *','.feature','.tools-panel','.process-grid > *','.evidence-grid > *','.timeline-item','.arena-research-group','.other-research','.arena-banner','.arena-number','.contact-inner','.contact-grid > *','.contact-panel','.case-panel','.case-card','.hub-stat','.discipline','.control-card','.panel','.flow-node','.flow-detail','.guide-steps > *','.related-grid > *','.case-jumps > *','.case-kpi','.phase-explorer','.phase-detail','.phase-item','.evidence-note','.page-hero .wrap','.risklab > .wrap > .eyebrow','.risklab > .wrap > h2','.deep-visual','.vuln-layout','.network-panel','.attack-frame','.eval-visual','.method-map','.visual-detail','.research-project-card'].join(',');
+const reveal=all(selector);
+if(!reduced&&'IntersectionObserver'in window&&reveal.length){document.documentElement.classList.add('site-motion-ready');reveal.forEach((n,i)=>{n.classList.add('site-reveal');n.style.setProperty('--site-motion-delay',(i%4)*65+'ms')});const ob=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('site-revealed');ob.unobserve(e.target)}}),{threshold:.07,rootMargin:'0px 0px -28px 0px'});reveal.forEach(n=>ob.observe(n))}else reveal.forEach(n=>n.classList.add('site-revealed'));
+const hover=all(['.service-card','.project-card','.evidence-card','.card','.feature','.timeline-item','.arena-banner','.arena-number','.case-panel','.case-card','.hub-stat','.discipline','.control-card','.panel','.flow-node','.flow-detail','.contact-panel','.stat','.guide-steps article','.related-grid a','.case-jumps a','.phase-item','.phase-detail','.case-kpi','.tab'].join(','));hover.forEach(n=>n.classList.add('site-hover'));
+if(fine)all('.hero-copy,.page-hero .wrap').forEach(n=>n.addEventListener('pointermove',e=>{const r=n.getBoundingClientRect();n.style.setProperty('--site-pointer-x',(e.clientX-r.left)+'px');n.style.setProperty('--site-pointer-y',(e.clientY-r.top)+'px')},{passive:true}));
+const counters=all('[data-count]');if(counters.length&&!reduced&&'IntersectionObserver'in window){const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const n=e.target,t=Number(n.dataset.count);if(!Number.isFinite(t)){co.unobserve(n);return}const start=performance.now(),duration=850;const tick=now=>{const p=Math.min(1,(now-start)/duration);n.textContent=Math.round(t*(1-Math.pow(1-p,3))).toLocaleString();if(p<1)requestAnimationFrame(tick);else n.textContent=t.toLocaleString()};requestAnimationFrame(tick);co.unobserve(n)}),{threshold:.6});counters.forEach(n=>co.observe(n))}
+const legacy=all('.reveal');if(!reduced&&'IntersectionObserver'in window){const lo=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');lo.unobserve(e.target)}}),{threshold:.08});legacy.forEach(n=>lo.observe(n))}else legacy.forEach(n=>n.classList.add('in'));
 })();
