@@ -86,7 +86,9 @@ function methodologyDiagram(root){
 function riskTestControlNetwork(root){
  const s=section('ANIMATED RISK → TEST → CONTROL NETWORK','See how governance connects to evaluation','Select a risk, test or control node. The network highlights its relationships so visitors can follow a traceable assurance path. Relationships are illustrative mappings, not a claim of control effectiveness.');
  const graph=svg('svg',{viewBox:'0 0 900 430',role:'img','aria-label':'Interactive network linking AI risks, security tests and controls'});
- const mobile=matchMedia('(max-width: 700px)').matches;\n const cols=mobile?[180,180,180]:[150,450,750], ys=mobile?[100,400,700]:[90,210,330];\n if(mobile)graph.setAttribute('viewBox','0 0 360 980');
+ const mobile=matchMedia('(max-width: 700px)').matches;
+ const cols=mobile?[180,180,180]:[150,450,750], ys=mobile?[100,400,700]:[90,210,330];
+ if(mobile)graph.setAttribute('viewBox','0 0 360 980');
  const nodes=[
  ['RISK','Prompt injection',0,0],['RISK','Data exposure',0,1],['RISK','Unsafe action',0,2],
  ['TEST','Indirect injection',1,0],['TEST','Data-boundary probe',1,1],['TEST','Action confirmation',1,2],
