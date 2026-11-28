@@ -43,7 +43,7 @@ function vulnerabilityMap(root){
  svgbox.append(g);
  const list=el('div','vuln-list');const detail=el('article','visual-detail');detail.append(el('div','eyebrow','RISK → CONTROL → EVIDENCE'),el('h3'),el('p'),el('div','visual-evidence'));
  risks.forEach((r,i)=>{const b=el('button','vuln-select');b.type='button';b.textContent='R'+(i+1)+' · '+r[0];b.addEventListener('click',()=>choose(i));list.append(b);buttons[i].addEventListener('click',()=>choose(i));buttons[i].addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();choose(i);}});});
- function choose(i){list.querySelectorAll('button').forEach((b,j)=>b.setAttribute('aria-pressed',String(j===i)));buttons.forEach((b,j)=>b.classList.toggle('active',i===j));g.querySelectorAll('.vuln-edge').forEach((p,j)=>p.classList.toggle('active',i===j));const d=detail.querySelectorAll('h3,p,.visual-evidence');d[0].textContent=riskName=risks[i][0];d[1].textContent=risks[i][1];d[2].textContent='Control objective: '+risks[i][2]+'. Evidence to seek: '+risks[i][3]+'.';}
+ function choose(i){list.querySelectorAll('button').forEach((b,j)=>b.setAttribute('aria-pressed',String(j===i)));buttons.forEach((b,j)=>b.classList.toggle('active',i===j));g.querySelectorAll('.vuln-edge').forEach((p,j)=>p.classList.toggle('active',i===j));const d=detail.querySelectorAll('h3,p,.visual-evidence');d[0].textContent=risks[i][0];d[1].textContent=risks[i][1];d[2].textContent='Control objective: '+risks[i][2]+'. Evidence to seek: '+risks[i][3]+'.';}
  layout.append(svgbox,list);s.append(layout,detail);root.append(s);choose(0);
 }
 const timelineItems=[
