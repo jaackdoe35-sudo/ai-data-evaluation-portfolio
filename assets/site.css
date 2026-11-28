@@ -78,33 +78,39 @@ button:not(.pg-launch):not(.pg-close):not(.pg-tab):not(.pg-chip):not(.pg-send){a
 a,.text-link,.card-link,.arena-profile-link a,.links a:hover,.links a[aria-current=page]{color:#7772a7}
 .gradient-text{background:linear-gradient(105deg,#918bbd,#aaa5ca)!important;background-clip:text!important;-webkit-background-clip:text!important;color:transparent!important;-webkit-text-fill-color:transparent!important}
 
-/* Research archive: compact horizontal cards, grouped Gray Swan challenge work */
-.project-list-horizontal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch}
-.project-list-horizontal>.card{display:grid;grid-template-columns:112px minmax(0,1fr);grid-template-rows:1fr;min-width:0;min-height:0;overflow:hidden}
-.project-list-horizontal>.card .card-art{height:auto;min-height:100%;min-width:0;display:grid;place-items:center}
-.project-list-horizontal>.card .card-body{min-width:0;padding:18px 17px;display:flex;flex-direction:column;align-items:flex-start;gap:5px}
-.project-list-horizontal>.card .card-body h3{font-size:16px;margin:1px 0 2px}
-.project-list-horizontal>.card .card-body p{font-size:10px;line-height:1.65;margin:0}
-.project-list-horizontal>.card .tags{gap:5px;margin:3px 0}
-.project-list-horizontal>.card .tag-pill{font-size:8px;padding:4px 7px}
-.project-list-horizontal>.card .card-link{font-size:9px;margin-top:4px}
+
+/* Research archive: preserve original card design; arrange the boxes in a compact horizontal grid */
+.project-list-horizontal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
+.project-list-horizontal>.card{display:block;min-width:0;overflow:hidden}
+.project-list-horizontal>.card .card-art{height:145px;min-height:0;width:100%;display:grid;place-items:center}
+.project-list-horizontal>.card .card-body{display:block;padding:20px}
+.project-list-horizontal>.card .card-body h3{font-size:18px;margin:0 0 9px}
+.project-list-horizontal>.card .card-body p{font-size:11px;line-height:1.8;margin:0 0 12px}
+.project-list-horizontal>.card .tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.project-list-horizontal>.card .tag-pill{font-size:8px;padding:5px 8px}
+.project-list-horizontal>.card .card-link{font-size:10px;margin-top:0}
 .arena-research-group{padding:25px;border:1px solid var(--line);border-radius:19px;background:rgba(255,255,255,.45);margin:22px 0 40px}
 .arena-group-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px;padding-bottom:17px;border-bottom:1px solid var(--line)}
 .arena-group-heading h3,.other-research h3{font-size:24px;margin:5px 0}
 .arena-group-heading p{font-size:11px;margin:0}
 .gsw-arrow{color:#918bbd;font-size:1.1em;font-weight:700;margin-left:5px}
-.gray-swan-cases>.card:first-child{grid-column:1/-1}
 .other-research{margin-top:34px}
 .other-research>.eyebrow{margin-bottom:5px}
 .other-research>h3{margin:5px 0 18px}
-@media(max-width:760px){
- .project-list-horizontal{grid-template-columns:1fr;gap:11px}
- .project-list-horizontal>.card{grid-template-columns:84px minmax(0,1fr)}
- .project-list-horizontal>.card .card-body{padding:13px 12px}
- .project-list-horizontal>.card .card-art b{font-size:28px}
- .project-list-horizontal>.card .card-body h3{font-size:14px}
- .project-list-horizontal>.card .card-body p{font-size:9px;line-height:1.55}
+@media(max-width:1000px){.project-list-horizontal{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){
+ .project-list-horizontal{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .project-list-horizontal>.card .card-art{height:110px}
+ .project-list-horizontal>.card .card-body{padding:14px}
+ .project-list-horizontal>.card .card-body h3{font-size:15px}
+ .project-list-horizontal>.card .card-body p{font-size:10px;line-height:1.65}
  .arena-research-group{padding:15px;margin:12px 0 30px}
  .arena-group-heading{align-items:flex-start;flex-direction:column;gap:8px}
- .gray-swan-cases>.card:first-child{grid-column:auto}
+}
+@media(max-width:390px){
+ .project-list-horizontal{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .project-list-horizontal>.card .card-art{height:90px}
+ .project-list-horizontal>.card .card-body{padding:11px}
+ .project-list-horizontal>.card .card-body h3{font-size:13px}
+ .project-list-horizontal>.card .card-body p{font-size:9px;line-height:1.5}
 }
